@@ -2,7 +2,7 @@ module MockResponses
   # here are some known API responses we can use to test our xml parsing
   def track_dhlgm_response
     "<track>
-      <shipment>        
+      <shipment>
         <trackingnumber>1071180100692707</trackingnumber>
         <deliveryconfirm>9261299996349762041684</deliveryconfirm>
         <customerconfirm>S725347170</customerconfirm>
@@ -144,7 +144,7 @@ module MockResponses
           <postalcode/>
           <country/>
         </event>
-        
+
       </shipment>
 
     </track>"
@@ -1353,6 +1353,347 @@ module MockResponses
           <ErrorDescription>Invalid tracking number</ErrorDescription>
         </Error>
       </Response>
+    </TrackResponse>"
+  end
+
+  def track_ups_surepost_response
+    "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+    <TrackResponse>
+       <Response>
+          <TransactionReference>
+             <CustomerContext>320f2ecb-ff3e-4d5f-b93b-43becd9a046a</CustomerContext>
+             <XpciVersion>1.0</XpciVersion>
+          </TransactionReference>
+          <ResponseStatusCode>1</ResponseStatusCode>
+          <ResponseStatusDescription>Success</ResponseStatusDescription>
+       </Response>
+       <Shipment>
+          <Shipper>
+             <ShipperNumber>1161WA</ShipperNumber>
+             <Address>
+                <AddressLine1>S 507 2ND ST</AddressLine1>
+                <City>MILWAUKEE</City>
+                <StateProvinceCode>WI</StateProvinceCode>
+                <PostalCode>532041614</PostalCode>
+                <CountryCode>US</CountryCode>
+             </Address>
+          </Shipper>
+          <ShipTo>
+             <Address>
+                <City>LOS GATOS</City>
+                <StateProvinceCode>CA</StateProvinceCode>
+                <PostalCode>95032</PostalCode>
+                <CountryCode>US</CountryCode>
+             </Address>
+          </ShipTo>
+          <ShipmentWeight>
+             <UnitOfMeasurement>
+                <Code>LBS</Code>
+             </UnitOfMeasurement>
+             <Weight>4.80</Weight>
+          </ShipmentWeight>
+          <Service>
+             <Code>093</Code>
+             <Description>UPS SurePost</Description>
+          </Service>
+          <ReferenceNumber>
+             <Code>01</Code>
+             <Value>M681861103-1025</Value>
+          </ReferenceNumber>
+          <ShipmentIdentificationNumber>1Z1161WAYW93644228</ShipmentIdentificationNumber>
+          <PickupDate>20180522</PickupDate>
+          <Package>
+             <TrackingNumber>1Z1161WAYW93644228</TrackingNumber>
+             <DeliveryIndicator>N</DeliveryIndicator>
+             <RescheduledDeliveryDate>20180531</RescheduledDeliveryDate>
+             <PackageServiceOptions>
+                <USPSPICNumber>92612904851879541400755181</USPSPICNumber>
+             </PackageServiceOptions>
+             <Activity>
+                <ActivityLocation>
+                   <Address />
+                   <Description>Dock</Description>
+                </ActivityLocation>
+                <Status>
+                   <StatusType>
+                      <Code>I</Code>
+                      <Description>Received by the local post office</Description>
+                   </StatusType>
+                   <StatusCode>
+                      <Code>YH</Code>
+                   </StatusCode>
+                </Status>
+                <Date>20180530</Date>
+                <Time>034200</Time>
+             </Activity>
+             <Activity>
+                <ActivityLocation>
+                   <Address>
+                      <City>CAMPBELL</City>
+                      <PostalCode>95008</PostalCode>
+                      <CountryCode>US</CountryCode>
+                   </Address>
+                   <Code>AI</Code>
+                   <Description>Dock</Description>
+                   <SignedForByName>TO</SignedForByName>
+                </ActivityLocation>
+                <Status>
+                   <StatusType>
+                      <Code>D</Code>
+                      <Description>Package transferred to post office</Description>
+                   </StatusType>
+                   <StatusCode>
+                      <Code>LX</Code>
+                   </StatusCode>
+                </Status>
+                <Date>20180529</Date>
+                <Time>121524</Time>
+             </Activity>
+             <Activity>
+                <ActivityLocation>
+                   <Address>
+                      <City>San Jose</City>
+                      <StateProvinceCode>CA</StateProvinceCode>
+                      <CountryCode>US</CountryCode>
+                   </Address>
+                   <Description>Dock</Description>
+                </ActivityLocation>
+                <Status>
+                   <StatusType>
+                      <Code>I</Code>
+                      <Description>Destination Scan</Description>
+                   </StatusType>
+                   <StatusCode>
+                      <Code>YP</Code>
+                   </StatusCode>
+                </Status>
+                <Date>20180529</Date>
+                <Time>050247</Time>
+             </Activity>
+             <Activity>
+                <ActivityLocation>
+                   <Address>
+                      <City>San Jose</City>
+                      <StateProvinceCode>CA</StateProvinceCode>
+                      <CountryCode>US</CountryCode>
+                   </Address>
+                   <Description>Dock</Description>
+                </ActivityLocation>
+                <Status>
+                   <StatusType>
+                      <Code>I</Code>
+                      <Description>Destination Scan</Description>
+                   </StatusType>
+                   <StatusCode>
+                      <Code>DS</Code>
+                   </StatusCode>
+                </Status>
+                <Date>20180526</Date>
+                <Time>082028</Time>
+             </Activity>
+             <Activity>
+                <ActivityLocation>
+                   <Address>
+                      <City>San Jose</City>
+                      <StateProvinceCode>CA</StateProvinceCode>
+                      <CountryCode>US</CountryCode>
+                   </Address>
+                   <Description>Dock</Description>
+                </ActivityLocation>
+                <Status>
+                   <StatusType>
+                      <Code>X</Code>
+                      <Description>/ Package in transit and scheduled for UPS delivery attempt to recipient on next UPS business day.</Description>
+                   </StatusType>
+                   <StatusCode>
+                      <Code>6N</Code>
+                   </StatusCode>
+                </Status>
+                <Date>20180526</Date>
+                <Time>081930</Time>
+             </Activity>
+             <Activity>
+                <ActivityLocation>
+                   <Address>
+                      <City>San Jose</City>
+                      <StateProvinceCode>CA</StateProvinceCode>
+                      <CountryCode>US</CountryCode>
+                   </Address>
+                   <Description>Dock</Description>
+                </ActivityLocation>
+                <Status>
+                   <StatusType>
+                      <Code>I</Code>
+                      <Description>Arrival Scan</Description>
+                   </StatusType>
+                   <StatusCode>
+                      <Code>AR</Code>
+                   </StatusCode>
+                </Status>
+                <Date>20180526</Date>
+                <Time>055500</Time>
+             </Activity>
+             <Activity>
+                <ActivityLocation>
+                   <Address>
+                      <City>Oakland</City>
+                      <StateProvinceCode>CA</StateProvinceCode>
+                      <CountryCode>US</CountryCode>
+                   </Address>
+                   <Description>Dock</Description>
+                </ActivityLocation>
+                <Status>
+                   <StatusType>
+                      <Code>I</Code>
+                      <Description>Departure Scan</Description>
+                   </StatusType>
+                   <StatusCode>
+                      <Code>DP</Code>
+                   </StatusCode>
+                </Status>
+                <Date>20180526</Date>
+                <Time>050500</Time>
+             </Activity>
+             <Activity>
+                <ActivityLocation>
+                   <Address>
+                      <City>Oakland</City>
+                      <StateProvinceCode>CA</StateProvinceCode>
+                      <CountryCode>US</CountryCode>
+                   </Address>
+                   <Description>Dock</Description>
+                </ActivityLocation>
+                <Status>
+                   <StatusType>
+                      <Code>I</Code>
+                      <Description>Arrival Scan</Description>
+                   </StatusType>
+                   <StatusCode>
+                      <Code>AR</Code>
+                   </StatusCode>
+                </Status>
+                <Date>20180525</Date>
+                <Time>194300</Time>
+             </Activity>
+             <Activity>
+                <ActivityLocation>
+                   <Address>
+                      <City>San Pablo</City>
+                      <StateProvinceCode>CA</StateProvinceCode>
+                      <CountryCode>US</CountryCode>
+                   </Address>
+                   <Description>Dock</Description>
+                </ActivityLocation>
+                <Status>
+                   <StatusType>
+                      <Code>I</Code>
+                      <Description>Departure Scan</Description>
+                   </StatusType>
+                   <StatusCode>
+                      <Code>DP</Code>
+                   </StatusCode>
+                </Status>
+                <Date>20180525</Date>
+                <Time>190200</Time>
+             </Activity>
+             <Activity>
+                <ActivityLocation>
+                   <Address>
+                      <City>San Pablo</City>
+                      <StateProvinceCode>CA</StateProvinceCode>
+                      <CountryCode>US</CountryCode>
+                   </Address>
+                   <Description>Dock</Description>
+                </ActivityLocation>
+                <Status>
+                   <StatusType>
+                      <Code>I</Code>
+                      <Description>Arrival Scan</Description>
+                   </StatusType>
+                   <StatusCode>
+                      <Code>AR</Code>
+                   </StatusCode>
+                </Status>
+                <Date>20180525</Date>
+                <Time>163500</Time>
+             </Activity>
+             <Activity>
+                <ActivityLocation>
+                   <Address>
+                      <City>Oak Creek</City>
+                      <StateProvinceCode>WI</StateProvinceCode>
+                      <CountryCode>US</CountryCode>
+                   </Address>
+                   <Description>Dock</Description>
+                </ActivityLocation>
+                <Status>
+                   <StatusType>
+                      <Code>I</Code>
+                      <Description>Departure Scan</Description>
+                   </StatusType>
+                   <StatusCode>
+                      <Code>DP</Code>
+                   </StatusCode>
+                </Status>
+                <Date>20180523</Date>
+                <Time>074200</Time>
+             </Activity>
+             <Activity>
+                <ActivityLocation>
+                   <Address>
+                      <City>Oak Creek</City>
+                      <StateProvinceCode>WI</StateProvinceCode>
+                      <CountryCode>US</CountryCode>
+                   </Address>
+                   <Description>Dock</Description>
+                </ActivityLocation>
+                <Status>
+                   <StatusType>
+                      <Code>I</Code>
+                      <Description>Origin Scan</Description>
+                   </StatusType>
+                   <StatusCode>
+                      <Code>OR</Code>
+                   </StatusCode>
+                </Status>
+                <Date>20180522</Date>
+                <Time>220616</Time>
+             </Activity>
+             <Activity>
+                <ActivityLocation>
+                   <Address>
+                      <CountryCode>US</CountryCode>
+                   </Address>
+                   <Description>Dock</Description>
+                </ActivityLocation>
+                <Status>
+                   <StatusType>
+                      <Code>M</Code>
+                      <Description>Order Processed: Ready for UPS</Description>
+                   </StatusType>
+                   <StatusCode>
+                      <Code>MP</Code>
+                   </StatusCode>
+                </Status>
+                <Date>20180522</Date>
+                <Time>111527</Time>
+             </Activity>
+             <PackageWeight>
+                <UnitOfMeasurement>
+                   <Code>LBS</Code>
+                </UnitOfMeasurement>
+                <Weight>4.80</Weight>
+             </PackageWeight>
+             <ReferenceNumber>
+                <Code>01</Code>
+                <Value>M681861103-1025</Value>
+             </ReferenceNumber>
+             <Accessorial>
+                <Code>010</Code>
+                <Description>Hundredweight</Description>
+             </Accessorial>
+          </Package>
+       </Shipment>
     </TrackResponse>"
   end
 end

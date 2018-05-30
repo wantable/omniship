@@ -7,14 +7,21 @@ module Omniship
         MANIFEST_ID = 'S'
         MMS_NUMBER = 'T'
         POSTAL_SERVICE_TRACKING_ID = 'Q'
-        
+
         def type
-          @root.xpath('Type').text
+          if @root.is_a? String # must be surepost
+            POSTAL_SERVICE_TRACKING_ID
+          else
+            @root.xpath('Type').text
+          end
         end
 
-
         def value
-          @root.xpath('Value').text
+          if @root.is_a? String
+            @root
+          else
+            @root.xpath('Value').text
+          end
         end
       end
     end
