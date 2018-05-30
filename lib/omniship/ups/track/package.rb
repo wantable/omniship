@@ -19,11 +19,9 @@ module Omniship
           if !@root.xpath('PackageServiceOptions/USPSPICNumber').empty?
             # surepost
             path = @root.xpath('PackageServiceOptions/USPSPICNumber').text
-            puts "USPSPICNumber #{path}"
           else
             # mail innovations
             path = @root.xpath('AlternateTrackingInfo')
-            puts "non USPSPICNumber = #{path.to_xml.inspect}"
           end
 
           AlternateTracking.new(path) if !path.empty?
