@@ -44,7 +44,7 @@ describe "UPS::Track" do
   it 'text xml parsing of mail innovations' do
     trk = Omniship::UPS::Track::Response.new(Nokogiri::XML::Document.parse(track_ups_mi_response))
     expect(trk.has_left?).to eq true
-    expect(trk.has_arrived?).to eq false # will never get to true because this package doesn't know the result of the alternate_tracking package
+    expect(trk.has_arrived?).to eq true
     package = trk.shipment.packages.first
     expect(package.tracking_number).to_not be_nil
 
