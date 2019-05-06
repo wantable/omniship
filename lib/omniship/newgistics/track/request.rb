@@ -3,12 +3,12 @@ module Omniship
     module Track
       class Request
         # https://apiint.newgistics.com/WebAPI/Shipment/help/operations/Tracking
-        
+
         TEST_URL = 'https://apiint.newgistics.com/WebAPI/Shipment/Tracking'
         LIVE_URL = 'https://api.newgistics.com/WebAPI/Shipment/Tracking'
 
         def self.endpoint
-          if Newgistics.test == true 
+          if Newgistics.test == true
             TEST_URL
           else
             LIVE_URL
@@ -19,12 +19,12 @@ module Omniship
           request = create_document(tracking_number, qualifier)
           response = get_response(request)
           parsed_response = JSON.parse(response)
-          package = parsed_response["Packages"].find{|p| p["TrackingNumber"] == tracking_number }
-          
+          package = parsed_response["Packages"].find{|p| p["TrackingNumber"] == tracking_number } || parsed_response["Packages"].first
+
           if error = package["ErrorMessage"] and error.length > 0
             raise Error.new(package)
           else
-            return Response.new(parsed_response) 
+            return Response.new(parsed_response)
           end
         end
 
