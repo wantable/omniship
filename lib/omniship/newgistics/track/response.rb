@@ -8,11 +8,11 @@ module Omniship
         end
 
         def has_left?
-          shipment.packages.length > 0 and shipment.packages.all?(&:has_left?)
+          shipment.packages.length > 0 && shipment.packages.any?(&:has_left?)
         end
 
         def has_arrived?
-          shipment.packages.length > 0 and shipment.packages.all?(&:has_arrived?)
+          shipment.packages.length > 0 && shipment.packages.any?(&:has_arrived?)
         end
       end
     end
