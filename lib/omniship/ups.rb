@@ -5,7 +5,7 @@ module Omniship
     LABEL = "UPS"
     TRACKING_REGEX = [/\b(1Z ?[0-9A-Z]{3} ?[0-9A-Z]{3} ?[0-9A-Z]{2} ?[0-9A-Z]{4} ?[0-9A-Z]{3} ?[0-9A-Z]|[\dT]\d\d\d ?\d\d\d\d ?\d\d\d)\b/i]
     TRACKING_URL = "http://wwwapps.ups.com/WebTracking/track?track=yes&trackNums="
-    TIMESTAMP_FORMAT = "%Y%m%d %H%M%S"
+    TIMESTAMP_FORMAT = "%Y%m%d"
 
     class << self
       attr_accessor :username
@@ -30,8 +30,8 @@ module Omniship
     # <Time>055500</Time>
     # Time zone here is local time
     def self.parse_timestamp(date, time=nil)
-      return if date.nil? or time.nil?
-      Time.strptime("#{date} #{time}", TIMESTAMP_FORMAT)
+      return if date.nil? || date.empty?
+      Time.strptime("#{date}", TIMESTAMP_FORMAT)
     end
   end
 end
