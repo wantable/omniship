@@ -19,7 +19,7 @@ module Omniship
         # this is actually an indicator that the the package has been scanned by USPS ANYWHERE
         # https://about.usps.com/publications/pub97/pub97_i.htm
         def has_left?
-          has_arrived? or 
+          has_arrived? or
           activity.any? {|activity|
             [
               "SF", # UNDOCUMENTED but seems to be "Acceptance"
@@ -27,7 +27,7 @@ module Omniship
               "10", # Processed
               "80", # Picked Up by Shipping Partner
               "81", # Arrived Shipping Partner Facility
-              "82", 
+              "82",
               "16", # Available for Returns Agent
               "MR" # UNDOCUMENTED Picked Up and Processed by Agent
             ].include?(activity.code) # Departed Shipping Partner Facility
@@ -37,7 +37,7 @@ module Omniship
         def has_arrived?
           # http://about.usps.com/publications/pub97/pub97_i.htm
           activity.any? {|activity|
-            # deliverred or ready for pickup at post office, or Notice Left 
+            # deliverred or ready for pickup at post office, or Notice Left
             ["01", # Delivered*
               "17", # Picked Up By Agent, Tendered to Returns Agent
               "MR" # UNDOCUMENTED Picked Up and Processed by Agent
@@ -46,7 +46,7 @@ module Omniship
         end
 
         def scheduled_delivery
-          Omniship::USPS.parse_timestamp(@root.xpath("PredictedDeliveryDate/text()").to_s)
+          Omniship::USPS.parse_timestamp(@root.xpath("PredictedDeliveryDate/text()").to_s) || Omniship::USPS.parse_timestamp(@root.xpath("ExpectedDeliveryDate/text()").to_s)
         end
       end
     end
