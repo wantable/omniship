@@ -2,8 +2,6 @@ Omniship
 ========
 
 [![Build Status](https://travis-ci.org/wantable/omniship.svg?branch=master)](https://travis-ci.org/wantable/omniship)
-[![Code Climate](https://codeclimate.com/repos/5881236a8b64000091000b40/badges/53f71c22a96463d82ed8/gpa.svg)](https://codeclimate.com/repos/5881236a8b64000091000b40/feed)
-[![Test Coverage](https://codeclimate.com/repos/5881236a8b64000091000b40/badges/53f71c22a96463d82ed8/coverage.svg)](https://codeclimate.com/repos/5881236a8b64000091000b40/coverage)
 
 Currently Supported Functionality
 ---------------------------------
@@ -71,15 +69,15 @@ config/settings.yaml
 ```yml
 Omniship:
   debug: true
-  
+
   USPS:
     userid: johndoe
     password: 1234567890
     client_ip: 127.0.0.1
-    source_id: Wantable, Inc. 
+    source_id: Wantable, Inc.
 
     retailer:
-      name: Wantable 
+      name: Wantable
       address: 223 N Water St. STE 300
     permit:
       number: 1234
@@ -88,8 +86,8 @@ Omniship:
       zip5: 53202
     pdu:
       po_box: 223 N Water ST STE 300
-      city: Milwaukee 
-      state: WI 
+      city: Milwaukee
+      state: WI
       zip5: 53202
 
   UPS:
@@ -109,9 +107,9 @@ Omniship:
 ```
 
 
-and then set it up in an intializer like: 
+and then set it up in an intializer like:
 
-```ruby 
+```ruby
 Omniship.config('config/settings.yml')
 ```
 
@@ -145,7 +143,7 @@ trk.shipment.packages.first.has_arrived?
 # => true / false
 
 trk.shipment.packages.first.tracking_number
-# => "123456790" 
+# => "123456790"
 ```
 
 USPS
@@ -171,7 +169,7 @@ trk.shipment.packages.first.has_arrived?
 # => true / false
 
 trk.shipment.packages.first.tracking_number
-# => "9400111201080302430600" 
+# => "9400111201080302430600"
 ```
 
 Make a return shipping label
@@ -184,21 +182,21 @@ Additional config
 
 ```ruby
 customer = {
-    name: "Casey Juan Lopez", 
-    address1: "223 N Water St.", 
-    address2: "STE 300", 
+    name: "Casey Juan Lopez",
+    address1: "223 N Water St.",
+    address2: "STE 300",
     city: "Milwaukee",
     state: "WI",
     zip5: "53202"
 }
 options = {
-    window: "RIGHTWINDOW", 
-    service_type: "PRIORITY", 
-    delivery_confirmation: false, 
+    window: "RIGHTWINDOW",
+    service_type: "PRIORITY",
+    delivery_confirmation: false,
     insurance_value: nil,  # only applicable if delivery_confirmation = true
-    weight: "13", # in ounces 
-    image_type: "TIF", #TIF/PDF 
-    rma: "asdfghjkl", 
+    weight: "13", # in ounces
+    image_type: "TIF", #TIF/PDF
+    rma: "asdfghjkl",
     rma_barcode: true,
 }
 ```
@@ -206,7 +204,7 @@ options = {
 ```ruby
 label = Omniship::USPS.return_label(customer, options)
 label.tracking_number
-# => "420532029311769932000000144614" 
+# => "420532029311769932000000144614"
 
 label.save("label_file")
 # creates file label_file.tif
@@ -242,7 +240,7 @@ trk.shipment.packages.first.has_arrived?
 # => true / false
 
 trk.shipment.packages.first.tracking_number
-# => "LTN62075201N1" 
+# => "LTN62075201N1"
 ```
 
 DHL Global Mail
