@@ -10,7 +10,9 @@ module Omniship
         end
 
         def scheduled_delivery
-          Omniship::UPS.parse_timestamp(@root.xpath('ScheduledDeliveryDate').text)
+          date = @root.xpath('Package/RescheduledDeliveryDate').text
+          date = @root.xpath('ScheduledDeliveryDate').text if date.nil? || date.empty?
+          Omniship::UPS.parse_timestamp(date) if date && !date.empty?
         end
       end
     end
