@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    omniship (0.3.5)
+    omniship (0.3.6)
       curb
       json
       nokogiri
@@ -10,25 +10,26 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    codeclimate-test-reporter (1.0.5)
-      simplecov
-    curb (0.9.10)
+    curb (0.9.11)
     diff-lcs (1.2.5)
-    docile (1.1.5)
-    domain_name (0.5.20180417)
+    domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    json (2.0.3)
-    mime-types (3.2.2)
+    json (2.5.1)
+    mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2019.0331)
-    mini_portile2 (2.4.0)
+    mime-types-data (3.2021.0225)
+    mini_portile2 (2.5.0)
     netrc (0.11.0)
-    nokogiri (1.10.3)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.11.3)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    racc (1.5.2)
     rake (11.2.2)
-    rest-client (2.0.2)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
@@ -45,24 +46,17 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
-    simplecov (0.12.0)
-      docile (~> 1.1.0)
-      json (>= 1.8, < 3)
-      simplecov-html (~> 0.10.0)
-    simplecov-html (0.10.0)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.6)
+    unf_ext (0.0.7.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  codeclimate-test-reporter
   omniship!
   rake
   rspec
-  simplecov
 
 BUNDLED WITH
    1.17.3
