@@ -1,9 +1,3 @@
-require "simplecov"
-SimpleCov.start do
-  add_filter  "spec/*"
-  add_filter 'Gemfile.lock'
-end
-
 ENV['RACK_ENV'] ||= 'test'
 require 'bundler/setup'
 Bundler.setup
@@ -50,7 +44,7 @@ RSpec.configure do |config|
     else
       Omniship.config("spec/sample_config.yml")
     end
-    
+
     Omniship::DHLGM.mailer_id = DHL_TEST_MAILER_ID
     Omniship::Landmark.test_mode = false  # not using test mode because "responses are randomized.  Some requests will succeed and some will fail with different error messages"
                                           # from https://mercury.landmarkglobal.com/clients/KnowledgeBase/index.php?topic_name=Track+API+Request&hash=539fd53b59e3bb12d203f45a912eeaf2

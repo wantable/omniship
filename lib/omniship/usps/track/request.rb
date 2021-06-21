@@ -3,10 +3,10 @@ module Omniship
     module Track
       class Request
         def self.endpoint
-          if USPS.test == true 
-            'http://stg-production.shippingapis.com/ShippingAPI.dll?API=TrackV2&XML='
+          if USPS.test == true
+            'https://stg-production.shippingapis.com/ShippingAPI.dll?API=TrackV2&XML='
           else
-            'http://production.shippingapis.com/ShippingAPI.dll?API=TrackV2&XML='
+            'https://production.shippingapis.com/ShippingAPI.dll?API=TrackV2&XML='
           end
         end
 
@@ -21,8 +21,8 @@ module Omniship
           end
         end
 
-        private 
-        
+        private
+
         def self.create_document(tracking_number)
           builder = Nokogiri::XML::Builder.new do |xml|
             xml.TrackFieldRequest("USERID" =>"#{USPS.userid || ENV["USPS_USERID"]}") {
@@ -41,7 +41,7 @@ module Omniship
             puts request.to_xml
           end
           response = RestClient.get URI.encode("#{endpoint}#{request.to_xml.gsub("<?xml version=\"1.0\"?>","")}"), content_type: "text/xml", accept: "text/xml"
-          
+
           if Omniship.debug
             puts response
           end
