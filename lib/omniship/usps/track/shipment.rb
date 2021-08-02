@@ -4,13 +4,13 @@ module Omniship
       class Shipment < Omniship::Base
         
         def packages
-          @root.xpath("TrackResponse/TrackInfo").map do |package|
+          @packages ||= @root.xpath("TrackResponse/TrackInfo").map do |package|
             Package.new(package)
           end
         end
 
         def scheduled_delivery
-         packages.first.scheduled_delivery
+          packages.find(&:scheduled_delivery)&.scheduled_delivery
         end
       end
     end
