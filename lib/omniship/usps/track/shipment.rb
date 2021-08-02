@@ -10,7 +10,7 @@ module Omniship
         end
 
         def scheduled_delivery
-          packages.find { |package| !package.scheduled_delivery.nil? }&.scheduled_delivery
+          packages.find(&:scheduled_delivery)&.scheduled_delivery
         end
       end
     end
