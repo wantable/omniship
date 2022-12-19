@@ -62,7 +62,7 @@ module Omniship
             puts endpoint
             puts request
           end
-          response = RestClient.post URI.encode(endpoint), request, content_type: "text/xml", accept: "text/xml", ssl_version: :TLSv1_2
+          response = RestClient.post CGI.escape(endpoint), request, content_type: "text/xml", accept: "text/xml", ssl_version: :TLSv1_2
           
           if Omniship.debug
             puts response
