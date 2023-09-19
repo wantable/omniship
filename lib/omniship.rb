@@ -27,9 +27,8 @@ require 'omniship/newgistics'
 module Omniship
   PROVIDERS = [UPSMI, UPS, Landmark, FedEx, DHLGM, DHL, USPS, Newgistics]
   class << self
-    attr_accessor :debug
+    attr_accessor :debug, :track_timeout
   end
-
 
   # Load configuration information from a YAML file.
   #
@@ -41,6 +40,7 @@ module Omniship
 
     if omniship = data['Omniship']
       Omniship.debug = omniship['debug']
+      Omniship.track_timeout = omniship['track_timeout'] || 10 # 10 seconds default
 
       if usps = omniship['USPS']
         USPS.userid = usps['userid']
@@ -88,7 +88,7 @@ module Omniship
       end
 
       if newgistics = omniship['Newgistics']
-        Newgistics.mailer_id = newgistics['mailer_id']
+        Newgistics.merchant_id = newgistics['merchant_id']
         Newgistics.api_key = newgistics['api_key']
         Newgistics.test = newgistics['test'].to_s
       end
@@ -108,6 +108,7 @@ module Omniship
       end
     else
       raise ProviderError.new("No provider found for #{number}")
+
     end
   end
 
@@ -129,8 +130,8 @@ module Omniship
     end
   end
 
-  private 
-  
+  private
+
   def self.provider_from_number(number)
     PROVIDERS.detect do |provider|
       provider.send(:tracking_test?, number)

@@ -2,13 +2,14 @@ require 'spec_helper'
 
 describe "Newgistics::Track" do
   it 'invalid tracking' do 
+    skip 'I no longer have valid test api credentials'
     expect { Omniship::Newgistics.track(NEWGISTICS_INVALID_ID) }.to raise_error(Omniship::Newgistics::Track::Error)
   end
 
   # newgistics test data is essentially random so we can't test for shipped/arrived packages. But we can test that things are formatted at least 
 
   it 'valid shipment' do 
-    skip "I no longer have valid test api credentials"
+    skip 'I no longer have valid test api credentials'
     trk = Omniship::Newgistics.track(NEWGISTICS_VALID_ID)
 
     expect(trk.shipment).to_not be_nil

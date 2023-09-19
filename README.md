@@ -24,7 +24,7 @@ Currently Supported Functionality
 
 * [USPS](#usps)
   * Track
-  * Return label
+  * Return label - this has been deprecated and only returns this error now `API Disabled: MerchandiseReturnV4.  This API has been retired.`
 
 * [DHL Global Mail](#dhl-global-mail)
     * Track
@@ -33,7 +33,6 @@ Currently Supported Functionality
     * Track
 
 Configuration
------
 
 Add to your gemfile
 
@@ -61,6 +60,8 @@ Omniship::DHLGM.password = '1234567890'
 Omniship::DHLGM.mailer_id = '1234567890' # this is required to detect the shipper type, since USPS and DHL are otherwise indistinguisiblle
 
 Omniship.debug = true # with this enabled all xml request's and responses will be outputed to the log
+
+Omniship.track_timeout = 5 # timeout for a tracking request in seconds. Only implemented on UPS, USPS, DHLGM. Default = 10 seconds
 ```
 
 You can also do this in a config file
@@ -313,7 +314,9 @@ Omniship.tracking_url('1z3050790327433970')
 
 TODO
 ------
-- Convert tests to use [webmock](https://github.com/bblimke/webmock) instead of calling the api's and using MockResponses.
+- Convert tests to use [webmock](https://github.com/bblimke/webmock) or similar strategy instead of calling the api's.
+  - Unskip Landmark and Newgistics tests once they are passing with valid credentials. Search for "I no longer have valid test api credentials"
 - Fix time zone issue with Newgistics.parse_timestamp
 - Add zip to time zone conversion for UPS and USPS timestamps
 - Bulk tracking? Newgistics at least supports it.
+- Use the `track_timeout` config var in Landmark and Newgistics. At this time I do not have access to those api's to develop this.
