@@ -45,7 +45,9 @@ module Omniship
             method: :get,
             url: URI::Parser.new.escape("#{endpoint}#{request.to_xml.gsub("<?xml version=\"1.0\"?>","")}"),
             timeout: Omniship.track_timeout,
-            open_timeout: Omniship.track_timeout
+            open_timeout: Omniship.track_timeout,
+            content_type: "text/xml", 
+            accept: "text/xml"
           )
 
           if Omniship.debug
