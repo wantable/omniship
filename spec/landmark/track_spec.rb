@@ -2,10 +2,12 @@ require 'spec_helper'
 
 describe "Landmark::Track" do
   it 'invalid tracking' do 
+    skip 'I no longer have valid test api credentials'
     expect { Omniship::Landmark.track(LANDMARK_INVALID_NUMBER) }.to raise_error(Omniship::Landmark::Track::Error)
   end
 
   it 'valid tracking' do 
+    skip 'I no longer have valid test api credentials'
     LANDMARK_VALID_NUMBERS.each do |tracking|
       trk = Omniship::Landmark.track(tracking)
       expect(trk.has_arrived?).to be true
@@ -13,6 +15,7 @@ describe "Landmark::Track" do
   end
 
   it 'valid tracking by reference' do 
+    skip 'I no longer have valid test api credentials'
     trk = Omniship::Landmark.track_with_reference(LANDMARK_VALID_REFERENCE)
     expect(trk.has_arrived?).to be true
 

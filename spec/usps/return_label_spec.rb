@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe "USPS::ReturnLabel" do
   it 'return label' do
+    skip 'deprecated api'
     customer = {
         name: "Casey Juan Lopez", 
         address1: "223 N Water St.", 

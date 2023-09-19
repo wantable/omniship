@@ -40,7 +40,13 @@ module Omniship
             puts endpoint
             puts request.to_xml
           end
-          response = RestClient.get URI::Parser.new.escape("#{endpoint}#{request.to_xml.gsub("<?xml version=\"1.0\"?>","")}"), content_type: "text/xml", accept: "text/xml"
+
+          response = RestClient::Request.execute(
+            method: :get,
+            url: URI::Parser.new.escape("#{endpoint}#{request.to_xml.gsub("<?xml version=\"1.0\"?>","")}"),
+            timeout: Omniship.track_timeout,
+            open_timeout: Omniship.track_timeout
+          )
 
           if Omniship.debug
             puts response

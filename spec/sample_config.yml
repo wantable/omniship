@@ -1,5 +1,6 @@
 Omniship:
   debug: false
+  track_timeout: 5
   
   UPS:
     username: '<%=ENV["UPS_USERNAME"]%>'
@@ -37,3 +38,7 @@ Omniship:
     username: '<%=ENV["DHLGM_USERNAME"]%>'
     password: '<%=ENV["DHLGM_PASSWORD"]%>'
     mailer_id: '<%=ENV["DHLGM_MAILER_ID"]%>'
+
+  Newgistics:
+    merchant_id: '<%=ENV["NEWGISTICS_MERCHANT_ID"]%>'
+    api_key: '<%=ENV["NEWGISTICS_API_KEY"]%>'

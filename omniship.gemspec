@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.description = "Omniship is a unified API for various shipping APIs such as UPS, USPS, FedEx, and DHL."
 
   s.authors  = ["Tom Preston-Werner", "Casey Juan Lopez", "Kevin Solkowski"]
-  s.email    = 'casey@wantable.com'
+  s.email    = 'webmaster@wantable.com'
   s.homepage = 'http://github.com/wantable/omniship'
 
   s.require_paths = %w[lib]

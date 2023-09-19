@@ -62,8 +62,18 @@ module Omniship
             puts endpoint
             puts request
           end
-          response = RestClient.post URI::Parser.new.escape(endpoint), request, content_type: "text/xml", accept: "text/xml", ssl_version: :TLSv1_2
-          
+
+          response = RestClient::Request.execute(
+            method: :post,
+            url: URI::Parser.new.escape(endpoint),
+            payload: request,
+            content_type: "text/xml",
+            accept: "text/xml",
+            ssl_version: :TLSv1_2,
+            timeout: Omniship.track_timeout,
+            open_timeout: Omniship.track_timeout
+          )
+
           if Omniship.debug
             puts response
           end

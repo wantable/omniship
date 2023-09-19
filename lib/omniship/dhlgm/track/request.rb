@@ -29,7 +29,16 @@ module Omniship
           if Omniship.debug
             puts request
           end
-          response = RestClient.post request, content_type: "text/xml", accept: "text/xml"
+
+          response = RestClient::Request.execute(
+            method: :post,
+            url: endpoint,
+            payload: request,
+            content_type: "text/xml",
+            accept: "text/xml",
+            timeout: Omniship.track_timeout,
+            open_timeout: Omniship.track_timeout
+          )
           
           if Omniship.debug
             puts endpoint
