@@ -60,6 +60,8 @@ Omniship::DHLGM.password = '1234567890'
 Omniship::DHLGM.mailer_id = '1234567890' # this is required to detect the shipper type, since USPS and DHL are otherwise indistinguisiblle
 
 Omniship.debug = true # with this enabled all xml request's and responses will be outputed to the log
+
+Omniship.track_timeout = 5 # timeout for a tracking request in seconds. Only implemented on UPS, USPS, DHLGM. Default = 10 seconds
 ```
 
 You can also do this in a config file
