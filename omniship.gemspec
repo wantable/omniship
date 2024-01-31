@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency('json')
   s.add_dependency('curb')
   s.add_dependency('rest-client')
-  s.add_dependency('nokogiri', "1.13.10")
+  s.add_dependency('nokogiri', "1.16")
   s.add_development_dependency('rake')
   s.add_development_dependency('rspec')
 
