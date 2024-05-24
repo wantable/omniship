@@ -2,82 +2,100 @@ module Omniship
   module UPS
     module Track
       class Request
-        ERROR_RESPONSE = 0 
-        TEST_URL = 'https://wwwcie.ups.com/ups.app/xml/Track'
-        LIVE_URL = 'https://onlinetools.ups.com/ups.app/xml/Track'
+        ERROR_RESPONSE = 0
+
+        TEST_URL = 'https://wwwcie.ups.com/'
+        LIVE_URL = 'https://onlinetools.ups.com/'
+
+        TOKEN_PATH = 'security/v1/oauth/token'
+        TRACK_PATH = 'api/track/v1/details/'
 
         def self.endpoint
-          if UPS.test == true 
+          if UPS.test == true
             TEST_URL
           else
             LIVE_URL
           end
         end
 
+        # https://developer.ups.com/api/reference?loc=en_US#operation/getSingleTrackResponseUsingGET
         def self.track(tracking_number, mail_innovations=false)
-          request = create_document(tracking_number, mail_innovations)
-          response = get_response(request)
-          
-          parsed_response = Nokogiri::XML::Document.parse(response)
+          raw_response = get_response(tracking_number)
 
-          if parsed_response.xpath("TrackResponse/Response/ResponseStatusCode/text()").to_s == "0"
-            raise Error.new(parsed_response)
-          else
-            Response.new(parsed_response)
+          response = JSON.parse(raw_response.body)
+
+          unless response.dig('response', 'errors').nil?
+            raise Error.new(raw_response.code, response.dig('response', 'errors'))
           end
+
+          Response.new(response)
         end
 
-        private 
+        private
 
-        def self.create_document(tracking_number, mail_innovations=false)
-          access_request = Nokogiri::XML::Builder.new do |xml|
-            
-            xml.AccessRequest {
-              xml.AccessLicenseNumber UPS.token || ENV["UPS_TOKEN"]
-              xml.UserId UPS.username || ENV["UPS_USERNAME"]
-              xml.Password UPS.password || ENV["UPS_PASSWORD"]
-            }
-          end
-          tracking_request = Nokogiri::XML::Builder.new do |xml|
-            xml.TrackRequest {
-              xml.Request {
-                xml.TransactionReference{
-                  xml.CustomerContext SecureRandom.uuid
-                  xml.XpciVersion '1.0'
-                }
-                xml.RequestAction 'Track'
-                xml.RequestOption '1'       # request all activity
-              }
-              if mail_innovations
-                xml.TrackingOption '03' # mail innovations tracking requires this
-              end
-              xml.TrackingNumber tracking_number
-            }
-          end
-          access_request.to_xml + tracking_request.to_xml
-        end
-
-        def self.get_response(request)
-          if Omniship.debug
-            puts endpoint
-            puts request
+        def self.oauth_client_credentials
+          if @oauth_client_credentials && oauth_client_credentials[:expires_at] > Time.zone.now.to_i
+            return @oauth_client_credentials[:access_token]
           end
 
-          response = RestClient::Request.execute(
+          raw_response = RestClient::Request.execute(
             method: :post,
-            url: URI::Parser.new.escape(endpoint),
-            payload: request,
-            content_type: "text/xml",
-            accept: "text/xml",
-            ssl_version: :TLSv1_2,
+            url: endpoint + TOKEN_PATH,
+            user: UPS.client_id,
+            password: UPS.client_secret,
+            payload: { "grant_type" => 'client_credentials' },
+            content_type: 'application/json',
+            accept: 'application/json',
             timeout: Omniship.track_timeout,
             open_timeout: Omniship.track_timeout
           )
 
-          if Omniship.debug
-            puts response
+          puts raw_response if Omniship.debug
+
+          response = JSON.parse(raw_response.body)
+
+          raise 'UPS TOKEN REQUEST NOT APPROVED' if response['status'] != 'approved'
+
+          @oauth_client_credentials = {
+            access_token: response.fetch('access_token'),
+            expires_at: Time.now.to_i + response.fetch('expires_in').to_i - 5 # request new token 5 seconds before expiration
+          }
+
+          @oauth_client_credentials[:access_token]
+        end
+
+        def self.transaction_src
+          if UPS.test
+            "Testing #{UPS.source}"
+          else
+            UPS.source
           end
-          response
+        end
+
+        def self.get_response(tracking_number)
+          tracking_url = endpoint + TRACK_PATH + tracking_number
+
+          puts tracking_url if Omniship.debug
+
+          transaction_id = SecureRandom.uuid
+
+          RestClient::Request.execute(
+            method: :get,
+            headers: {
+               'Authorization' => "Bearer #{oauth_client_credentials}",
+               'transId' => SecureRandom.uuid,
+               'transactionSrc' => transaction_src,
+              accept: :json,
+              'Content-Type' => 'application/json; charset=UTF-8'
+            },
+            url: tracking_url,
+            content_type: 'application/json',
+            accept: 'application/json',
+            timeout: Omniship.track_timeout,
+            open_timeout: Omniship.track_timeout
+          )
+        rescue RestClient::Unauthorized => e
+          e.response
         end
       end
     end

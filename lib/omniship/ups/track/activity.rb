@@ -2,23 +2,20 @@ module Omniship
   module UPS
     module Track
       class Activity < Omniship::Base
-
         def address
-          Address.new(@root.xpath('ActivityLocation').xpath('Address'))
+          Address.new(@root.dig('location', 'address'))
         end
 
         def status
-          @root.xpath('Status/StatusType/Description').text
+          @root.dig('status', 'description')
         end
 
-        def code 
-          @root.xpath('Status/StatusType/Code').text
+        def code
+          @root.dig('status', 'code').to_s
         end
 
         def timestamp
-          date = @root.xpath('Date/text()').to_s
-          time = @root.xpath('Time/text()').to_s
-          Omniship::UPS.parse_timestamp(date, time)
+          Omniship::UPS.parse_timestamp(@root['date'], @root['time'])
         end
       end
     end
