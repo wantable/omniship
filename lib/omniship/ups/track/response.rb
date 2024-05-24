@@ -4,7 +4,7 @@ module Omniship
       class Response < Omniship::Base
 
         def shipment
-          @shipment ||= Track::Shipment.new(@root.dig('trackResponse', 'shipment'))
+          @shipment ||= Track::Shipment.new(@root.dig('trackResponse', 'shipment')&.first)
         end
 
         def has_left?
