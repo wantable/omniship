@@ -11,7 +11,7 @@ module Omniship
         end
 
         def code
-          @root.dig('status', 'statusCode').to_s
+          @root.dig('status', 'type')
         end
 
         def timestamp
