@@ -2,6 +2,12 @@ module Omniship
   module UPS
     module Track
       class Shipment < Omniship::Base
+        def initialize(root)
+          super(root)
+
+          raise Error.new(404, @root['warnings']) if @root.key?('warnings')
+        end
+
         def packages
           @packages ||= @root['package'].map do |package|
             Package.new(package)

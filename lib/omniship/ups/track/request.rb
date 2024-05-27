@@ -31,8 +31,6 @@ module Omniship
 
           if response['response'].key?('errors')
             raise Error.new(raw_response.code, response.dig('response', 'errors'))
-          elsif response['response'].key?('warnings')
-            raise Error.new(raw_response.code, response.dig('response', 'warnings'))
           end
 
           Response.new(response)
