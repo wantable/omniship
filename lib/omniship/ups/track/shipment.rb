@@ -3,6 +3,8 @@ module Omniship
     module Track
       class Shipment < Omniship::Base
         def packages
+          return [] unless @root.key?('package')
+
           @packages ||= @root['package'].map do |package|
             Package.new(package)
           end
