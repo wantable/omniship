@@ -24,15 +24,16 @@ module Omniship
 
           response = JSON.parse(raw_response.body)
 
-          puts raw_response.code if Omniship.debug
+          if Omniship.debug
+            puts raw_response.code
+            puts response.inspect
+          end
 
           if response['response'].key?('errors')
             raise Error.new(raw_response.code, response.dig('response', 'errors'))
           elsif response['response'].key?('warnings')
             raise Error.new(raw_response.code, response.dig('response', 'warnings'))
           end
-
-
 
           Response.new(response)
         end
