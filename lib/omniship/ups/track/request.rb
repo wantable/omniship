@@ -29,7 +29,7 @@ module Omniship
             puts response.inspect
           end
 
-          if response['response'].key?('errors')
+          unless response.dig('response', 'errors').nil?
             raise Error.new(raw_response.code, response.dig('response', 'errors'))
           end
 
