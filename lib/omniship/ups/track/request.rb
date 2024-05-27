@@ -33,6 +33,11 @@ module Omniship
             raise Error.new(raw_response.code, response.dig('response', 'errors'))
           end
 
+          # Sometimes the tracking number is technically valid but doesn't actually exist. Still want to raise not found
+          if raw_response.code == 200 && response.dig('trackResponse', 'shipment')&.first&.key?('warnings')
+            raise Error.new(404, response.dig('trackResponse', 'shipment').first['warnings'])
+          end
+
           Response.new(response)
         end
 
