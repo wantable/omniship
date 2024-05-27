@@ -12,7 +12,7 @@ module Omniship
         end
 
         def value
-          @root['value']
+          @root['number']
         end
       end
     end

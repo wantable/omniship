@@ -629,6 +629,12 @@ module MockResponses
               {
                 "trackingNumber" => "1Z1202R66698804005",
                 "deliveryDate" => [],
+                "alternateTrackingNumber" => [
+                  {
+                    "number" => "123456",
+                    "type" => "Q"
+                  }
+                ],
                 "activity" => [
                   {
                     "location" => {
@@ -1415,17 +1421,19 @@ module MockResponses
                 "accessPointInformation" => {
                   "pickupByDate" => "string"
                 },
-                "activity" => [
-                  {
-                    "date" => "null",
-                    "gmtDate" => "null",
-                    "gmtOffset" => "null",
-                    "gmtTime" => "null",
-                    "location" => "null",
-                    "status" => "null",
-                    "time" => "null"
-                  }
-                ],
+                "activity" => [{
+                  "location" => {"slic"=>"9642"},
+                  "status" => {
+                    "type"=> "X",
+                    "description"=>"The package is at the clearing agency awaiting final release.",
+                    "statusCode"=>"092"
+                  },
+                  "date"=>"20240320",
+                  "time"=>"190838",
+                  "gmtDate"=>"20240320",
+                  "gmtOffset"=>"+08:00",
+                  "gmtTime"=>"11:08:38"
+                }],
                 "additionalAttributes" => [
                   "SENSOR_EVENT"
                 ],
@@ -1440,8 +1448,8 @@ module MockResponses
                 ],
                 "alternateTrackingNumber" => [
                   {
-                    "number" => "null",
-                    "type" => "null"
+                    "number" => "123456",
+                    "type" => "Q"
                   }
                 ],
                 "currentStatus" => {

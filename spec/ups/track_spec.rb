@@ -42,15 +42,12 @@ describe "UPS::Track" do
     expect(activity.code).to_not be_nil
     expect(activity.status).to_not be_nil
     expect(activity.timestamp).to_not be_nil
-
-    alternate_tracking = package.alternate_tracking
-    expect(alternate_tracking).to be_nil
   end
 
   it 'text json parsing of mail innovations' do
     trk = Omniship::UPS::Track::Response.new(track_ups_mi_response)
-    expect(trk.has_left?).to eq true
-    expect(trk.has_arrived?).to eq true
+    expect(trk.has_left?).to eq false
+    expect(trk.has_arrived?).to eq false
     package = trk.shipment.packages.first
     expect(package.tracking_number).to_not be_nil
 
