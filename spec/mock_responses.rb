@@ -620,352 +620,376 @@ module MockResponses
   end
 
   def track_ups_response
-    "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-    <TrackResponse>
-      <Response>
-        <TransactionReference>
-          <CustomerContext>9cbf1901-c9d8-419e-b52c-e224ad693781</CustomerContext>
-          <XpciVersion>1.0</XpciVersion>
-        </TransactionReference>
-        <ResponseStatusCode>1</ResponseStatusCode>
-        <ResponseStatusDescription>Success</ResponseStatusDescription>
-      </Response>
-      <Shipment>
-        <Shipper>
-          <ShipperNumber>1161WA</ShipperNumber>
-          <Address>
-            <AddressLine1>112 E MINERAL ST</AddressLine1>
-            <City>MILWAUKEE</City>
-            <StateProvinceCode>WI</StateProvinceCode>
-            <PostalCode>53204  1876</PostalCode>
-            <CountryCode>US</CountryCode>
-          </Address>
-        </Shipper>
-        <ShipTo>
-          <Address>
-            <City>SANTA CLARA</City>
-            <StateProvinceCode>CA</StateProvinceCode>
-            <PostalCode>95053</PostalCode>
-            <CountryCode>US</CountryCode>
-          </Address>
-        </ShipTo>
-        <ShipmentWeight>
-          <UnitOfMeasurement>
-            <Code>LBS</Code>
-          </UnitOfMeasurement>
-          <Weight>3.90</Weight>
-        </ShipmentWeight>
-        <Service>
-          <Code>003</Code>
-          <Description>UPS GROUND</Description>
-        </Service>
-        <ReferenceNumber>
-          <Code>01</Code>
-          <Value>W886314636-875</Value>
-        </ReferenceNumber>
-        <ShipmentIdentificationNumber>1Z1161WA0394673667</ShipmentIdentificationNumber>
-        <PickupDate>20170110</PickupDate>
-        <DeliveryDateUnavailable>
-          <Type>Scheduled Delivery</Type>
-          <Description>Scheduled Delivery Date is not currently available, please try back later</Description>
-        </DeliveryDateUnavailable>
-        <Package>
-          <TrackingNumber>1Z1161WA0394673667</TrackingNumber>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>SANTA CLARA</City>
-                <StateProvinceCode>CA</StateProvinceCode>
-                <PostalCode>95053</PostalCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-              <Code>AI</Code>
-              <Description>DOCK</Description>
-              <SignedForByName>DANIGNACIO</SignedForByName>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>D</Code>
-                <Description>DELIVERED</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>KB</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170117</Date>
-            <Time>101600</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>SUNNYVALE</City>
-                <StateProvinceCode>CA</StateProvinceCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>OUT FOR DELIVERY</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>DS</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170117</Date>
-            <Time>055500</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>SUNNYVALE</City>
-                <StateProvinceCode>CA</StateProvinceCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>X</Code>
-                <Description>DELIVERY HAS BEEN RESCHEDULED DUE TO HOLIDAY CLOSURES. / YOUR DELIVERY HAS BEEN RESCHEDULED FOR THE NEXT BUSINESS DAY.</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>AZ</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170116</Date>
-            <Time>100000</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>SUNNYVALE</City>
-                <StateProvinceCode>CA</StateProvinceCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>DESTINATION SCAN</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>DS</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170116</Date>
-            <Time>044900</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>SUNNYVALE</City>
-                <StateProvinceCode>CA</StateProvinceCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>ARRIVAL SCAN</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>AR</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170114</Date>
-            <Time>060500</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>SOUTH SAN FRANCISCO</City>
-                <StateProvinceCode>CA</StateProvinceCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>DEPARTURE SCAN</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>DP</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170114</Date>
-            <Time>043900</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>SOUTH SAN FRANCISCO</City>
-                <StateProvinceCode>CA</StateProvinceCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>ARRIVAL SCAN</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>AR</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170113</Date>
-            <Time>211000</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>SAN PABLO</City>
-                <StateProvinceCode>CA</StateProvinceCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>DEPARTURE SCAN</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>DP</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170113</Date>
-            <Time>201500</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>SAN PABLO</City>
-                <StateProvinceCode>CA</StateProvinceCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>ARRIVAL SCAN</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>AR</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170113</Date>
-            <Time>143400</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>HODGKINS</City>
-                <StateProvinceCode>IL</StateProvinceCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>DEPARTURE SCAN</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>DP</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170111</Date>
-            <Time>090100</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>HODGKINS</City>
-                <StateProvinceCode>IL</StateProvinceCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>ARRIVAL SCAN</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>AR</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170111</Date>
-            <Time>070600</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>OAK CREEK</City>
-                <StateProvinceCode>WI</StateProvinceCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>DEPARTURE SCAN</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>DP</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170111</Date>
-            <Time>051800</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>OAK CREEK</City>
-                <StateProvinceCode>WI</StateProvinceCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>ORIGIN SCAN</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>OR</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170110</Date>
-            <Time>201200</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <CountryCode>US</CountryCode>
-              </Address>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>M</Code>
-                <Description>BILLING INFORMATION RECEIVED</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>MP</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170110</Date>
-            <Time>123448</Time>
-          </Activity>
-          <PackageWeight>
-            <UnitOfMeasurement>
-              <Code>LBS</Code>
-            </UnitOfMeasurement>
-            <Weight>3.90</Weight>
-          </PackageWeight>
-          <ReferenceNumber>
-            <Code>01</Code>
-            <Value>W886314636-875</Value>
-          </ReferenceNumber>
-        </Package>
-      </Shipment>
-    </TrackResponse>"
+    {
+      "trackResponse": {
+        "shipment": [
+          {
+            "inquiryNumber": "1Z1202R66698804005",
+            "package": [
+              {
+                "trackingNumber": "1Z1202R66698804005",
+                "deliveryDate": [],
+                "activity": [
+                  {
+                    "location": {
+                      "slic": "9642"
+                    },
+                    "status": {
+                      "type": "X",
+                      "description": "The package is at the clearing agency awaiting final release.",
+                      "statusCode": "092"
+                    },
+                    "date": "20240320",
+                    "time": "190838",
+                    "gmtDate": "20240320",
+                    "gmtOffset": "+08:00",
+                    "gmtTime": "11:08:38"
+                  },
+                  {
+                    "location": {
+                      "address": {
+                        "city": "Changi",
+                        "countryCode": "SG",
+                        "country": "SG"
+                      },
+                      "slic": "0009"
+                    },
+                    "status": {
+                      "type": "I",
+                      "description": "Arrived at Facility",
+                      "code": "AR",
+                      "statusCode": "005"
+                    },
+                    "date": "20240320",
+                    "time": "070700",
+                    "gmtDate": "20240319",
+                    "gmtOffset": "+08:00",
+                    "gmtTime": "23:07:00"
+                  },
+                  {
+                    "location": {
+                      "address": {
+                        "city": "Shenzhen",
+                        "countryCode": "CN",
+                        "country": "CN"
+                      },
+                      "slic": "0009"
+                    },
+                    "status": {
+                      "type": "I",
+                      "description": "Departed from Facility",
+                      "code": "DP",
+                      "statusCode": "005"
+                    },
+                    "date": "20240320",
+                    "time": "032000",
+                    "gmtDate": "20240319",
+                    "gmtOffset": "+08:00",
+                    "gmtTime": "19:20:00"
+                  },
+                  {
+                    "location": {
+                      "address": {
+                        "city": "Shenzhen",
+                        "countryCode": "CN",
+                        "country": "CN"
+                      },
+                      "slic": "3459"
+                    },
+                    "status": {
+                      "type": "I",
+                      "description": "Arrived at Facility",
+                      "code": "AR",
+                      "statusCode": "005"
+                    },
+                    "date": "20240319",
+                    "time": "232200",
+                    "gmtDate": "20240319",
+                    "gmtOffset": "+08:00",
+                    "gmtTime": "15:22:00"
+                  },
+                  {
+                    "location": {
+                      "address": {
+                        "city": "Koeln",
+                        "countryCode": "DE",
+                        "country": "DE"
+                      },
+                      "slic": "3459"
+                    },
+                    "status": {
+                      "type": "I",
+                      "description": "Departed from Facility",
+                      "code": "DP",
+                      "statusCode": "005"
+                    },
+                    "date": "20240319",
+                    "time": "045000",
+                    "gmtDate": "20240319",
+                    "gmtOffset": "+01:00",
+                    "gmtTime": "03:50:00"
+                  },
+                  {
+                    "location": {
+                      "address": {
+                        "city": "Koeln",
+                        "countryCode": "DE",
+                        "country": "DE"
+                      },
+                      "slic": "3468"
+                    },
+                    "status": {
+                      "type": "I",
+                      "description": "Arrived at Facility",
+                      "code": "AR",
+                      "statusCode": "005"
+                    },
+                    "date": "20240319",
+                    "time": "003400",
+                    "gmtDate": "20240318",
+                    "gmtOffset": "+01:00",
+                    "gmtTime": "23:34:00"
+                  },
+                  {
+                    "location": {
+                      "address": {
+                        "city": "Lummen",
+                        "countryCode": "BE",
+                        "country": "BE"
+                      },
+                      "slic": "3468"
+                    },
+                    "status": {
+                      "type": "I",
+                      "description": "Departed from Facility",
+                      "code": "DP",
+                      "statusCode": "005"
+                    },
+                    "date": "20240318",
+                    "time": "221000",
+                    "gmtDate": "20240318",
+                    "gmtOffset": "+01:00",
+                    "gmtTime": "21:10:00"
+                  },
+                  {
+                    "location": {
+                      "slic": "3468"
+                    },
+                    "status": {
+                      "type": "X",
+                      "description": "Your package has been released by the government agency.",
+                      "code": "RZ",
+                      "statusCode": "014"
+                    },
+                    "date": "20240318",
+                    "time": "213829",
+                    "gmtDate": "20240318",
+                    "gmtOffset": "+01:00",
+                    "gmtTime": "20:38:29"
+                  },
+                  {
+                    "location": {
+                      "address": {
+                        "city": "Lummen",
+                        "countryCode": "BE",
+                        "country": "BE"
+                      },
+                      "slic": "3468"
+                    },
+                    "status": {
+                      "type": "X",
+                      "description": "Your package is pending release from a Government Agency. Once they release it, your package will be on its way.",
+                      "code": "RZ",
+                      "statusCode": "012"
+                    },
+                    "date": "20240318",
+                    "time": "212334",
+                    "gmtDate": "20240318",
+                    "gmtOffset": "+01:00",
+                    "gmtTime": "20:23:34"
+                  },
+                  {
+                    "location": {
+                      "slic": "3468"
+                    },
+                    "status": {
+                      "type": "X",
+                      "description": "UPS has received the information needed to submit your package for clearance.",
+                      "code": "BB",
+                      "statusCode": "014"
+                    },
+                    "date": "20240318",
+                    "time": "212334",
+                    "gmtDate": "20240318",
+                    "gmtOffset": "+01:00",
+                    "gmtTime": "20:23:34"
+                  },
+                  {
+                    "location": {
+                      "address": {
+                        "city": "Lummen",
+                        "countryCode": "BE",
+                        "country": "BE"
+                      },
+                      "slic": "3468"
+                    },
+                    "status": {
+                      "type": "I",
+                      "description": "We have your package",
+                      "code": "OR",
+                      "statusCode": "005"
+                    },
+                    "date": "20240318",
+                    "time": "200306",
+                    "gmtDate": "20240318",
+                    "gmtOffset": "+01:00",
+                    "gmtTime": "19:03:06"
+                  },
+                  {
+                    "location": {
+                      "slic": "3468"
+                    },
+                    "status": {
+                      "type": "X",
+                      "description": "Your package has been released by the government agency.",
+                      "code": "RZ",
+                      "statusCode": "014"
+                    },
+                    "date": "20240318",
+                    "time": "183623",
+                    "gmtDate": "20240318",
+                    "gmtOffset": "+01:00",
+                    "gmtTime": "17:36:23"
+                  },
+                  {
+                    "location": {
+                      "address": { "city": "Lummen", "countryCode": "BE", "country": "BE" },
+                      "slic": "3468"
+                    },
+                    "status": {
+                      "type": "X",
+                      "description": "UPS initiated contact with the sender to obtain clearance information. Once received, UPS will submit for clearance.",
+                      "code": "BB",
+                      "statusCode": "058"
+                    },
+                    "date": "20240318",
+                    "time": "183623",
+                    "gmtDate": "20240318",
+                    "gmtOffset": "+01:00",
+                    "gmtTime": "17:36:23"
+                  },
+                  {
+                    "location": {
+                      "address": { "city": "Lummen", "countryCode": "BE", "country": "BE" },
+                      "slic": "3468"
+                    },
+                    "status": {
+                      "type": "X",
+                      "description": "Your package is pending release from a Government Agency. Once they release it, your package will be on its way.",
+                      "code": "RZ",
+                      "statusCode": "012"
+                    },
+                    "date": "20240318",
+                    "time": "181605",
+                    "gmtDate": "20240318",
+                    "gmtOffset": "+01:00",
+                    "gmtTime": "17:16:05"
+                  },
+                  {
+                    "location": { "slic": "3468" },
+                    "status": {
+                      "type": "X",
+                      "description": "Your package is on the way",
+                      "code": "DA",
+                      "statusCode": "014"
+                    },
+                    "date": "20240318",
+                    "time": "181605",
+                    "gmtDate": "20240318",
+                    "gmtOffset": "+01:00",
+                    "gmtTime": "17:16:05"
+                  },
+                  {
+                    "location": {
+                      "address": { "city": "Lummen", "countryCode": "BE", "country": "BE" },
+                      "slic": "3484"
+                    },
+                    "status": {
+                      "type": "P",
+                      "description": "Pickup Scan ",
+                      "code": "PU",
+                      "statusCode": "038"
+                    },
+                    "date": "20240318",
+                    "time": "154403",
+                    "gmtDate": "20240318",
+                    "gmtOffset": "+01:00",
+                    "gmtTime": "14:44:03"
+                  },
+                  {
+                    "location": {
+                      "address": { "countryCode": "BE", "country": "BE" }
+                    },
+                    "status": {
+                      "type": "M",
+                      "description": "Shipper created a label, UPS has not received the package yet. ",
+                      "code": "MP",
+                      "statusCode": "003"
+                    },
+                    "date": "20240318",
+                    "time": "124917",
+                    "gmtDate": "20240318",
+                    "gmtOffset": "+01:00",
+                    "gmtTime": "11:49:17"
+                  }
+                ],
+                "currentStatus": {
+                  "description": "Customs Clearance in Progress",
+                  "code": "092",
+                  "simplifiedTextDescription": "The package is at the clearing agency awaiting final release."
+                },
+                "packageAddress": [
+                  {
+                    "type": "ORIGIN",
+                    "address": {
+                      "city": "Brussels",
+                      "stateProvince": "",
+                      "countryCode": "BE",
+                      "country": "BE"
+                    }
+                  },
+                  {
+                    "type": "DESTINATION",
+                    "address": {
+                      "city": "CAIRNS",
+                      "stateProvince": "",
+                      "countryCode": "AU",
+                      "country": "AU"
+                    }
+                  }
+                ],
+                "weight": { "unitOfMeasurement": "KGS", "weight": "17.00" },
+                "service": { "code": "554", "levelCode": "007", "description": "UPS Express®" },
+                "referenceNumber": [
+                  { "type": "SHIPMENT", "number": "11111" },
+                  { "type": "SHIPMENT", "number": "INVOICE 11111" },
+                  { "type": "SHIPMENT", "number": "PO11111 / 11111" },
+                  { "type": "PACKAGE", "number": "INVOICE 11111" },
+                  { "type": "PACKAGE", "number": "PO11111 / 11111" }
+                ],
+                "dimension": {
+                  "height": "51.00",
+                  "length": "52.00",
+                  "width": "51.00",
+                  "unitOfDimension": "CM"
+                },
+                "packageCount": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
   end
 
   def track_ups_mi_response

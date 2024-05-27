@@ -39,7 +39,7 @@ module Omniship
         private
 
         def self.oauth_client_credentials
-          if @oauth_client_credentials && oauth_client_credentials[:expires_at] > Time.zone.now.to_i
+          if @oauth_client_credentials && @oauth_client_credentials[:expires_at] > Time.zone.now.to_i
             return @oauth_client_credentials[:access_token]
           end
 
