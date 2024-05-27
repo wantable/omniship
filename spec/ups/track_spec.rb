@@ -67,7 +67,7 @@ describe "UPS::Track" do
   end
 
   it 'test xml parsing not found' do
-    error = Omniship::UPS::Track::Error.new(Nokogiri::XML::Document.parse(track_ups_not_found_response))
+    error = Omniship::UPS::Track::Error.new(404, Nokogiri::XML::Document.parse(track_ups_not_found_response))
     expect(error.code).to eq(Omniship::TrackError::NOT_FOUND)
   end
 end

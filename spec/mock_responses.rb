@@ -1338,22 +1338,14 @@ module MockResponses
   end
 
   def track_ups_not_found_response
-    "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-    <TrackResponse>
-      <Response>
-        <TransactionReference>
-          <CustomerContext>52c13489-7a9f-4cb1-b0b8-951274a4fc6c</CustomerContext>
-          <XpciVersion>1.0</XpciVersion>
-        </TransactionReference>
-        <ResponseStatusCode>0</ResponseStatusCode>
-        <ResponseStatusDescription>Failure</ResponseStatusDescription>
-        <Error>
-          <ErrorSeverity>Hard</ErrorSeverity>
-          <ErrorCode>150022</ErrorCode>
-          <ErrorDescription>Invalid tracking number</ErrorDescription>
-        </Error>
-      </Response>
-    </TrackResponse>"
+    {
+      "trackResponse" => {
+        "shipment" => [{
+          "inquiryNumber" => "1Z9912350341235622",
+          "warnings" => [{"code" => "TW0001", "message" => "Tracking Information Not Found"}]
+        }]
+      }
+    }
   end
 
   def track_ups_surepost_response
