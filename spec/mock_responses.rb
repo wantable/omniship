@@ -280,113 +280,113 @@ module MockResponses
 
   def track_newgistics_response
     '{
-      "Packages":[
+      "Packages" =>[
         {
-         "ActualEstimatedDeliveryDate":null,
-         "CarrierCode":"NEWG",
-         "CarrierCodeDescription":"Newgistics, Inc.",
-         "CarrierName":"United States Postal Service",
-         "CarrierService":"USPS Return Delivery Unit 5DZ",
-         "CarrierServiceCode":null,
-         "CarrierServiceCodeDescription":null,
-         "ErrorMessage":"",
-         "EstimatedDeliveryDate":null,
-         "EstimatedDeliveryText":null,
-         "FinalCarrier":null,
-         "MaxEstimatedDeliveryDate":null,
-         "MerchantName":null,
-         "MinEstimatedDeliveryDate":null,
-         "PackageTrackingEvents":[
+         "ActualEstimatedDeliveryDate" =>"null",
+         "CarrierCode" =>"NEWG",
+         "CarrierCodeDescription" =>"Newgistics, Inc.",
+         "CarrierName" =>"United States Postal Service",
+         "CarrierService" =>"USPS Return Delivery Unit 5DZ",
+         "CarrierServiceCode" =>"null",
+         "CarrierServiceCodeDescription" =>"null",
+         "ErrorMessage" =>"",
+         "EstimatedDeliveryDate" =>"null",
+         "EstimatedDeliveryText" =>"null",
+         "FinalCarrier" =>"null",
+         "MaxEstimatedDeliveryDate" =>"null",
+         "MerchantName" =>"null",
+         "MinEstimatedDeliveryDate" =>"null",
+         "PackageTrackingEvents" =>[
           {
-             "CSREventMessage":"Package delivered to returns processing facility.",
-             "CarrierCode":"SDRC",
-             "CarrierDescription":"Delivered",
-             "City":"Milwaukee",
-             "ConsumerEventMessage":"Package delivered to returns processing facility.",
-             "CreateDate":"\/Date(-62135575200000-0600)\/",
-             "Date":"\/Date(1469163600000-0500)\/",
-             "Description":"Delivered",
-             "EventCode":"DRC",
-             "EventDescription":"Delivered to Return Center",
-             "FacilityID":52687,
-             "FacilityName":"Wantable Returns",
-             "PostalCode":"53204",
-             "State":"WI",
-             "Time":"\/Date(1484870400000-0600)\/",
-             "TrackingKey":"320908566",
-             "UpdateDate":"\/Date(-62135575200000-0600)\/"
+             "CSREventMessage" =>"Package delivered to returns processing facility.",
+             "CarrierCode" =>"SDRC",
+             "CarrierDescription" =>"Delivered",
+             "City" =>"Milwaukee",
+             "ConsumerEventMessage" =>"Package delivered to returns processing facility.",
+             "CreateDate" =>"\/Date(-62135575200000-0600)\/",
+             "Date" =>"\/Date(1469163600000-0500)\/",
+             "Description" =>"Delivered",
+             "EventCode" =>"DRC",
+             "EventDescription" =>"Delivered to Return Center",
+             "FacilityID" =>52687,
+             "FacilityName" =>"Wantable Returns",
+             "PostalCode" =>"53204",
+             "State" =>"WI",
+             "Time" =>"\/Date(1484870400000-0600)\/",
+             "TrackingKey" =>"320908566",
+             "UpdateDate" =>"\/Date(-62135575200000-0600)\/"
           },
           {
-             "CSREventMessage":"Package in-transit to returns processing facility.",
-             "CarrierCode":"SS",
-             "CarrierDescription":"In transit",
-             "City":"Carol Stream",
-             "ConsumerEventMessage":"Package in-transit to returns processing facility.",
-             "CreateDate":"\/Date(-62135575200000-0600)\/",
-             "Date":"\/Date(1469077200000-0500)\/",
-             "Description":"In transit",
-             "EventCode":"DNF",
-             "EventDescription":"Departing Newgistics Facility",
-             "FacilityID":47662,
-             "FacilityName":"ORD2",
-             "PostalCode":"60188",
-             "State":"IL",
-             "Time":"\/Date(1484887140000-0600)\/",
-             "TrackingKey":"320908566",
-             "UpdateDate":"\/Date(-62135575200000-0600)\/"
+             "CSREventMessage" =>"Package in-transit to returns processing facility.",
+             "CarrierCode" =>"SS",
+             "CarrierDescription" =>"In transit",
+             "City" =>"Carol Stream",
+             "ConsumerEventMessage" =>"Package in-transit to returns processing facility.",
+             "CreateDate" =>"\/Date(-62135575200000-0600)\/",
+             "Date" =>"\/Date(1469077200000-0500)\/",
+             "Description" =>"In transit",
+             "EventCode" =>"DNF",
+             "EventDescription" =>"Departing Newgistics Facility",
+             "FacilityID" =>47662,
+             "FacilityName" =>"ORD2",
+             "PostalCode" =>"60188",
+             "State" =>"IL",
+             "Time" =>"\/Date(1484887140000-0600)\/",
+             "TrackingKey" =>"320908566",
+             "UpdateDate" =>"\/Date(-62135575200000-0600)\/"
           },
           {
-             "CSREventMessage":"Package scanned by Newgistics.",
-             "CarrierCode":"IPS",
-             "CarrierDescription":"Arrived at Shipping Facility",
-             "City":"Carol Stream",
-             "ConsumerEventMessage":"Package scanned by Newgistics.",
-             "CreateDate":"\/Date(-62135575200000-0600)\/",
-             "Date":"\/Date(1468904400000-0500)\/",
-             "Description":"Arrived at Shipping Facility",
-             "EventCode":"IPS",
-             "EventDescription":"Inducted into Newgistics Network",
-             "FacilityID":47662,
-             "FacilityName":"ORD2",
-             "PostalCode":"60188",
-             "State":"IL",
-             "Time":"\/Date(1484882280000-0600)\/",
-             "TrackingKey":"320908566",
-             "UpdateDate":"\/Date(-62135575200000-0600)\/"
+             "CSREventMessage" =>"Package scanned by Newgistics.",
+             "CarrierCode" =>"IPS",
+             "CarrierDescription" =>"Arrived at Shipping Facility",
+             "City" =>"Carol Stream",
+             "ConsumerEventMessage" =>"Package scanned by Newgistics.",
+             "CreateDate" =>"\/Date(-62135575200000-0600)\/",
+             "Date" =>"\/Date(1468904400000-0500)\/",
+             "Description" =>"Arrived at Shipping Facility",
+             "EventCode" =>"IPS",
+             "EventDescription" =>"Inducted into Newgistics Network",
+             "FacilityID" =>47662,
+             "FacilityName" =>"ORD2",
+             "PostalCode" =>"60188",
+             "State" =>"IL",
+             "Time" =>"\/Date(1484882280000-0600)\/",
+             "TrackingKey" =>"320908566",
+             "UpdateDate" =>"\/Date(-62135575200000-0600)\/"
           },
           {
-             "CSREventMessage":"Received by the USPS",
-             "CarrierCode":"PTS03",
-             "CarrierDescription":"Arrival at USPS",
-             "City":"MILWAUKEE",
-             "ConsumerEventMessage":"Received by the USPS",
-             "CreateDate":"\/Date(-62135575200000-0600)\/",
-             "Date":"\/Date(1468904400000-0500)\/",
-             "Description":"Arrival at USPS",
-             "EventCode":"PUU",
-             "EventDescription":"Picked up by USPS",
-             "FacilityID":14512,
-             "FacilityName":"WEST MILWAUKEE",
-             "PostalCode":"532195012",
-             "State":"WI",
-             "Time":"\/Date(1484829060000-0600)\/",
-             "TrackingKey":"320908566",
-             "UpdateDate":"\/Date(-62135575200000-0600)\/"
+             "CSREventMessage" =>"Received by the USPS",
+             "CarrierCode" =>"PTS03",
+             "CarrierDescription" =>"Arrival at USPS",
+             "City" =>"MILWAUKEE",
+             "ConsumerEventMessage" =>"Received by the USPS",
+             "CreateDate" =>"\/Date(-62135575200000-0600)\/",
+             "Date" =>"\/Date(1468904400000-0500)\/",
+             "Description" =>"Arrival at USPS",
+             "EventCode" =>"PUU",
+             "EventDescription" =>"Picked up by USPS",
+             "FacilityID" =>14512,
+             "FacilityName" =>"WEST MILWAUKEE",
+             "PostalCode" =>"532195012",
+             "State" =>"WI",
+             "Time" =>"\/Date(1484829060000-0600)\/",
+             "TrackingKey" =>"320908566",
+             "UpdateDate" =>"\/Date(-62135575200000-0600)\/"
           }
          ],
-         "ReferenceNumber":"000511171",
-         "Service":"RETURN",
-         "ShipToAddressLine1":"112 E Mineral Street",
-         "ShipToAddressLine2":"",
-         "ShipToCity":"Milwaukee",
-         "ShipToName":"Wantable Returns",
-         "ShipToPostalCode":"53204",
-         "ShipToState":"WI",
-         "Signer":null,
-         "Status":"Delivered",
-         "TrackingNumber":"7250053219012360010005111713",
-         "UnitOfMeasure":"pounds",
-         "Weight":3.5260
+         "ReferenceNumber" =>"000511171",
+         "Service" =>"RETURN",
+         "ShipToAddressLine1" =>"112 E Mineral Street",
+         "ShipToAddressLine2" =>"",
+         "ShipToCity" =>"Milwaukee",
+         "ShipToName" =>"Wantable Returns",
+         "ShipToPostalCode" =>"53204",
+         "ShipToState" =>"WI",
+         "Signer" =>"null",
+         "Status" =>"Delivered",
+         "TrackingNumber" =>"7250053219012360010005111713",
+         "UnitOfMeasure" =>"pounds",
+         "Weight" =>3.5260
         }
        ]
     }'
@@ -394,36 +394,36 @@ module MockResponses
 
   def track_newgistics_not_found_response
     '{
-       "Packages":[
+       "Packages" =>[
           {
-             "ActualEstimatedDeliveryDate":null,
-             "CarrierCode":null,
-             "CarrierCodeDescription":null,
-             "CarrierName":"",
-             "CarrierService":"",
-             "CarrierServiceCode":null,
-             "CarrierServiceCodeDescription":null,
-             "ErrorMessage":"No tracking data available for 9402116901279224348471blah.",
-             "EstimatedDeliveryDate":null,
-             "EstimatedDeliveryText":null,
-             "FinalCarrier":null,
-             "MaxEstimatedDeliveryDate":null,
-             "MerchantName":null,
-             "MinEstimatedDeliveryDate":null,
-             "PackageTrackingEvents":null,
-             "ReferenceNumber":null,
-             "Service":"UNKNOWN",
-             "ShipToAddressLine1":null,
-             "ShipToAddressLine2":null,
-             "ShipToCity":null,
-             "ShipToName":null,
-             "ShipToPostalCode":null,
-             "ShipToState":null,
-             "Signer":null,
-             "Status":"NotFound",
-             "TrackingNumber":"9402116901279224348471blah",
-             "UnitOfMeasure":null,
-             "Weight":null
+             "ActualEstimatedDeliveryDate" =>"null",
+             "CarrierCode" =>"null",
+             "CarrierCodeDescription" =>"null",
+             "CarrierName" =>"",
+             "CarrierService" =>"",
+             "CarrierServiceCode" =>"null",
+             "CarrierServiceCodeDescription" =>"null",
+             "ErrorMessage" =>"No tracking data available for 9402116901279224348471blah.",
+             "EstimatedDeliveryDate" =>"null",
+             "EstimatedDeliveryText" =>"null",
+             "FinalCarrier" =>"null",
+             "MaxEstimatedDeliveryDate" =>"null",
+             "MerchantName" =>"null",
+             "MinEstimatedDeliveryDate" =>"null",
+             "PackageTrackingEvents" =>"null",
+             "ReferenceNumber" =>"null",
+             "Service" =>"UNKNOWN",
+             "ShipToAddressLine1" =>"null",
+             "ShipToAddressLine2" =>"null",
+             "ShipToCity" =>"null",
+             "ShipToName" =>"null",
+             "ShipToPostalCode" =>"null",
+             "ShipToState" =>"null",
+             "Signer" =>"null",
+             "Status" =>"NotFound",
+             "TrackingNumber" =>"9402116901279224348471blah",
+             "UnitOfMeasure" =>"null",
+             "Weight" =>"null"
           }
        ]
     }'
@@ -621,369 +621,781 @@ module MockResponses
 
   def track_ups_response
     {
-      "trackResponse": {
-        "shipment": [
+      "trackResponse" => {
+        "shipment" => [
           {
-            "inquiryNumber": "1Z1202R66698804005",
-            "package": [
+            "inquiryNumber" => "1Z1202R66698804005",
+            "package" => [
               {
-                "trackingNumber": "1Z1202R66698804005",
-                "deliveryDate": [],
-                "activity": [
+                "trackingNumber" => "1Z1202R66698804005",
+                "deliveryDate" => [],
+                "activity" => [
                   {
-                    "location": {
-                      "slic": "9642"
+                    "location" => {
+                      "slic" => "9642"
                     },
-                    "status": {
-                      "type": "X",
-                      "description": "The package is at the clearing agency awaiting final release.",
-                      "statusCode": "092"
+                    "status" => {
+                      "type" => "X",
+                      "description" => "The package is at the clearing agency awaiting final release.",
+                      "statusCode" => "092"
                     },
-                    "date": "20240320",
-                    "time": "190838",
-                    "gmtDate": "20240320",
-                    "gmtOffset": "+08:00",
-                    "gmtTime": "11:08:38"
+                    "date" => "20240320",
+                    "time" => "190838",
+                    "gmtDate" => "20240320",
+                    "gmtOffset" => "+08:00",
+                    "gmtTime" => "11:08:38"
                   },
                   {
-                    "location": {
-                      "address": {
-                        "city": "Changi",
-                        "countryCode": "SG",
-                        "country": "SG"
+                    "location" => {
+                      "address" => {
+                        "city" => "Changi",
+                        "countryCode" => "SG",
+                        "country" => "SG"
                       },
-                      "slic": "0009"
+                      "slic" => "0009"
                     },
-                    "status": {
-                      "type": "I",
-                      "description": "Arrived at Facility",
-                      "code": "AR",
-                      "statusCode": "005"
+                    "status" => {
+                      "type" => "I",
+                      "description" => "Arrived at Facility",
+                      "code" => "AR",
+                      "statusCode" => "005"
                     },
-                    "date": "20240320",
-                    "time": "070700",
-                    "gmtDate": "20240319",
-                    "gmtOffset": "+08:00",
-                    "gmtTime": "23:07:00"
+                    "date" => "20240320",
+                    "time" => "070700",
+                    "gmtDate" => "20240319",
+                    "gmtOffset" => "+08:00",
+                    "gmtTime" => "23:07:00"
                   },
                   {
-                    "location": {
-                      "address": {
-                        "city": "Shenzhen",
-                        "countryCode": "CN",
-                        "country": "CN"
+                    "location" => {
+                      "address" => {
+                        "city" => "Shenzhen",
+                        "countryCode" => "CN",
+                        "country" => "CN"
                       },
-                      "slic": "0009"
+                      "slic" => "0009"
                     },
-                    "status": {
-                      "type": "I",
-                      "description": "Departed from Facility",
-                      "code": "DP",
-                      "statusCode": "005"
+                    "status" => {
+                      "type" => "I",
+                      "description" => "Departed from Facility",
+                      "code" => "DP",
+                      "statusCode" => "005"
                     },
-                    "date": "20240320",
-                    "time": "032000",
-                    "gmtDate": "20240319",
-                    "gmtOffset": "+08:00",
-                    "gmtTime": "19:20:00"
+                    "date" => "20240320",
+                    "time" => "032000",
+                    "gmtDate" => "20240319",
+                    "gmtOffset" => "+08:00",
+                    "gmtTime" => "19:20:00"
                   },
                   {
-                    "location": {
-                      "address": {
-                        "city": "Shenzhen",
-                        "countryCode": "CN",
-                        "country": "CN"
+                    "location" => {
+                      "address" => {
+                        "city" => "Shenzhen",
+                        "countryCode" => "CN",
+                        "country" => "CN"
                       },
-                      "slic": "3459"
+                      "slic" => "3459"
                     },
-                    "status": {
-                      "type": "I",
-                      "description": "Arrived at Facility",
-                      "code": "AR",
-                      "statusCode": "005"
+                    "status" => {
+                      "type" => "I",
+                      "description" => "Arrived at Facility",
+                      "code" => "AR",
+                      "statusCode" => "005"
                     },
-                    "date": "20240319",
-                    "time": "232200",
-                    "gmtDate": "20240319",
-                    "gmtOffset": "+08:00",
-                    "gmtTime": "15:22:00"
+                    "date" => "20240319",
+                    "time" => "232200",
+                    "gmtDate" => "20240319",
+                    "gmtOffset" => "+08:00",
+                    "gmtTime" => "15:22:00"
                   },
                   {
-                    "location": {
-                      "address": {
-                        "city": "Koeln",
-                        "countryCode": "DE",
-                        "country": "DE"
+                    "location" => {
+                      "address" => {
+                        "city" => "Koeln",
+                        "countryCode" => "DE",
+                        "country" => "DE"
                       },
-                      "slic": "3459"
+                      "slic" => "3459"
                     },
-                    "status": {
-                      "type": "I",
-                      "description": "Departed from Facility",
-                      "code": "DP",
-                      "statusCode": "005"
+                    "status" => {
+                      "type" => "I",
+                      "description" => "Departed from Facility",
+                      "code" => "DP",
+                      "statusCode" => "005"
                     },
-                    "date": "20240319",
-                    "time": "045000",
-                    "gmtDate": "20240319",
-                    "gmtOffset": "+01:00",
-                    "gmtTime": "03:50:00"
+                    "date" => "20240319",
+                    "time" => "045000",
+                    "gmtDate" => "20240319",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "03:50:00"
                   },
                   {
-                    "location": {
-                      "address": {
-                        "city": "Koeln",
-                        "countryCode": "DE",
-                        "country": "DE"
+                    "location" => {
+                      "address" => {
+                        "city" => "Koeln",
+                        "countryCode" => "DE",
+                        "country" => "DE"
                       },
-                      "slic": "3468"
+                      "slic" => "3468"
                     },
-                    "status": {
-                      "type": "I",
-                      "description": "Arrived at Facility",
-                      "code": "AR",
-                      "statusCode": "005"
+                    "status" => {
+                      "type" => "I",
+                      "description" => "Arrived at Facility",
+                      "code" => "AR",
+                      "statusCode" => "005"
                     },
-                    "date": "20240319",
-                    "time": "003400",
-                    "gmtDate": "20240318",
-                    "gmtOffset": "+01:00",
-                    "gmtTime": "23:34:00"
+                    "date" => "20240319",
+                    "time" => "003400",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "23:34:00"
                   },
                   {
-                    "location": {
-                      "address": {
-                        "city": "Lummen",
-                        "countryCode": "BE",
-                        "country": "BE"
+                    "location" => {
+                      "address" => {
+                        "city" => "Lummen",
+                        "countryCode" => "BE",
+                        "country" => "BE"
                       },
-                      "slic": "3468"
+                      "slic" => "3468"
                     },
-                    "status": {
-                      "type": "I",
-                      "description": "Departed from Facility",
-                      "code": "DP",
-                      "statusCode": "005"
+                    "status" => {
+                      "type" => "I",
+                      "description" => "Departed from Facility",
+                      "code" => "DP",
+                      "statusCode" => "005"
                     },
-                    "date": "20240318",
-                    "time": "221000",
-                    "gmtDate": "20240318",
-                    "gmtOffset": "+01:00",
-                    "gmtTime": "21:10:00"
+                    "date" => "20240318",
+                    "time" => "221000",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "21:10:00"
                   },
                   {
-                    "location": {
-                      "slic": "3468"
+                    "location" => {
+                      "slic" => "3468"
                     },
-                    "status": {
-                      "type": "X",
-                      "description": "Your package has been released by the government agency.",
-                      "code": "RZ",
-                      "statusCode": "014"
+                    "status" => {
+                      "type" => "X",
+                      "description" => "Your package has been released by the government agency.",
+                      "code" => "RZ",
+                      "statusCode" => "014"
                     },
-                    "date": "20240318",
-                    "time": "213829",
-                    "gmtDate": "20240318",
-                    "gmtOffset": "+01:00",
-                    "gmtTime": "20:38:29"
+                    "date" => "20240318",
+                    "time" => "213829",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "20:38:29"
                   },
                   {
-                    "location": {
-                      "address": {
-                        "city": "Lummen",
-                        "countryCode": "BE",
-                        "country": "BE"
+                    "location" => {
+                      "address" => {
+                        "city" => "Lummen",
+                        "countryCode" => "BE",
+                        "country" => "BE"
                       },
-                      "slic": "3468"
+                      "slic" => "3468"
                     },
-                    "status": {
-                      "type": "X",
-                      "description": "Your package is pending release from a Government Agency. Once they release it, your package will be on its way.",
-                      "code": "RZ",
-                      "statusCode": "012"
+                    "status" => {
+                      "type" => "X",
+                      "description" => "Your package is pending release from a Government Agency. Once they release it, your package will be on its way.",
+                      "code" => "RZ",
+                      "statusCode" => "012"
                     },
-                    "date": "20240318",
-                    "time": "212334",
-                    "gmtDate": "20240318",
-                    "gmtOffset": "+01:00",
-                    "gmtTime": "20:23:34"
+                    "date" => "20240318",
+                    "time" => "212334",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "20:23:34"
                   },
                   {
-                    "location": {
-                      "slic": "3468"
+                    "location" => {
+                      "slic" => "3468"
                     },
-                    "status": {
-                      "type": "X",
-                      "description": "UPS has received the information needed to submit your package for clearance.",
-                      "code": "BB",
-                      "statusCode": "014"
+                    "status" => {
+                      "type" => "X",
+                      "description" => "UPS has received the information needed to submit your package for clearance.",
+                      "code" => "BB",
+                      "statusCode" => "014"
                     },
-                    "date": "20240318",
-                    "time": "212334",
-                    "gmtDate": "20240318",
-                    "gmtOffset": "+01:00",
-                    "gmtTime": "20:23:34"
+                    "date" => "20240318",
+                    "time" => "212334",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "20:23:34"
                   },
                   {
-                    "location": {
-                      "address": {
-                        "city": "Lummen",
-                        "countryCode": "BE",
-                        "country": "BE"
+                    "location" => {
+                      "address" => {
+                        "city" => "Lummen",
+                        "countryCode" => "BE",
+                        "country" => "BE"
                       },
-                      "slic": "3468"
+                      "slic" => "3468"
                     },
-                    "status": {
-                      "type": "I",
-                      "description": "We have your package",
-                      "code": "OR",
-                      "statusCode": "005"
+                    "status" => {
+                      "type" => "I",
+                      "description" => "We have your package",
+                      "code" => "OR",
+                      "statusCode" => "005"
                     },
-                    "date": "20240318",
-                    "time": "200306",
-                    "gmtDate": "20240318",
-                    "gmtOffset": "+01:00",
-                    "gmtTime": "19:03:06"
+                    "date" => "20240318",
+                    "time" => "200306",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "19:03:06"
                   },
                   {
-                    "location": {
-                      "slic": "3468"
+                    "location" => {
+                      "slic" => "3468"
                     },
-                    "status": {
-                      "type": "X",
-                      "description": "Your package has been released by the government agency.",
-                      "code": "RZ",
-                      "statusCode": "014"
+                    "status" => {
+                      "type" => "X",
+                      "description" => "Your package has been released by the government agency.",
+                      "code" => "RZ",
+                      "statusCode" => "014"
                     },
-                    "date": "20240318",
-                    "time": "183623",
-                    "gmtDate": "20240318",
-                    "gmtOffset": "+01:00",
-                    "gmtTime": "17:36:23"
+                    "date" => "20240318",
+                    "time" => "183623",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "17:36:23"
                   },
                   {
-                    "location": {
-                      "address": { "city": "Lummen", "countryCode": "BE", "country": "BE" },
-                      "slic": "3468"
+                    "location" => {
+                      "address" => { "city" => "Lummen", "countryCode" => "BE", "country" => "BE" },
+                      "slic" => "3468"
                     },
-                    "status": {
-                      "type": "X",
-                      "description": "UPS initiated contact with the sender to obtain clearance information. Once received, UPS will submit for clearance.",
-                      "code": "BB",
-                      "statusCode": "058"
+                    "status" => {
+                      "type" => "X",
+                      "description" => "UPS initiated contact with the sender to obtain clearance information. Once received, UPS will submit for clearance.",
+                      "code" => "BB",
+                      "statusCode" => "058"
                     },
-                    "date": "20240318",
-                    "time": "183623",
-                    "gmtDate": "20240318",
-                    "gmtOffset": "+01:00",
-                    "gmtTime": "17:36:23"
+                    "date" => "20240318",
+                    "time" => "183623",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "17:36:23"
                   },
                   {
-                    "location": {
-                      "address": { "city": "Lummen", "countryCode": "BE", "country": "BE" },
-                      "slic": "3468"
+                    "location" => {
+                      "address" => { "city" => "Lummen", "countryCode" => "BE", "country" => "BE" },
+                      "slic" => "3468"
                     },
-                    "status": {
-                      "type": "X",
-                      "description": "Your package is pending release from a Government Agency. Once they release it, your package will be on its way.",
-                      "code": "RZ",
-                      "statusCode": "012"
+                    "status" => {
+                      "type" => "X",
+                      "description" => "Your package is pending release from a Government Agency. Once they release it, your package will be on its way.",
+                      "code" => "RZ",
+                      "statusCode" => "012"
                     },
-                    "date": "20240318",
-                    "time": "181605",
-                    "gmtDate": "20240318",
-                    "gmtOffset": "+01:00",
-                    "gmtTime": "17:16:05"
+                    "date" => "20240318",
+                    "time" => "181605",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "17:16:05"
                   },
                   {
-                    "location": { "slic": "3468" },
-                    "status": {
-                      "type": "X",
-                      "description": "Your package is on the way",
-                      "code": "DA",
-                      "statusCode": "014"
+                    "location" => { "slic" => "3468" },
+                    "status" => {
+                      "type" => "X",
+                      "description" => "Your package is on the way",
+                      "code" => "DA",
+                      "statusCode" => "014"
                     },
-                    "date": "20240318",
-                    "time": "181605",
-                    "gmtDate": "20240318",
-                    "gmtOffset": "+01:00",
-                    "gmtTime": "17:16:05"
+                    "date" => "20240318",
+                    "time" => "181605",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "17:16:05"
                   },
                   {
-                    "location": {
-                      "address": { "city": "Lummen", "countryCode": "BE", "country": "BE" },
-                      "slic": "3484"
+                    "location" => {
+                      "address" => { "city" => "Lummen", "countryCode" => "BE", "country" => "BE" },
+                      "slic" => "3484"
                     },
-                    "status": {
-                      "type": "P",
-                      "description": "Pickup Scan ",
-                      "code": "PU",
-                      "statusCode": "038"
+                    "status" => {
+                      "type" => "P",
+                      "description" => "Pickup Scan ",
+                      "code" => "PU",
+                      "statusCode" => "038"
                     },
-                    "date": "20240318",
-                    "time": "154403",
-                    "gmtDate": "20240318",
-                    "gmtOffset": "+01:00",
-                    "gmtTime": "14:44:03"
+                    "date" => "20240318",
+                    "time" => "154403",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "14:44:03"
                   },
                   {
-                    "location": {
-                      "address": { "countryCode": "BE", "country": "BE" }
+                    "location" => {
+                      "address" => { "countryCode" => "BE", "country" => "BE" }
                     },
-                    "status": {
-                      "type": "M",
-                      "description": "Shipper created a label, UPS has not received the package yet. ",
-                      "code": "MP",
-                      "statusCode": "003"
+                    "status" => {
+                      "type" => "M",
+                      "description" => "Shipper created a label, UPS has not received the package yet. ",
+                      "code" => "MP",
+                      "statusCode" => "003"
                     },
-                    "date": "20240318",
-                    "time": "124917",
-                    "gmtDate": "20240318",
-                    "gmtOffset": "+01:00",
-                    "gmtTime": "11:49:17"
+                    "date" => "20240318",
+                    "time" => "124917",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "11:49:17"
                   }
                 ],
-                "currentStatus": {
-                  "description": "Customs Clearance in Progress",
-                  "code": "092",
-                  "simplifiedTextDescription": "The package is at the clearing agency awaiting final release."
+                "currentStatus" => {
+                  "description" => "Customs Clearance in Progress",
+                  "code" => "092",
+                  "simplifiedTextDescription" => "The package is at the clearing agency awaiting final release."
                 },
-                "packageAddress": [
+                "packageAddress" => [
                   {
-                    "type": "ORIGIN",
-                    "address": {
-                      "city": "Brussels",
-                      "stateProvince": "",
-                      "countryCode": "BE",
-                      "country": "BE"
+                    "type" => "ORIGIN",
+                    "address" => {
+                      "city" => "Brussels",
+                      "stateProvince" => "",
+                      "countryCode" => "BE",
+                      "country" => "BE"
                     }
                   },
                   {
-                    "type": "DESTINATION",
-                    "address": {
-                      "city": "CAIRNS",
-                      "stateProvince": "",
-                      "countryCode": "AU",
-                      "country": "AU"
+                    "type" => "DESTINATION",
+                    "address" => {
+                      "city" => "CAIRNS",
+                      "stateProvince" => "",
+                      "countryCode" => "AU",
+                      "country" => "AU"
                     }
                   }
                 ],
-                "weight": { "unitOfMeasurement": "KGS", "weight": "17.00" },
-                "service": { "code": "554", "levelCode": "007", "description": "UPS Express®" },
-                "referenceNumber": [
-                  { "type": "SHIPMENT", "number": "11111" },
-                  { "type": "SHIPMENT", "number": "INVOICE 11111" },
-                  { "type": "SHIPMENT", "number": "PO11111 / 11111" },
-                  { "type": "PACKAGE", "number": "INVOICE 11111" },
-                  { "type": "PACKAGE", "number": "PO11111 / 11111" }
+                "weight" => { "unitOfMeasurement" => "KGS", "weight" => "17.00" },
+                "service" => { "code" => "554", "levelCode" => "007", "description" => "UPS Express®" },
+                "referenceNumber" => [
+                  { "type" => "SHIPMENT", "number" => "11111" },
+                  { "type" => "SHIPMENT", "number" => "INVOICE 11111" },
+                  { "type" => "SHIPMENT", "number" => "PO11111 / 11111" },
+                  { "type" => "PACKAGE", "number" => "INVOICE 11111" },
+                  { "type" => "PACKAGE", "number" => "PO11111 / 11111" }
                 ],
-                "dimension": {
-                  "height": "51.00",
-                  "length": "52.00",
-                  "width": "51.00",
-                  "unitOfDimension": "CM"
+                "dimension" => {
+                  "height" => "51.00",
+                  "length" => "52.00",
+                  "width" => "51.00",
+                  "unitOfDimension" => "CM"
                 },
-                "packageCount": 1
+                "packageCount" => 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  end
+
+  def track_ups_left_not_arrived
+    {
+      "trackResponse" => {
+        "shipment" => [
+          {
+            "inquiryNumber" => "1Z1202R66698804005",
+            "package" => [
+              {
+                "trackingNumber" => "1Z1202R66698804005",
+                "deliveryDate" => [],
+                "activity" => [
+                  {
+                    "location" => {
+                      "slic" => "9642"
+                    },
+                    "status" => {
+                      "type" => "X",
+                      "description" => "The package is at the clearing agency awaiting final release.",
+                      "statusCode" => "092"
+                    },
+                    "date" => "20240320",
+                    "time" => "190838",
+                    "gmtDate" => "20240320",
+                    "gmtOffset" => "+08:00",
+                    "gmtTime" => "11:08:38"
+                  },
+                  {
+                    "location" => {
+                      "address" => {
+                        "city" => "Changi",
+                        "countryCode" => "SG",
+                        "country" => "SG"
+                      },
+                      "slic" => "0009"
+                    },
+                    "status" => {
+                      "type" => "I",
+                      "description" => "Arrived at Facility",
+                      "code" => "AR",
+                      "statusCode" => "005"
+                    },
+                    "date" => "20240320",
+                    "time" => "070700",
+                    "gmtDate" => "20240319",
+                    "gmtOffset" => "+08:00",
+                    "gmtTime" => "23:07:00"
+                  },
+                  {
+                    "location" => {
+                      "address" => {
+                        "city" => "Shenzhen",
+                        "countryCode" => "CN",
+                        "country" => "CN"
+                      },
+                      "slic" => "0009"
+                    },
+                    "status" => {
+                      "type" => "I",
+                      "description" => "Departed from Facility",
+                      "code" => "DP",
+                      "statusCode" => "005"
+                    },
+                    "date" => "20240320",
+                    "time" => "032000",
+                    "gmtDate" => "20240319",
+                    "gmtOffset" => "+08:00",
+                    "gmtTime" => "19:20:00"
+                  },
+                  {
+                    "location" => {
+                      "address" => {
+                        "city" => "Shenzhen",
+                        "countryCode" => "CN",
+                        "country" => "CN"
+                      },
+                      "slic" => "3459"
+                    },
+                    "status" => {
+                      "type" => "I",
+                      "description" => "Arrived at Facility",
+                      "code" => "AR",
+                      "statusCode" => "005"
+                    },
+                    "date" => "20240319",
+                    "time" => "232200",
+                    "gmtDate" => "20240319",
+                    "gmtOffset" => "+08:00",
+                    "gmtTime" => "15:22:00"
+                  },
+                  {
+                    "location" => {
+                      "address" => {
+                        "city" => "Koeln",
+                        "countryCode" => "DE",
+                        "country" => "DE"
+                      },
+                      "slic" => "3459"
+                    },
+                    "status" => {
+                      "type" => "I",
+                      "description" => "Departed from Facility",
+                      "code" => "DP",
+                      "statusCode" => "005"
+                    },
+                    "date" => "20240319",
+                    "time" => "045000",
+                    "gmtDate" => "20240319",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "03:50:00"
+                  },
+                  {
+                    "location" => {
+                      "address" => {
+                        "city" => "Koeln",
+                        "countryCode" => "DE",
+                        "country" => "DE"
+                      },
+                      "slic" => "3468"
+                    },
+                    "status" => {
+                      "type" => "I",
+                      "description" => "Arrived at Facility",
+                      "code" => "AR",
+                      "statusCode" => "005"
+                    },
+                    "date" => "20240319",
+                    "time" => "003400",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "23:34:00"
+                  },
+                  {
+                    "location" => {
+                      "address" => {
+                        "city" => "Lummen",
+                        "countryCode" => "BE",
+                        "country" => "BE"
+                      },
+                      "slic" => "3468"
+                    },
+                    "status" => {
+                      "type" => "I",
+                      "description" => "Departed from Facility",
+                      "code" => "DP",
+                      "statusCode" => "005"
+                    },
+                    "date" => "20240318",
+                    "time" => "221000",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "21:10:00"
+                  },
+                  {
+                    "location" => {
+                      "slic" => "3468"
+                    },
+                    "status" => {
+                      "type" => "X",
+                      "description" => "Your package has been released by the government agency.",
+                      "code" => "RZ",
+                      "statusCode" => "014"
+                    },
+                    "date" => "20240318",
+                    "time" => "213829",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "20:38:29"
+                  },
+                  {
+                    "location" => {
+                      "address" => {
+                        "city" => "Lummen",
+                        "countryCode" => "BE",
+                        "country" => "BE"
+                      },
+                      "slic" => "3468"
+                    },
+                    "status" => {
+                      "type" => "X",
+                      "description" => "Your package is pending release from a Government Agency. Once they release it, your package will be on its way.",
+                      "code" => "RZ",
+                      "statusCode" => "012"
+                    },
+                    "date" => "20240318",
+                    "time" => "212334",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "20:23:34"
+                  },
+                  {
+                    "location" => {
+                      "slic" => "3468"
+                    },
+                    "status" => {
+                      "type" => "X",
+                      "description" => "UPS has received the information needed to submit your package for clearance.",
+                      "code" => "BB",
+                      "statusCode" => "014"
+                    },
+                    "date" => "20240318",
+                    "time" => "212334",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "20:23:34"
+                  },
+                  {
+                    "location" => {
+                      "address" => {
+                        "city" => "Lummen",
+                        "countryCode" => "BE",
+                        "country" => "BE"
+                      },
+                      "slic" => "3468"
+                    },
+                    "status" => {
+                      "type" => "I",
+                      "description" => "We have your package",
+                      "code" => "OR",
+                      "statusCode" => "005"
+                    },
+                    "date" => "20240318",
+                    "time" => "200306",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "19:03:06"
+                  },
+                  {
+                    "location" => {
+                      "slic" => "3468"
+                    },
+                    "status" => {
+                      "type" => "X",
+                      "description" => "Your package has been released by the government agency.",
+                      "code" => "RZ",
+                      "statusCode" => "014"
+                    },
+                    "date" => "20240318",
+                    "time" => "183623",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "17:36:23"
+                  },
+                  {
+                    "location" => {
+                      "address" => {
+                        "city" => "Lummen",
+                        "countryCode" => "BE",
+                        "country" => "BE"
+                      },
+                      "slic" => "3468"
+                    },
+                    "status" => {
+                      "type" => "X",
+                      "description" => "UPS initiated contact with the sender to obtain clearance information. Once received, UPS will submit for clearance.",
+                      "code" => "BB",
+                      "statusCode" => "058"
+                    },
+                    "date" => "20240318",
+                    "time" => "183623",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "17:36:23"
+                  },
+                  {
+                    "location" => {
+                      "address" => {
+                        "city" => "Lummen",
+                        "countryCode" => "BE",
+                        "country" => "BE"
+                      },
+                      "slic" => "3468"
+                    },
+                    "status" => {
+                      "type" => "X",
+                      "description" => "Your package is pending release from a Government Agency. Once they release it, your package will be on its way.",
+                      "code" => "RZ",
+                      "statusCode" => "012"
+                    },
+                    "date" => "20240318",
+                    "time" => "181605",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "17:16:05"
+                  },
+                  {
+                    "location" => {
+                      "slic" => "3468"
+                    },
+                    "status" => {
+                      "type" => "X",
+                      "description" => "Your package is on the way",
+                      "code" => "DA",
+                      "statusCode" => "014"
+                    },
+                    "date" => "20240318",
+                    "time" => "181605",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "17:16:05"
+                  },
+                  {
+                    "location" => {
+                      "address" => {
+                        "city" => "Lummen",
+                        "countryCode" => "BE",
+                        "country" => "BE"
+                      },
+                      "slic" => "3484"
+                    },
+                    "status" => {
+                      "type" => "P",
+                      "description" => "Pickup Scan ",
+                      "code" => "PU",
+                      "statusCode" => "038"
+                    },
+                    "date" => "20240318",
+                    "time" => "154403",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "14:44:03"
+                  },
+                  {
+                    "location" => {
+                      "address" => {
+                        "countryCode" => "BE",
+                        "country" => "BE"
+                      }
+                    },
+                    "status" => {
+                      "type" => "M",
+                      "description" => "Shipper created a label, UPS has not received the package yet. ",
+                      "code" => "MP",
+                      "statusCode" => "003"
+                    },
+                    "date" => "20240318",
+                    "time" => "124917",
+                    "gmtDate" => "20240318",
+                    "gmtOffset" => "+01:00",
+                    "gmtTime" => "11:49:17"
+                  }
+                ],
+                "currentStatus" => {
+                  "description" => "Customs Clearance in Progress",
+                  "code" => "092",
+                  "simplifiedTextDescription" => "The package is at the clearing agency awaiting final release."
+                },
+                "packageAddress" => [
+                  {
+                    "type" => "ORIGIN",
+                    "address" => {
+                      "city" => "Brussels",
+                      "stateProvince" => "",
+                      "countryCode" => "BE",
+                      "country" => "BE"
+                    }
+                  },
+                  {
+                    "type" => "DESTINATION",
+                    "address" => {
+                      "city" => "CAIRNS",
+                      "stateProvince" => "",
+                      "countryCode" => "AU",
+                      "country" => "AU"
+                    }
+                  }
+                ],
+                "weight" => {
+                  "unitOfMeasurement" => "KGS",
+                  "weight" => "17.00"
+                },
+                "service" => {
+                  "code" => "554",
+                  "levelCode" => "007",
+                  "description" => "UPS Express®"
+                },
+                "referenceNumber" => [
+                  {
+                    "type" => "SHIPMENT",
+                    "number" => "1202R6ZZZZZ"
+                  },
+                  {
+                    "type" => "SHIPMENT",
+                    "number" => "INVOICE 3000010221"
+                  },
+                  {
+                    "type" => "SHIPMENT",
+                    "number" => "PO22235 / 338343000"
+                  },
+                  {
+                    "type" => "PACKAGE",
+                    "number" => "INVOICE 3000043391"
+                  },
+                  {
+                    "type" => "PACKAGE",
+                    "number" => "PO22000 / 338343000"
+                  }
+                ],
+                "dimension" => {
+                  "height" => "51.00",
+                  "length" => "52.00",
+                  "width" => "51.00",
+                  "unitOfDimension" => "CM"
+                },
+                "packageCount" => 1
               }
             ]
           }
@@ -993,372 +1405,146 @@ module MockResponses
   end
 
   def track_ups_mi_response
-    "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-    <TrackResponse>
-      <Response>
-        <TransactionReference>
-          <CustomerContext>ad037137-1281-4e73-9260-0b681485657a</CustomerContext>
-          <XpciVersion>1.0</XpciVersion>
-        </TransactionReference>
-        <ResponseStatusCode>1</ResponseStatusCode>
-        <ResponseStatusDescription>Success</ResponseStatusDescription>
-      </Response>
-      <Shipment>
-        <InquiryNumber>
-          <Code>03</Code>
-          <Description>Mail Innovations Tracking Number</Description>
-          <Value>801677101298096996</Value>
-        </InquiryNumber>
-        <ShipmentType>
-          <Code>03</Code>
-          <Description>Mail Innovations</Description>
-        </ShipmentType>
-        <Shipper>
-          <Address>
-            <City>Milwauke</City>
-            <StateProvinceCode>WI</StateProvinceCode>
-            <PostalCode>53204</PostalCode>
-            <CountryCode>US</CountryCode>
-          </Address>
-        </Shipper>
-        <ShipTo>
-          <Address>
-            <City>DUNWOODY</City>
-            <StateProvinceCode>GA</StateProvinceCode>
-            <PostalCode>30338</PostalCode>
-            <CountryCode>US</CountryCode>
-          </Address>
-        </ShipTo>
-        <ShipmentWeight>
-          <UnitOfMeasurement>
-            <Code>LBS</Code>
-          </UnitOfMeasurement>
-          <Weight>0.5050</Weight>
-        </ShipmentWeight>
-        <Service>
-          <Code>702</Code>
-          <Description>UPS Mail Innovations Expedited</Description>
-        </Service>
-        <ReferenceNumber>
-          <Code>96</Code>
-          <Value>W025284315C226</Value>
-        </ReferenceNumber>
-        <PickupDate>20170112</PickupDate>
-        <DeliveryDateTime>
-          <Type>
-            <Code>01</Code>
-            <Description>Delivery</Description>
-          </Type>
-          <Date>20170116</Date>
-          <Time>1314</Time>
-        </DeliveryDateTime>
-        <Package>
-          <TrackingNumber>801677101298096996</TrackingNumber>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>Atlanta</City>
-                <StateProvinceCode>GA</StateProvinceCode>
-                <PostalCode>30338</PostalCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-              <TransportFacility>
-                <Type>IC</Type>
-              </TransportFacility>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>D</Code>
-                <Description>Package delivered by post office</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>D</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170116</Date>
-            <Time>1314</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>Atlanta</City>
-                <StateProvinceCode>GA</StateProvinceCode>
-                <PostalCode>30338</PostalCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-              <TransportFacility>
-                <Type>VT</Type>
-                <Code>GATLA</Code>
-              </TransportFacility>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>Package transferred to post office</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>I</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170114</Date>
-            <Time>1511</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>Morrow</City>
-                <StateProvinceCode>GA</StateProvinceCode>
-                <PostalCode>30260</PostalCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-              <TransportFacility>
-                <Type>VT</Type>
-                <Code>GATLA</Code>
-              </TransportFacility>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>Package departed UPS Mail Innovations facility enroute to USPS for induction</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>I</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170114</Date>
-            <Time>1022</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>Morrow</City>
-                <StateProvinceCode>GA</StateProvinceCode>
-                <PostalCode>30260</PostalCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-              <TransportFacility>
-                <Type>VT</Type>
-                <Code>GATLA</Code>
-              </TransportFacility>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>Postage Paid/Ready for destination post office entry</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>I</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170114</Date>
-            <Time>1018</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>Atlanta</City>
-                <StateProvinceCode>GA</StateProvinceCode>
-                <PostalCode>30338</PostalCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-              <TransportFacility>
-                <Type>IC</Type>
-              </TransportFacility>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>Electronic Shipment Information Received for Package by Post Office</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>I</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170114</Date>
-            <Time>0947</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>Morrow</City>
-                <StateProvinceCode>GA</StateProvinceCode>
-                <PostalCode>30260</PostalCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-              <TransportFacility>
-                <Type>VT</Type>
-                <Code>GATLA</Code>
-              </TransportFacility>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>Package received for sort by destination UPS Mail Innovations facility</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>I</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170114</Date>
-            <Time>0650</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>Bensenville</City>
-                <StateProvinceCode>IL</StateProvinceCode>
-                <PostalCode>60106</PostalCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-              <TransportFacility>
-                <Type>VT</Type>
-                <Code>ILCST</Code>
-              </TransportFacility>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>Package transferred to destination UPS Mail Innovations facility</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>I</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170113</Date>
-            <Time>0721</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>Bensenville</City>
-                <StateProvinceCode>IL</StateProvinceCode>
-                <PostalCode>60106</PostalCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-              <TransportFacility>
-                <Type>VT</Type>
-                <Code>ILCST</Code>
-              </TransportFacility>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>Package processed by UPS Mail Innovations origin facility</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>I</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170113</Date>
-            <Time>0043</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>Bensenville</City>
-                <StateProvinceCode>IL</StateProvinceCode>
-                <PostalCode>60106</PostalCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-              <TransportFacility>
-                <Type>VT</Type>
-                <Code>ILCST</Code>
-              </TransportFacility>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>I</Code>
-                <Description>Package received for processing by UPS Mail Innovations</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>I</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170113</Date>
-            <Time>0005</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <City>Milwauke</City>
-                <StateProvinceCode>WI</StateProvinceCode>
-                <PostalCode>53204</PostalCode>
-                <CountryCode>US</CountryCode>
-              </Address>
-              <TransportFacility>
-                <Type>VT</Type>
-                <Code>ILCST</Code>
-              </TransportFacility>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>P</Code>
-                <Description>Shipment tendered to UPS Mail Innovations</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>P</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170112</Date>
-            <Time>2353</Time>
-          </Activity>
-          <Activity>
-            <ActivityLocation>
-              <Address>
-                <CountryCode>US</CountryCode>
-              </Address>
-              <TransportFacility>
-                <Type>VT</Type>
-              </TransportFacility>
-            </ActivityLocation>
-            <Status>
-              <StatusType>
-                <Code>M</Code>
-                <Description>Shipment information received by UPS Mail Innovations</Description>
-              </StatusType>
-              <StatusCode>
-                <Code>M</Code>
-              </StatusCode>
-            </Status>
-            <Date>20170112</Date>
-            <Time>1553</Time>
-          </Activity>
-          <PackageWeight>
-            <UnitOfMeasurement>
-              <Code>LBS</Code>
-            </UnitOfMeasurement>
-            <Weight>0.5050</Weight>
-          </PackageWeight>
-          <ReferenceNumber>
-            <Code>96</Code>
-            <Value>W025284315C226</Value>
-          </ReferenceNumber>
-          <AlternateTrackingInfo>
-            <Type>Q</Type>
-            <Value>92748999964209543475518096</Value>
-          </AlternateTrackingInfo>
-        </Package>
-      </Shipment>
-    </TrackResponse>"
+    {
+      "trackResponse" => {
+        "shipment" => [
+          {
+            "inquiryNumber" => "1Z023E2X0214323462",
+            "package" => [
+              {
+                "accessPointInformation" => {
+                  "pickupByDate" => "string"
+                },
+                "activity" => [
+                  {
+                    "date" => "null",
+                    "gmtDate" => "null",
+                    "gmtOffset" => "null",
+                    "gmtTime" => "null",
+                    "location" => "null",
+                    "status" => "null",
+                    "time" => "null"
+                  }
+                ],
+                "additionalAttributes" => [
+                  "SENSOR_EVENT"
+                ],
+                "additionalServices" => [
+                  "ADULT_SIGNATURE_REQUIRED",
+                  "SIGNATURE_REQUIRED",
+                  "ADDITIONAL_HANDLING",
+                  "CARBON_NEUTRAL",
+                  "UPS_PREMIER_SILVER",
+                  "UPS_PREMIER_GOLD",
+                  "UPS_PREMIER_PLATINUM"
+                ],
+                "alternateTrackingNumber" => [
+                  {
+                    "number" => "null",
+                    "type" => "null"
+                  }
+                ],
+                "currentStatus" => {
+                  "code" => "SR",
+                  "description" => "Your package was released by the customs agency.",
+                  "simplifiedTextDescription" => "Delivered",
+                  "statusCode" => "003",
+                  "type" => "X"
+                },
+                "deliveryDate" => [
+                  {
+                    "date" => "null",
+                    "type" => "null"
+                  }
+                ],
+                "deliveryInformation" => {
+                  "location" => "Front Door",
+                  "receivedBy" => "",
+                  "signature" => {
+                    "image" => "null"
+                  },
+                  "pod" => {
+                    "content" => "null"
+                  }
+                },
+                "deliveryTime" => {
+                  "endTime" => "string",
+                  "startTime" => "string",
+                  "type" => "string"
+                },
+                "milestones" => [
+                  {
+                    "category" => "null",
+                    "code" => "null",
+                    "current" => "null",
+                    "description" => "null",
+                    "linkedActivity" => "null",
+                    "state" => "null",
+                    "subMilestone" => "null"
+                  }
+                ],
+                "packageAddress" => [
+                  {
+                    "address" => "null",
+                    "attentionName" => "null",
+                    "name" => "null",
+                    "type" => "null"
+                  }
+                ],
+                "packageCount" => 2,
+                "paymentInformation" => [
+                  {
+                    "amount" => "null",
+                    "currency" => "null",
+                    "id" => "null",
+                    "paid" => "null",
+                    "paymentMethod" => "null",
+                    "type" => "null"
+                  }
+                ],
+                "referenceNumber" => [
+                  {
+                    "number" => "null",
+                    "type" => "null"
+                  }
+                ],
+                "service" => {
+                  "code" => "518",
+                  "description" => "UPS Ground",
+                  "levelCode" => "011"
+                },
+                "statusCode" => "string",
+                "statusDescription" => "string",
+                "suppressionIndicators" => "DETAIL",
+                "trackingNumber" => "string",
+                "weight" => {
+                  "unitOfMeasurement" => "string",
+                  "weight" => "string"
+                }
+              }
+            ],
+            "userRelation" => "MYCHOICE_HOME",
+            "warnings" => [
+              {
+                "code" => "string",
+                "message" => "string"
+              }
+            ]
+          }
+        ]
+      }
+    }
   end
 
   def track_ups_mi_not_found_response
-    "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-    <TrackResponse>
-      <Response>
-        <TransactionReference>
-          <CustomerContext>4951bd50-6af6-4d92-abb4-c5025de11d42</CustomerContext>
-          <XpciVersion>1.0</XpciVersion>
-        </TransactionReference>
-        <ResponseStatusCode>0</ResponseStatusCode>
-        <ResponseStatusDescription>Failure</ResponseStatusDescription>
-        <Error>
-          <ErrorSeverity>Hard</ErrorSeverity>
-          <ErrorCode>155002</ErrorCode>
-          <ErrorDescription>Mail Innovations Tracking Information not found.</ErrorDescription>
-        </Error>
-      </Response>
-    </TrackResponse>"
+    {
+      "trackResponse" => {
+        "shipment" => [{
+          "inquiryNumber" => "1Z9912350341235622",
+          "warnings" => [{"code" => "TW0001", "message" => "Tracking Information Not Found"}]
+        }]
+      }
+    }
   end
 
   def track_ups_not_found_response
@@ -1373,343 +1559,6 @@ module MockResponses
   end
 
   def track_ups_surepost_response
-    "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-    <TrackResponse>
-       <Response>
-          <TransactionReference>
-             <CustomerContext>320f2ecb-ff3e-4d5f-b93b-43becd9a046a</CustomerContext>
-             <XpciVersion>1.0</XpciVersion>
-          </TransactionReference>
-          <ResponseStatusCode>1</ResponseStatusCode>
-          <ResponseStatusDescription>Success</ResponseStatusDescription>
-       </Response>
-       <Shipment>
-          <Shipper>
-             <ShipperNumber>1161WA</ShipperNumber>
-             <Address>
-                <AddressLine1>S 507 2ND ST</AddressLine1>
-                <City>MILWAUKEE</City>
-                <StateProvinceCode>WI</StateProvinceCode>
-                <PostalCode>532041614</PostalCode>
-                <CountryCode>US</CountryCode>
-             </Address>
-          </Shipper>
-          <ShipTo>
-             <Address>
-                <City>LOS GATOS</City>
-                <StateProvinceCode>CA</StateProvinceCode>
-                <PostalCode>95032</PostalCode>
-                <CountryCode>US</CountryCode>
-             </Address>
-          </ShipTo>
-          <ShipmentWeight>
-             <UnitOfMeasurement>
-                <Code>LBS</Code>
-             </UnitOfMeasurement>
-             <Weight>4.80</Weight>
-          </ShipmentWeight>
-          <Service>
-             <Code>093</Code>
-             <Description>UPS SurePost</Description>
-          </Service>
-          <ReferenceNumber>
-             <Code>01</Code>
-             <Value>M681861103-1025</Value>
-          </ReferenceNumber>
-          <ShipmentIdentificationNumber>1Z1161WAYW93644228</ShipmentIdentificationNumber>
-          <PickupDate>20180522</PickupDate>
-          <Package>
-             <TrackingNumber>1Z1161WAYW93644228</TrackingNumber>
-             <DeliveryIndicator>N</DeliveryIndicator>
-             <RescheduledDeliveryDate>20180531</RescheduledDeliveryDate>
-             <PackageServiceOptions>
-                <USPSPICNumber>92612904851879541400755181</USPSPICNumber>
-             </PackageServiceOptions>
-             <Activity>
-                <ActivityLocation>
-                   <Address />
-                   <Description>Dock</Description>
-                </ActivityLocation>
-                <Status>
-                   <StatusType>
-                      <Code>I</Code>
-                      <Description>Received by the local post office</Description>
-                   </StatusType>
-                   <StatusCode>
-                      <Code>YH</Code>
-                   </StatusCode>
-                </Status>
-                <Date>20180530</Date>
-                <Time>034200</Time>
-             </Activity>
-             <Activity>
-                <ActivityLocation>
-                   <Address>
-                      <City>CAMPBELL</City>
-                      <PostalCode>95008</PostalCode>
-                      <CountryCode>US</CountryCode>
-                   </Address>
-                   <Code>AI</Code>
-                   <Description>Dock</Description>
-                   <SignedForByName>TO</SignedForByName>
-                </ActivityLocation>
-                <Status>
-                   <StatusType>
-                      <Code>D</Code>
-                      <Description>Package transferred to post office</Description>
-                   </StatusType>
-                   <StatusCode>
-                      <Code>LX</Code>
-                   </StatusCode>
-                </Status>
-                <Date>20180529</Date>
-                <Time>121524</Time>
-             </Activity>
-             <Activity>
-                <ActivityLocation>
-                   <Address>
-                      <City>San Jose</City>
-                      <StateProvinceCode>CA</StateProvinceCode>
-                      <CountryCode>US</CountryCode>
-                   </Address>
-                   <Description>Dock</Description>
-                </ActivityLocation>
-                <Status>
-                   <StatusType>
-                      <Code>I</Code>
-                      <Description>Destination Scan</Description>
-                   </StatusType>
-                   <StatusCode>
-                      <Code>YP</Code>
-                   </StatusCode>
-                </Status>
-                <Date>20180529</Date>
-                <Time>050247</Time>
-             </Activity>
-             <Activity>
-                <ActivityLocation>
-                   <Address>
-                      <City>San Jose</City>
-                      <StateProvinceCode>CA</StateProvinceCode>
-                      <CountryCode>US</CountryCode>
-                   </Address>
-                   <Description>Dock</Description>
-                </ActivityLocation>
-                <Status>
-                   <StatusType>
-                      <Code>I</Code>
-                      <Description>Destination Scan</Description>
-                   </StatusType>
-                   <StatusCode>
-                      <Code>DS</Code>
-                   </StatusCode>
-                </Status>
-                <Date>20180526</Date>
-                <Time>082028</Time>
-             </Activity>
-             <Activity>
-                <ActivityLocation>
-                   <Address>
-                      <City>San Jose</City>
-                      <StateProvinceCode>CA</StateProvinceCode>
-                      <CountryCode>US</CountryCode>
-                   </Address>
-                   <Description>Dock</Description>
-                </ActivityLocation>
-                <Status>
-                   <StatusType>
-                      <Code>X</Code>
-                      <Description>/ Package in transit and scheduled for UPS delivery attempt to recipient on next UPS business day.</Description>
-                   </StatusType>
-                   <StatusCode>
-                      <Code>6N</Code>
-                   </StatusCode>
-                </Status>
-                <Date>20180526</Date>
-                <Time>081930</Time>
-             </Activity>
-             <Activity>
-                <ActivityLocation>
-                   <Address>
-                      <City>San Jose</City>
-                      <StateProvinceCode>CA</StateProvinceCode>
-                      <CountryCode>US</CountryCode>
-                   </Address>
-                   <Description>Dock</Description>
-                </ActivityLocation>
-                <Status>
-                   <StatusType>
-                      <Code>I</Code>
-                      <Description>Arrival Scan</Description>
-                   </StatusType>
-                   <StatusCode>
-                      <Code>AR</Code>
-                   </StatusCode>
-                </Status>
-                <Date>20180526</Date>
-                <Time>055500</Time>
-             </Activity>
-             <Activity>
-                <ActivityLocation>
-                   <Address>
-                      <City>Oakland</City>
-                      <StateProvinceCode>CA</StateProvinceCode>
-                      <CountryCode>US</CountryCode>
-                   </Address>
-                   <Description>Dock</Description>
-                </ActivityLocation>
-                <Status>
-                   <StatusType>
-                      <Code>I</Code>
-                      <Description>Departure Scan</Description>
-                   </StatusType>
-                   <StatusCode>
-                      <Code>DP</Code>
-                   </StatusCode>
-                </Status>
-                <Date>20180526</Date>
-                <Time>050500</Time>
-             </Activity>
-             <Activity>
-                <ActivityLocation>
-                   <Address>
-                      <City>Oakland</City>
-                      <StateProvinceCode>CA</StateProvinceCode>
-                      <CountryCode>US</CountryCode>
-                   </Address>
-                   <Description>Dock</Description>
-                </ActivityLocation>
-                <Status>
-                   <StatusType>
-                      <Code>I</Code>
-                      <Description>Arrival Scan</Description>
-                   </StatusType>
-                   <StatusCode>
-                      <Code>AR</Code>
-                   </StatusCode>
-                </Status>
-                <Date>20180525</Date>
-                <Time>194300</Time>
-             </Activity>
-             <Activity>
-                <ActivityLocation>
-                   <Address>
-                      <City>San Pablo</City>
-                      <StateProvinceCode>CA</StateProvinceCode>
-                      <CountryCode>US</CountryCode>
-                   </Address>
-                   <Description>Dock</Description>
-                </ActivityLocation>
-                <Status>
-                   <StatusType>
-                      <Code>I</Code>
-                      <Description>Departure Scan</Description>
-                   </StatusType>
-                   <StatusCode>
-                      <Code>DP</Code>
-                   </StatusCode>
-                </Status>
-                <Date>20180525</Date>
-                <Time>190200</Time>
-             </Activity>
-             <Activity>
-                <ActivityLocation>
-                   <Address>
-                      <City>San Pablo</City>
-                      <StateProvinceCode>CA</StateProvinceCode>
-                      <CountryCode>US</CountryCode>
-                   </Address>
-                   <Description>Dock</Description>
-                </ActivityLocation>
-                <Status>
-                   <StatusType>
-                      <Code>I</Code>
-                      <Description>Arrival Scan</Description>
-                   </StatusType>
-                   <StatusCode>
-                      <Code>AR</Code>
-                   </StatusCode>
-                </Status>
-                <Date>20180525</Date>
-                <Time>163500</Time>
-             </Activity>
-             <Activity>
-                <ActivityLocation>
-                   <Address>
-                      <City>Oak Creek</City>
-                      <StateProvinceCode>WI</StateProvinceCode>
-                      <CountryCode>US</CountryCode>
-                   </Address>
-                   <Description>Dock</Description>
-                </ActivityLocation>
-                <Status>
-                   <StatusType>
-                      <Code>I</Code>
-                      <Description>Departure Scan</Description>
-                   </StatusType>
-                   <StatusCode>
-                      <Code>DP</Code>
-                   </StatusCode>
-                </Status>
-                <Date>20180523</Date>
-                <Time>074200</Time>
-             </Activity>
-             <Activity>
-                <ActivityLocation>
-                   <Address>
-                      <City>Oak Creek</City>
-                      <StateProvinceCode>WI</StateProvinceCode>
-                      <CountryCode>US</CountryCode>
-                   </Address>
-                   <Description>Dock</Description>
-                </ActivityLocation>
-                <Status>
-                   <StatusType>
-                      <Code>I</Code>
-                      <Description>Origin Scan</Description>
-                   </StatusType>
-                   <StatusCode>
-                      <Code>OR</Code>
-                   </StatusCode>
-                </Status>
-                <Date>20180522</Date>
-                <Time>220616</Time>
-             </Activity>
-             <Activity>
-                <ActivityLocation>
-                   <Address>
-                      <CountryCode>US</CountryCode>
-                   </Address>
-                   <Description>Dock</Description>
-                </ActivityLocation>
-                <Status>
-                   <StatusType>
-                      <Code>M</Code>
-                      <Description>Order Processed: Ready for UPS</Description>
-                   </StatusType>
-                   <StatusCode>
-                      <Code>MP</Code>
-                   </StatusCode>
-                </Status>
-                <Date>20180522</Date>
-                <Time>111527</Time>
-             </Activity>
-             <PackageWeight>
-                <UnitOfMeasurement>
-                   <Code>LBS</Code>
-                </UnitOfMeasurement>
-                <Weight>4.80</Weight>
-             </PackageWeight>
-             <ReferenceNumber>
-                <Code>01</Code>
-                <Value>M681861103-1025</Value>
-             </ReferenceNumber>
-             <Accessorial>
-                <Code>010</Code>
-                <Description>Hundredweight</Description>
-             </Accessorial>
-          </Package>
-       </Shipment>
-    </TrackResponse>"
+    track_ups_response
   end
 end

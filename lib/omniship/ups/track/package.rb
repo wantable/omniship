@@ -21,7 +21,7 @@ module Omniship
         end
 
         def alternate_tracking
-          numbers = @root['AlternateTrackingNumber']
+          numbers = @root['AlternateTrackingNumber'] || []
 
           AlternateTracking.new(numbers.first) unless numbers.empty?
         end

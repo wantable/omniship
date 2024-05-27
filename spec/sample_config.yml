@@ -1,18 +1,21 @@
 Omniship:
   debug: false
   track_timeout: 5
-  
+
   UPS:
     username: '<%=ENV["UPS_USERNAME"]%>'
     password: '<%=ENV["UPS_PASSWORD"]%>'
     token: '<%=ENV["UPS_TOKEN"]%>'
+    client_id: '<%=ENV["UPS_CLIENT_ID"]%>'
+    client_secret: '<%=ENV["UPS_CLIENT_SECRET"]%>'
     test: false
+    source: Wantable, Inc.
 
   USPS:
     userid: '<%=ENV["USPS_USERID"]%>'
     password: '<%=ENV["USPS_PASSWORD"]%>'
     client_ip: 127.0.0.1
-    source_id: Wantable, Inc. 
+    source_id: Wantable, Inc.
 
     retailer:
       name: Wantable Inc
@@ -24,8 +27,8 @@ Omniship:
       zip5: 53204
     pdu:
       po_box: PO Box 514033
-      city: Milwaukee 
-      state: WI 
+      city: Milwaukee
+      state: WI
       zip5: 53203
 
   Landmark:
