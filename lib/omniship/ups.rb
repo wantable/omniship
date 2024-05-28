@@ -12,6 +12,9 @@ module Omniship
       attr_accessor :username
       attr_accessor :password
       attr_accessor :token
+      attr_accessor :client_id
+      attr_accessor :client_secret
+      attr_accessor :source
       attr_accessor :test
     end
 

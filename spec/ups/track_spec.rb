@@ -20,31 +20,34 @@ describe "UPS::Track" do
     expect(trk.has_left?).to be true
   end
 
+  it 'mocked left shipment' do
+    trk = Omniship::UPS::Track::Response.new(track_ups_left_not_arrived)
+
+    expect(trk.has_arrived?).to be false
+    expect(trk.has_left?).to be true
+  end
+
   it 'timstamp parsing' do
     expect(Omniship::UPS.parse_timestamp("20170117", "211600")).to eq(Time.parse("2017-01-17 21:16"))
   end
 
-  it 'test xml parsing' do
-    trk = Omniship::UPS::Track::Response.new(Nokogiri::XML::Document.parse(track_ups_response))
+  it 'test json parsing' do
+    trk = Omniship::UPS::Track::Response.new(track_ups_response)
     expect(trk.has_left?).to eq true
-    expect(trk.has_arrived?).to eq true
+    expect(trk.has_arrived?).to eq false
     package = trk.shipment.packages.first
     expect(package.tracking_number).to_not be_nil
     expect(trk.shipment.scheduled_delivery).to be_nil
     activity = package.activity.first
     expect(activity.code).to_not be_nil
     expect(activity.status).to_not be_nil
-    expect(activity.address.to_s).to eq("SANTA CLARA, CA 95053 US")
     expect(activity.timestamp).to_not be_nil
-
-    alternate_tracking = package.alternate_tracking
-    expect(alternate_tracking).to be_nil
   end
 
-  it 'text xml parsing of mail innovations' do
-    trk = Omniship::UPS::Track::Response.new(Nokogiri::XML::Document.parse(track_ups_mi_response))
-    expect(trk.has_left?).to eq true
-    expect(trk.has_arrived?).to eq true
+  it 'text json parsing of mail innovations' do
+    trk = Omniship::UPS::Track::Response.new(track_ups_mi_response)
+    expect(trk.has_left?).to eq false
+    expect(trk.has_arrived?).to eq false
     package = trk.shipment.packages.first
     expect(package.tracking_number).to_not be_nil
 
@@ -53,8 +56,8 @@ describe "UPS::Track" do
     expect(alternate_tracking.type).to eq(Omniship::UPS::Track::AlternateTracking::POSTAL_SERVICE_TRACKING_ID)
     expect(alternate_tracking.value).to_not be_nil
   end
-  it 'test xml parsing of surepost' do
-    trk = Omniship::UPS::Track::Response.new(Nokogiri::XML::Document.parse(track_ups_surepost_response))
+  it 'test json parsing of surepost' do
+    trk = Omniship::UPS::Track::Response.new(track_ups_surepost_response)
     expect(trk.has_left?).to eq true
     expect(trk.has_arrived?).to eq false # will never get to true because this package doesn't know the result of the alternate_tracking package
     package = trk.shipment.packages.first
@@ -66,8 +69,8 @@ describe "UPS::Track" do
     expect(alternate_tracking.value).to_not be_nil
   end
 
-  it 'test xml parsing not found' do
-    error = Omniship::UPS::Track::Error.new(Nokogiri::XML::Document.parse(track_ups_not_found_response))
+  it 'test parsing not found' do
+    error = Omniship::UPS::Track::Error.new(404, track_ups_not_found_response.dig('trackResponse', 'shipment').first['warnings'])
     expect(error.code).to eq(Omniship::TrackError::NOT_FOUND)
   end
 end

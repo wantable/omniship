@@ -2,21 +2,20 @@ module Omniship
   module UPS
     module Track
       class Address < Omniship::Base
-
         def city
-          @root.xpath('City/text()').to_s
+          @root['city']
         end
 
         def state
-          @root.xpath('StateProvinceCode/text()').to_s
+          @root['stateProvince']
         end
 
         def country
-          @root.xpath('CountryCode/text()').to_s
+          @root['country']
         end
 
         def postal_code
-          @root.xpath('PostalCode/text()').to_s
+          @root['postalCode']
         end
 
         def to_s
