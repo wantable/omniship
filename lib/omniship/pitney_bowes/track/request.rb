@@ -8,7 +8,7 @@ module Omniship
         LIVE_URL = 'https://shipping-api.pitneybowes.com/'
 
         TOKEN_PATH = 'oauth/token'
-        TRACK_PATH = 'shippingservices/v1/tracking/{identifier}' # ?packageIdentifierType=TrackingNumber
+        TRACK_PATH = 'shippingservices/v1/tracking/'
 
         def self.endpoint
           if PitneyBowes.test == true
