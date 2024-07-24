@@ -1,4 +1,3 @@
-require 'omniship/pitney_bowes/track/alternate_tracking'
 require 'omniship/pitney_bowes/track/activity'
 require 'omniship/pitney_bowes/track/address'
 require 'omniship/pitney_bowes/track/package'
