@@ -19,7 +19,7 @@ module Omniship
 
           return if date.nil? || date.empty?
 
-          Omniship::PitneyBowes.parse_timestamp(root['date'], root['time'])
+          Omniship::PitneyBowes.parse_timestamp(date, time, offset)
         end
       end
     end
