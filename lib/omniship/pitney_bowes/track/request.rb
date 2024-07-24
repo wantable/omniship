@@ -90,17 +90,17 @@ module Omniship
             headers: {
               'Authorization' => "Bearer #{oauth_client_credentials}",
               accept: :json,
-              'Content-Type' => 'application/json; charset=UTF-8'
+              'Content-Type' => 'application/json; charset=UTF-8',
+              params: {
+                carrier: 'PBCS',
+                packageIdentifierType: 'TrackingNumber'
+              }
             },
-            url: "#{tracking_url}?carrier=PBCS&packageIdentifierType=TrackingNumber",
+            url: tracking_url,
             content_type: 'application/json',
             accept: 'application/json',
             timeout: Omniship.track_timeout,
-            open_timeout: Omniship.track_timeout# ,
-            # params: {
-            #   carrier: 'PBCS',
-            #   packageIdentifierType: 'TrackingNumber'
-            # }
+            open_timeout: Omniship.track_timeout
           )
         rescue RestClient::Unauthorized => e
           e.response
