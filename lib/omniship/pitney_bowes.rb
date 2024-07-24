@@ -6,8 +6,8 @@ module Omniship
     TRACKING_REGEX = [/^920[0-9]{23}$/]
     TRACKING_URL = "https://trackpb.shipment.co/track/"
     DATE_FORMAT = "%Y-%m-%d"
-    TIMESTAMP_FORMAT = "%Y-%m-%d %H-%M-%S"
-    TIMESTAMP_FORMAT_WITH_OFFSET = "%Y-%m-%d %H-%M-%S %z"
+    TIMESTAMP_FORMAT = "#{DATE_FORMAT} %H:%M:%S"
+    TIMESTAMP_FORMAT_WITH_OFFSET = "#{TIMESTAMP_FORMAT} %z"
 
     class << self
       attr_accessor :api_key, :api_secret, :test
