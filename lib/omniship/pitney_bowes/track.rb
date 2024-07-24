@@ -1,0 +1,8 @@
+require 'omniship/pitney_bowes/track/alternate_tracking'
+require 'omniship/pitney_bowes/track/activity'
+require 'omniship/pitney_bowes/track/address'
+require 'omniship/pitney_bowes/track/package'
+require 'omniship/pitney_bowes/track/shipment'
+require 'omniship/pitney_bowes/track/error'
+require 'omniship/pitney_bowes/track/request'
+require 'omniship/pitney_bowes/track/response'
