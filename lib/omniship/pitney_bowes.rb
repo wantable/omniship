@@ -3,7 +3,7 @@ require 'omniship/pitney_bowes/track'
 module Omniship
   module PitneyBowes
     LABEL = 'PitneyBowes'.freeze
-    TRACKING_REGEX = [/^920[0-9]{23}$/
+    TRACKING_REGEX = [/^920[0-9]{23}$/]
     TRACKING_URL = "https://trackpb.shipment.co/track/"
     DATE_FORMAT = "%Y-%m-%d"
     TIMESTAMP_FORMAT = "%Y-%m-%d %H-%M-%S"
