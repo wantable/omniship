@@ -92,15 +92,15 @@ module Omniship
               accept: :json,
               'Content-Type' => 'application/json; charset=UTF-8'
             },
-            url: tracking_url,
+            url: "#{tracking_url}?carrier=PBCS&packageIdentifierType=TrackingNumber",
             content_type: 'application/json',
             accept: 'application/json',
             timeout: Omniship.track_timeout,
-            open_timeout: Omniship.track_timeout,
-            params: {
-              carrier: 'PBCS',
-              packageIdentifierType: 'TrackingNumber'
-            }
+            open_timeout: Omniship.track_timeout# ,
+            # params: {
+            #   carrier: 'PBCS',
+            #   packageIdentifierType: 'TrackingNumber'
+            # }
           )
         rescue RestClient::Unauthorized => e
           e.response
