@@ -88,7 +88,7 @@ module Omniship
           RestClient::Request.execute(
             method: :get,
             headers: {
-              'Authorization' => "Bearer #{oauth_client_credentials}"
+              'Authorization' => "Bearer #{oauth_client_credentials}",
               accept: :json,
               'Content-Type' => 'application/json; charset=UTF-8'
             },
