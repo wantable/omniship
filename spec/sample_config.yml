@@ -45,3 +45,8 @@ Omniship:
   Newgistics:
     merchant_id: '<%=ENV["NEWGISTICS_MERCHANT_ID"]%>'
     api_key: '<%=ENV["NEWGISTICS_API_KEY"]%>'
+
+  PitneyBowes:
+    api_key: '<%=ENV["PITNEY_BOWES_API_KEY"]%>'
+    api_secret: '<%=ENV["PITNEY_BOWES_API_SECRET"]%>'
+    test: true

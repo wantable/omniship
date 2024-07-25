@@ -50,6 +50,7 @@ RSpec.configure do |config|
                                           # from https://mercury.landmarkglobal.com/clients/KnowledgeBase/index.php?topic_name=Track+API+Request&hash=539fd53b59e3bb12d203f45a912eeaf2
     Omniship::UPS.test = true
     Omniship::USPS.test = true
+    Omniship::PitneyBowes.test = true
     Omniship::Newgistics.test = true
   }
 end
