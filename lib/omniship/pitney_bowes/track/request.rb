@@ -10,7 +10,7 @@ module Omniship
         TOKEN_PATH = 'oauth/token'
         TRACK_PATH = 'shippingservices/v1/tracking/'
 
-        def self.endpoint
+        def self.base_url
           if PitneyBowes.test == true
             TEST_URL
           else
@@ -32,11 +32,6 @@ module Omniship
             raise Error.new(raw_response.code, response.dig('response', 'errors'))
           end
 
-          # # Sometimes the tracking number is technically valid but doesn't actually exist. Still want to raise not found
-          # if raw_response.code == 200 && response.dig('trackResponse', 'shipment')&.first&.key?('warnings')
-          #   raise Error.new(404, response.dig('trackResponse', 'shipment').first['warnings'])
-          # end
-
           Response.new(response)
         end
 
@@ -49,7 +44,7 @@ module Omniship
 
           raw_response = RestClient::Request.execute(
             method: :post,
-            url: endpoint + TOKEN_PATH,
+            url: base_url + TOKEN_PATH,
             timeout: 20,
             headers: {
               content_type: 'application/x-www-form-urlencoded',
@@ -81,7 +76,7 @@ module Omniship
         end
 
         def self.get_response(tracking_number)
-          tracking_url = endpoint + TRACK_PATH + tracking_number
+          tracking_url = base_url + TRACK_PATH + tracking_number
 
           puts tracking_url if Omniship.debug
 
