@@ -59,6 +59,10 @@ Omniship::DHLGM.username = 'johndoe'
 Omniship::DHLGM.password = '1234567890'
 Omniship::DHLGM.mailer_id = '1234567890' # this is required to detect the shipper type, since USPS and DHL are otherwise indistinguisiblle
 
+Omniship::PitneyBowes.api_key = 'XXXX'
+Omniship::PitneyBowes.api_secret = 'YYYY'
+Omniship::PitneyBowes.test = true/false
+
 Omniship.debug = true # with this enabled all xml request's and responses will be outputed to the log
 
 Omniship.track_timeout = 5 # timeout for a tracking request in seconds. Only implemented on UPS, USPS, DHLGM. Default = 10 seconds
@@ -105,6 +109,11 @@ Omniship:
   DHLGM:
     username: johndoe
     password: 1234567890
+
+  PitneyBowes:
+    api_key: YYYY
+    api_secret: XXXX
+    test: false
 ```
 
 
@@ -282,6 +291,29 @@ trk.shipment.class
 
 trk.shipment.scheduled_delivery - not supported by DHL Global Mail
 # => nil
+
+trk.shipment.packages.first.has_left?
+# => true / false
+
+trk.shipment.packages.first.has_arrived?
+# => true / false
+```
+
+PitneyBowes
+---------------
+
+Track
+
+```ruby
+trk = Omniship::PitneyBowes.track('12345')
+trk.class
+# => Omniship::PitneyBowes::Track::Response
+
+trk.shipment.class
+# => Omniship::PitneyBowes::Track::Shipment
+
+trk.shipment.scheduled_delivery
+# => nil / date
 
 trk.shipment.packages.first.has_left?
 # => true / false
