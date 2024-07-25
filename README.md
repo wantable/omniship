@@ -346,6 +346,7 @@ Omniship.tracking_url('1z3050790327433970')
 
 TODO
 ------
+- Add rubocop or some code standardization
 - Convert tests to use [webmock](https://github.com/bblimke/webmock) or similar strategy instead of calling the api's.
   - Unskip Landmark and Newgistics tests once they are passing with valid credentials. Search for "I no longer have valid test api credentials"
 - Fix time zone issue with Newgistics.parse_timestamp
