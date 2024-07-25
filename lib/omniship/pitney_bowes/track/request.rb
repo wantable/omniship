@@ -45,7 +45,6 @@ module Omniship
           raw_response = RestClient::Request.execute(
             method: :post,
             url: base_url + TOKEN_PATH,
-            timeout: 20,
             headers: {
               content_type: 'application/x-www-form-urlencoded',
               Authorization: "Basic <#{base64_oauth_creds}>"
