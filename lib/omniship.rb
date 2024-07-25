@@ -100,7 +100,7 @@ module Omniship
       if pitney_bowes = omniship['PitneyBowes']
         PitneyBowes.api_key = pitney_bowes['api_key']
         PitneyBowes.api_secret = pitney_bowes['api_secret']
-        PitneyBowes.test = pitney_bowes['test'].to_s
+        PitneyBowes.test = pitney_bowes['test']
       end
     end
     nil
