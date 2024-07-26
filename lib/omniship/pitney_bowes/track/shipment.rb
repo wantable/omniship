@@ -11,7 +11,7 @@ module Omniship
 
           date = root['estimatedDeliveryDate']
           time = root['estimatedDeliveryTime']
-          time = root['estimatedDeliveryTimeOffset']
+          offset = root['estimatedDeliveryTimeOffset']
 
           Omniship::PitneyBowes.parse_timestamp(date, time, offset)
         end
