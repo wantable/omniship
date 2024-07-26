@@ -1569,4 +1569,43 @@ module MockResponses
   def track_ups_surepost_response
     track_ups_response
   end
+
+  def track_pitney_bowes_response
+    {
+      'packageCount' => 1,
+      'reattemptDate' => nil,
+      'reattemptTime' => nil,
+      'signedBy' => nil,
+      'senderAddress' => { 'name' => nil, 'address1' => nil, 'address2' => nil, 'address3' => nil, 'city' => nil, 'stateOrProvince' => nil, 'postalCode' => nil, 'country' => nil },
+      'requestedIdentifier' => '92023903406069000000000285',
+      'clientId' => nil, 'trackingNumber' => '4205690192023903406069000000000285',
+      'referenceNumber' => 'W435706480',
+      'smartLabelBarcode' => '725109850102377001010000000000W435706480N',
+      'carrier' => 'PBCS',
+      'serviceName' => 'Parcel Return Service',
+      'serviceCode' => 'RP',
+      'estimatedDeliveryDate' => nil,
+      'estimatedDeliveryTime' => nil,
+      'estimatedDeliveryTimeOffset' => nil,
+      'weight' => '4.06',
+      'weightUOM' => 'LBS',
+      'dimension' => nil,
+      'deliveryDate' => nil,
+      'deliveryTime' => nil,
+      'deliveryTimeOffset' => nil,
+      'deliveryProofUrl' => nil,
+      'shipDate' => nil, 'shipTime' => nil, 'shipTimeOffset' => nil,
+      'destinationAddress' => { 'name' => nil, 'address1' => nil, 'address2' => nil, 'address3' => nil, 'city' => nil, 'stateOrProvince' => nil, 'country' => nil, 'postalCode' => nil },
+      'deliveryLocation' => nil,
+      'deliveryLocationDescription' => nil,
+      'scanDetailsList' => [
+        { 'standardizedEventCode' => 'LC', 'standardizedEventDescription' => 'Label created', 'l1Code' => 'LC', 'l1Description' => 'Label Created', 'eventDate' => '2024-07-24', 'eventTime' => '12:20:26', 'eventTimeOffset' => '-07:00', 'trackingUrl' => nil, 'latitude' => nil, 'longitude' => nil, 'locationUnit' => nil, 'eventLeg' => 'FML', 'eventType' => 'RTN', 'authorizedAgent' => nil, 'scanType' => 'LC', 'scanDescription' => 'Label created', 'packageStatus' => 'Manifest', 'l2Description' => nil, 'eventCity' => 'Olympia', 'eventStateOrProvince' => 'WA', 'postalCode' => '98501-6202', 'country' => 'US' }
+      ],
+      'currentStatus' => { 'standardizedEventCode' => 'LC', 'standardizedEventDescription' => 'Label created', 'l1Code' => 'LC', 'l1Description' => 'Label Created', 'eventDate' => '2024-07-24', 'eventTime' => '12:20:26', 'eventTimeOffset' => '-07:00', 'trackingUrl' => nil, 'latitude' => nil, 'longitude' => nil, 'locationUnit' => nil, 'eventLeg' => 'FML', 'eventType' => 'RTN', 'authorizedAgent' => nil, 'packageStatus' => 'Manifest', 'scanType' => 'LC', 'scanDescription' => 'Label created', 'l2Description' => nil, 'eventCity' => 'Olympia', 'eventStateOrProvince' => 'WA', 'postalCode' => '98501-6202', 'country' => 'US' },
+      'status' => 'Manifest',
+      'updatedDate' => '2024-07-24',
+      'updatedTime' => '12:20:26',
+      'lastPackageStatusLocation' => 'Olympia,WA,98501-6202'
+    }
+  end
 end
