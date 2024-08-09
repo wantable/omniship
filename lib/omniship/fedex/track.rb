@@ -1,0 +1,7 @@
+require 'omniship/fedex/track/activity'
+require 'omniship/fedex/track/address'
+require 'omniship/fedex/track/package'
+require 'omniship/fedex/track/shipment'
+require 'omniship/fedex/track/error'
+require 'omniship/fedex/track/request'
+require 'omniship/fedex/track/response'

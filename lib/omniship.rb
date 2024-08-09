@@ -20,7 +20,7 @@ require 'omniship/landmark'
 require 'omniship/usps'
 require 'omniship/dhlgm'
 require 'omniship/dhl'
-require 'omniship/fed_ex'
+require 'omniship/fedex'
 require 'omniship/newgistics'
 require 'omniship/pitney_bowes'
 
@@ -101,6 +101,12 @@ module Omniship
         PitneyBowes.api_key = pitney_bowes['api_key']
         PitneyBowes.api_secret = pitney_bowes['api_secret']
         PitneyBowes.test = pitney_bowes['test']
+      end
+
+      if fedex = omniship['Fedex']
+        Fedex.api_key = fedex['api_key']
+        Fedex.api_secret = fedex['api_secret']
+        Fedex.test = fedex['test']
       end
     end
     nil
