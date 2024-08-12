@@ -73,7 +73,7 @@ module Omniship
           end
 
           def get_response(tracking_number)
-            puts tracking_url if Omniship.debug
+            puts tracking_number if Omniship.debug
 
             RestClient::Request.execute(
               method: :post,
