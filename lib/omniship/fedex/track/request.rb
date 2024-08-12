@@ -6,7 +6,7 @@ module Omniship
         LIVE_URL = 'https://apis.fedex.com/'.freeze
 
         # test and live are the same?
-        OAUTH_PATH = 'authorization/v1/oauth/token'.freeze
+        OAUTH_PATH = 'oauth/token'.freeze
         TRACK_PATH = 'track/v1/trackingnumbers'.freeze
 
         class << self
