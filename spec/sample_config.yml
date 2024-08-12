@@ -52,6 +52,6 @@ Omniship:
     test: true
 
   FedEx:
-    api_key: '<%=ENV["FEDEX_API_KEY"]%>'
-    api_secret: '<%=ENV["FEDEX_API_SECRET"]%>'
+    client_id: '<%=ENV["FEDEX_CLIENT_KEY"]%>'
+    client_secret: '<%=ENV["FEDEX_CLIENT_SECRET"]%>'
     test: true

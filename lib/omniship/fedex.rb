@@ -12,7 +12,7 @@ module Omniship
     TIMESTAMP_FORMAT_WITH_OFFSET = "%Y-%m-%dT%H:%M:%S %z"
 
     class << self
-      attr_accessor :api_key, :api_secret, :test
+      attr_accessor :client_id, :client_secret, :test
     end
 
     def self.tracking_test?(tracking)
