@@ -7,7 +7,7 @@ module Omniship
         end
 
         def scheduled_delivery
-          packages.detect { |package| package.delivery_dates.present? }&.delivery_dates
+          packages.detect { |package| !package.delivery_dates.nil? }&.delivery_dates
         end
       end
     end

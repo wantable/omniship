@@ -36,7 +36,7 @@ describe "Newgistics::Track" do
   end
 
   it 'test xml parsing' do 
-    trk = Omniship::Newgistics::Track::Response.new(JSON.parse(track_newgistics_response))
+    trk = Omniship::Newgistics::Track::Response.new(track_newgistics_response)
     expect(trk.has_left?).to eq true
     expect(trk.has_arrived?).to eq true
     package = trk.shipment.packages.first
@@ -50,7 +50,7 @@ describe "Newgistics::Track" do
   end
 
   it 'test xml parsing not found' do 
-    error = Omniship::Newgistics::Track::Error.new(JSON.parse(track_newgistics_not_found_response)["Packages"].first)
+    error = Omniship::Newgistics::Track::Error.new(track_newgistics_not_found_response["Packages"].first)
     expect(error.code).to eq(Omniship::TrackError::NOT_FOUND)
   end
 end

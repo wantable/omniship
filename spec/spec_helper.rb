@@ -31,7 +31,6 @@ UPS_VALID_TEST_NUMBER_ORIGIN_SCAN = '1Z12345E1392654435'
 UPS_INVALID_TEST_NUMBER = '1Z12345E020527079'
 UPSMI_TEST_NUMBER = 'cgish000116630'
 
-
 RSpec.configure do |config|
 
   config.include MockResponses
@@ -51,6 +50,7 @@ RSpec.configure do |config|
     Omniship::UPS.test = true
     Omniship::USPS.test = true
     Omniship::PitneyBowes.test = true
+    Omniship::FedEx.test = true
     Omniship::Newgistics.test = true
   }
 end
