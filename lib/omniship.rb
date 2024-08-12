@@ -104,8 +104,8 @@ module Omniship
       end
 
       if fedex = omniship['FedEx']
-        FedEx.client_id = fedex['api_key']
-        FedEx.client_secret = fedex['api_secret']
+        FedEx.client_id = fedex['client_id']
+        FedEx.client_secret = fedex['client_secret']
         FedEx.test = fedex['test']
       end
     end
