@@ -98,7 +98,7 @@ module Omniship
               timeout: Omniship.track_timeout,
               open_timeout: Omniship.track_timeout
             )
-          rescue RestClient::Unauthorized => e
+          rescue RestClient::Unauthorized, RestClient::Forbidden => e
             e.response
           end
         end
