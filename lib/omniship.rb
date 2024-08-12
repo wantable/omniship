@@ -103,10 +103,10 @@ module Omniship
         PitneyBowes.test = pitney_bowes['test']
       end
 
-      if fedex = omniship['Fedex']
-        Fedex.api_key = fedex['api_key']
-        Fedex.api_secret = fedex['api_secret']
-        Fedex.test = fedex['test']
+      if fedex = omniship['FedEx']
+        FedEx.api_key = fedex['api_key']
+        FedEx.api_secret = fedex['api_secret']
+        FedEx.test = fedex['test']
       end
     end
     nil

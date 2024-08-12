@@ -1,5 +1,5 @@
 module Omniship
-  module Fedex
+  module FedEx
     module Track
       class Response < Omniship::Base
         # https://developer.fedex.com/api/en-us/catalog/track/v1/docs.html#operation/Track%20by%20Tracking%20Number

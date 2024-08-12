@@ -1,5 +1,5 @@
 module Omniship
-  module Fedex
+  module FedEx
     module Track
       class Address < Omniship::Base
         def city

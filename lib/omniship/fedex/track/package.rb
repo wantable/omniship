@@ -1,5 +1,5 @@
 module Omniship
-  module Fedex
+  module FedEx
     module Track
       class Package < Omniship::Base
         # https://developer.fedex.com/api/en-us/guides/api-reference.html#trackingstatuscodes
@@ -34,7 +34,7 @@ module Omniship
 
           return if window.nil? || window.empty?
 
-          Omniship::Fedex.parse_timestamp(window)
+          Omniship::FedEx.parse_timestamp(window)
         end
 
         def alternate_tracking; end

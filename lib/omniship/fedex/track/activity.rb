@@ -1,5 +1,5 @@
 module Omniship
-  module Fedex
+  module FedEx
     module Track
       class Activity < Omniship::Base
         def address
@@ -19,7 +19,7 @@ module Omniship
 
           return if datetime.nil? || datetime.empty?
 
-          Omniship::Fedex.parse_timestamp(datetime, offset: true)
+          Omniship::FedEx.parse_timestamp(datetime, offset: true)
         end
       end
     end

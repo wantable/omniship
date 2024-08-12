@@ -1,5 +1,5 @@
 module Omniship
-  module Fedex
+  module FedEx
     module Track
       class Shipment < Omniship::Base
         def packages

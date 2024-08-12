@@ -1,5 +1,5 @@
 module Omniship
-  module Fedex
+  module FedEx
     module Track
       class Error < TrackError
         # errors are an array of { code: 'string', message: 'string' }

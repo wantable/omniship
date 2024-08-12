@@ -1,5 +1,5 @@
 module Omniship
-  module Fedex
+  module FedEx
     module Track
       class Request
         TEST_URL = 'https://apis-sandbox.fedex.com/'.freeze
@@ -11,7 +11,7 @@ module Omniship
 
         class << self
           def base_url
-            if Fedex.test == true
+            if FedEx.test == true
               TEST_URL
             else
               LIVE_URL
@@ -51,8 +51,8 @@ module Omniship
               },
               payload: {
                 grant_type: 'client_credentials',
-                client_id: Fedex.client_id,
-                client_secret: Fedex.client_secret
+                client_id: FedEx.client_id,
+                client_secret: FedEx.client_secret
               },
               timeout: Omniship.track_timeout,
               open_timeout: Omniship.track_timeout
