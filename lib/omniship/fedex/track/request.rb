@@ -28,9 +28,8 @@ module Omniship
               puts response.inspect
             end
 
-            unless response.key?('errors')
+            if response.key?('errors')
               raise Error.new(raw_response.code, response['errors'])
-              return
             end
 
             Response.new(response.dig('output', 'completeTrackResults'))
