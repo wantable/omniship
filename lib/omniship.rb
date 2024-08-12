@@ -26,7 +26,7 @@ require 'omniship/pitney_bowes'
 
 
 module Omniship
-  PROVIDERS = [UPSMI, UPS, Landmark, FedEx, DHLGM, DHL, USPS, Newgistics, PitneyBowes]
+  PROVIDERS = [UPSMI, UPS, Landmark, FedEx, DHLGM, DHL, USPS, Newgistics]
   class << self
     attr_accessor :debug, :track_timeout
   end
