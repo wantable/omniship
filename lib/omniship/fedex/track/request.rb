@@ -6,7 +6,7 @@ module Omniship
         LIVE_URL = 'https://apis.fedex.com/'.freeze
 
         # test and live are the same?
-        OAUTH_URL = 'https://developer.fedex.com/api/en-us/catalog/authorization/v1/oauth/token'.freeze
+        OAUTH_PATH = 'authorization/v1/oauth/token'.freeze
         TRACK_PATH = 'track/v1/trackingnumbers'.freeze
 
         class << self
@@ -45,7 +45,7 @@ module Omniship
 
             raw_response = RestClient::Request.execute(
               method: :post,
-              url: OAUTH_URL,
+              url: base_url + OAUTH_PATH,
               headers: {
                 content_type: 'application/x-www-form-urlencoded',
               },
