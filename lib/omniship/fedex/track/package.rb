@@ -28,7 +28,7 @@ module Omniship
         end
 
         def delivery_dates
-          return if root.key?('estimatedDeliveryTimeWindow')
+          return unless root.key?('estimatedDeliveryTimeWindow')
 
           window = root.dig('estimatedDeliveryTimeWindow', 'window', 'begins')
 
