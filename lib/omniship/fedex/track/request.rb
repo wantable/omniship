@@ -30,6 +30,7 @@ module Omniship
 
             unless response.key?('errors')
               raise Error.new(raw_response.code, response['errors'])
+              return
             end
 
             Response.new(response.dig('output', 'completeTrackResults'))
@@ -99,7 +100,7 @@ module Omniship
               open_timeout: Omniship.track_timeout
             )
           rescue RestClient::Unauthorized, RestClient::Forbidden => e
-            e.response.body
+            e.response
           end
         end
       end
