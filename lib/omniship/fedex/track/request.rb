@@ -92,7 +92,7 @@ module Omniship
                     trackingNumberInfo: { trackingNumber: tracking_number }
                   }
                 ]
-              },
+              }.to_json,
               content_type: 'application/json',
               accept: 'application/json',
               timeout: Omniship.track_timeout,
