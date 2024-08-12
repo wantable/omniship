@@ -3,7 +3,7 @@ module Omniship
     module Track
       class Shipment < Omniship::Base
         def packages
-          @packages ||= root.map { |results| Package.new(results['trackResults']) }
+          @packages ||= root.map { |results| Package.new(results['trackResults'].first) }
         end
 
         def scheduled_delivery
