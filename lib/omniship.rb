@@ -20,13 +20,13 @@ require 'omniship/landmark'
 require 'omniship/usps'
 require 'omniship/dhlgm'
 require 'omniship/dhl'
-require 'omniship/fed_ex'
+require 'omniship/fedex'
 require 'omniship/newgistics'
 require 'omniship/pitney_bowes'
 
 
 module Omniship
-  PROVIDERS = [UPSMI, UPS, Landmark, FedEx, DHLGM, DHL, USPS, Newgistics, PitneyBowes]
+  PROVIDERS = [UPSMI, UPS, Landmark, FedEx, DHLGM, DHL, USPS, Newgistics]
   class << self
     attr_accessor :debug, :track_timeout
   end
@@ -101,6 +101,12 @@ module Omniship
         PitneyBowes.api_key = pitney_bowes['api_key']
         PitneyBowes.api_secret = pitney_bowes['api_secret']
         PitneyBowes.test = pitney_bowes['test']
+      end
+
+      if fedex = omniship['FedEx']
+        FedEx.client_id = fedex['client_id']
+        FedEx.client_secret = fedex['client_secret']
+        FedEx.test = fedex['test']
       end
     end
     nil

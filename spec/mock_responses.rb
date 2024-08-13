@@ -279,7 +279,7 @@ module MockResponses
   end
 
   def track_newgistics_response
-    '{
+    {
       "Packages" =>[
         {
          "ActualEstimatedDeliveryDate" =>"null",
@@ -389,11 +389,11 @@ module MockResponses
          "Weight" =>3.5260
         }
        ]
-    }'
+    }
   end
 
   def track_newgistics_not_found_response
-    '{
+    {
        "Packages" =>[
           {
              "ActualEstimatedDeliveryDate" =>"null",
@@ -426,7 +426,7 @@ module MockResponses
              "Weight" =>"null"
           }
        ]
-    }'
+    }
   end
 
   def track_usps_response
@@ -1607,5 +1607,470 @@ module MockResponses
       'updatedTime' => '12:20:26',
       'lastPackageStatusLocation' => 'Olympia,WA,98501-6202'
     }
+  end
+
+  def track_fedex_response
+    <<-JSON
+    {
+      "transactionId": "b2ff9d63-7e07-4e43-a201-bdb936c15cc2",
+      "customerTransactionId": "AnyCo_order123456789",
+      "output": {
+        "completeTrackResults": [
+          {
+            "trackingNumber": "122816215025810",
+            "trackResults": [
+              {
+                "trackingNumberInfo": {
+                  "trackingNumber": "122816215025810",
+                  "carrierCode": "FDXE",
+                  "trackingNumberUniqueId": "245822~123456789012~FDEG"
+                },
+                "additionalTrackingInfo": {
+                  "hasAssociatedShipments": false,
+                  "nickname": "shipment nickname",
+                  "packageIdentifiers": [
+                    {
+                      "type": "SHIPPER_REFERENCE",
+                      "value": "ASJFGVAS",
+                      "trackingNumberUniqueId": "245822~123456789012~FDEG"
+                    }
+                  ],
+                  "shipmentNotes": "shipment notes"
+                },
+                "distanceToDestination": {
+                  "units": "KM",
+                  "value": 685.7
+                },
+                "consolidationDetail": [],
+                "meterNumber": "12345",
+                "returnDetail": {},
+                "serviceDetail": {
+                  "description": "FedEx Freight Economy.",
+                  "shortDescription": "FL",
+                  "type": "FEDEX_FREIGHT_ECONOMY"
+                },
+                "destinationLocation": {
+                  "locationId": "SEA",
+                  "locationContactAndAddress": {
+                    "address": {
+                      "addressClassification": "BUSINESS",
+                      "residential": false,
+                      "streetLines": [
+                        "1043 North Easy Street",
+                        "Suite 999"
+                      ],
+                      "city": "SEATTLE",
+                      "stateOrProvinceCode": "WA",
+                      "postalCode": "98101",
+                      "countryCode": "US",
+                      "countryName": "United States"
+                    }
+                  },
+                  "locationType": "FEDEX_SHIPSITE"
+                },
+                "latestStatusDetail": {
+                  "date": "2024-08-12T15:18:10 -0500",
+                  "derivedStatus": "Delivered",
+                  "scanLocation": {
+                    "addressClassification": "BUSINESS",
+                    "residential": false,
+                    "streetLines": [
+                      "1043 North Easy Street",
+                      "Suite 999"
+                    ],
+                    "city": "SEATTLE",
+                    "stateOrProvinceCode": "WA",
+                    "postalCode": "98101",
+                    "countryCode": "US",
+                    "countryName": "United States"
+                  },
+                  "locationId": "SEA",
+                  "locationType": "CUSTOMS_BROKER",
+                  "exceptionDescription": "Package available for clearance",
+                  "eventDescription": "Picked Up",
+                  "eventType": "PU",
+                  "derivedStatusCode": "DL",
+                  "exceptionCode": "A25",
+                  "delayDetail": {
+                    "type": "",
+                    "subType": "",
+                    "status": ""
+                  }
+                },
+                "serviceCommitMessage": {
+                  "message": "No scheduled delivery date available at this time.",
+                  "type": "ESTIMATED_DELIVERY_DATE_UNAVAILABLE"
+                },
+                "informationNotes": [
+                  {
+                    "code": "CLEARANCE_ENTRY_FEE_APPLIES",
+                    "description": "this is an informational message"
+                  }
+                ],
+                "error": {},
+                "specialHandlings": [
+                  {
+                    "description": "Deliver Weekday",
+                    "type": "DELIVER_WEEKDAY",
+                    "paymentType": "OTHER"
+                  }
+                ],
+                "availableImages": [
+                  {
+                    "size": "LARGE",
+                    "type": "BILL_OF_LADING"
+                  }
+                ],
+                "deliveryDetails": {
+                  "receivedByName": "Reciever",
+                  "destinationServiceArea": "EDDUNAVAILABLE",
+                  "destinationServiceAreaDescription": "Appointment required",
+                  "locationDescription": "Receptionist/Front Desk",
+                  "actualDeliveryAddress": {
+                    "addressClassification": "BUSINESS",
+                    "residential": false,
+                    "streetLines": [
+                      "1043 North Easy Street",
+                      "Suite 999"
+                    ],
+                    "city": "SEATTLE",
+                    "stateOrProvinceCode": "WA",
+                    "postalCode": "98101",
+                    "countryCode": "US",
+                    "countryName": "United States"
+                  },
+                  "deliveryToday": false,
+                  "locationType": "APARTMENT_OFFICE",
+                  "signedByName": "Reciever",
+                  "officeOrderDeliveryMethod": "Courier",
+                  "deliveryAttempts": "0",
+                  "deliveryOptionEligibilityDetails": [
+                    {
+                      "option": "INDIRECT_SIGNATURE_RELEASE",
+                      "eligibility": "INELIGIBLE"
+                    }
+                  ]
+                },
+                "scanEvents": [
+                  {
+                    "date": "2024-08-12T15:18:10 -0500",
+                    "derivedStatus": "Order Created",
+                    "scanLocation": {
+                      "addressClassification": "BUSINESS",
+                      "residential": false,
+                      "streetLines": [
+                        "1043 North Easy Street",
+                        "Suite 999"
+                      ],
+                      "city": "SEATTLE",
+                      "stateOrProvinceCode": "WA",
+                      "postalCode": "98101",
+                      "countryCode": "US",
+                      "countryName": "United States"
+                    },
+                    "locationId": "SEA",
+                    "locationType": "CUSTOMS_BROKER",
+                    "exceptionDescription": "Package available for clearance",
+                    "eventDescription": "Picked Up",
+                    "eventType": "PU",
+                    "derivedStatusCode": "OC",
+                    "exceptionCode": "A25",
+                    "delayDetail": {
+                      "type": "",
+                      "subType": "",
+                      "status": ""
+                    }
+                  },
+                  {
+                    "date": "2024-08-12T15:18:10 -0500",
+                    "derivedStatus": "Picked UP",
+                    "scanLocation": {
+                      "addressClassification": "BUSINESS",
+                      "residential": false,
+                      "streetLines": [
+                        "1043 North Easy Street",
+                        "Suite 999"
+                      ],
+                      "city": "SEATTLE",
+                      "stateOrProvinceCode": "WA",
+                      "postalCode": "98101",
+                      "countryCode": "US",
+                      "countryName": "United States"
+                    },
+                    "locationId": "SEA",
+                    "locationType": "CUSTOMS_BROKER",
+                    "exceptionDescription": "Package available for clearance",
+                    "eventDescription": "Picked Up",
+                    "eventType": "PU",
+                    "derivedStatusCode": "DP",
+                    "exceptionCode": "A25",
+                    "delayDetail": {
+                      "type": "",
+                      "subType": "",
+                      "status": ""
+                    }
+                  },
+                  {
+                    "date": "2024-08-12T15:18:10 -0500",
+                    "derivedStatus": "Out for Delivery",
+                    "scanLocation": {
+                      "addressClassification": "BUSINESS",
+                      "residential": false,
+                      "streetLines": [
+                        "1043 North Easy Street",
+                        "Suite 999"
+                      ],
+                      "city": "SEATTLE",
+                      "stateOrProvinceCode": "WA",
+                      "postalCode": "98101",
+                      "countryCode": "US",
+                      "countryName": "United States"
+                    },
+                    "locationId": "SEA",
+                    "locationType": "CUSTOMS_BROKER",
+                    "exceptionDescription": "Package available for clearance",
+                    "eventDescription": "Picked Up",
+                    "eventType": "PU",
+                    "derivedStatusCode": "OD",
+                    "exceptionCode": "A25",
+                    "delayDetail": {
+                      "type": "",
+                      "subType": "",
+                      "status": ""
+                    }
+                  },
+                  {
+                    "date": "2024-08-12T15:18:10 -0500",
+                    "derivedStatus": "Delivered",
+                    "scanLocation": {
+                      "addressClassification": "BUSINESS",
+                      "residential": false,
+                      "streetLines": [
+                        "1043 North Easy Street",
+                        "Suite 999"
+                      ],
+                      "city": "SEATTLE",
+                      "stateOrProvinceCode": "WA",
+                      "postalCode": "98101",
+                      "countryCode": "US",
+                      "countryName": "United States"
+                    },
+                    "locationId": "SEA",
+                    "locationType": "CUSTOMS_BROKER",
+                    "exceptionDescription": "Package available for clearance",
+                    "eventDescription": "Picked Up",
+                    "eventType": "PU",
+                    "derivedStatusCode": "DL",
+                    "exceptionCode": "A25",
+                    "delayDetail": {
+                      "type": "",
+                      "subType": "",
+                      "status": ""
+                    }
+                  }
+                ],
+                "dateAndTimes": [
+                  {
+                    "dateTime": "2007-09-27T00:00:00",
+                    "type": "ACTUAL_DELIVERY"
+                  }
+                ],
+                "packageDetails": {
+                  "physicalPackagingType": "BARREL",
+                  "sequenceNumber": "45",
+                  "undeliveredCount": "7",
+                  "packagingDescription": {
+                    "description": "FedEx Pak",
+                    "type": "FEDEX_PAK"
+                  },
+                  "count": "1",
+                  "weightAndDimensions": {
+                    "weight": [
+                      {
+                        "unit": "LB",
+                        "value": "22222.0"
+                      }
+                    ],
+                    "dimensions": [
+                      {
+                        "length": 100,
+                        "width": 50,
+                        "height": 30,
+                        "units": "CM"
+                      }
+                    ]
+                  },
+                  "packageContent": [],
+                  "contentPieceCount": "100",
+                  "declaredValue": {
+                    "currency": "USD",
+                    "value": 56.8
+                  }
+                },
+                "goodsClassificationCode": "goodsClassificationCode",
+                "holdAtLocation": {
+                  "locationId": "SEA",
+                  "locationContactAndAddress": {
+                    "address": {
+                      "addressClassification": "BUSINESS",
+                      "residential": false,
+                      "streetLines": [
+                        "1043 North Easy Street",
+                        "Suite 999"
+                      ],
+                      "city": "SEATTLE",
+                      "stateOrProvinceCode": "WA",
+                      "postalCode": "98101",
+                      "countryCode": "US",
+                      "countryName": "United States"
+                    }
+                  },
+                  "locationType": "FEDEX_SHIPSITE"
+                },
+                "customDeliveryOptions": [
+                  {
+                    "requestedAppointmentDetail": {
+                      "date": "2019-05-07",
+                      "window": [
+                        {
+                          "description": "Description field",
+                          "window": {
+                            "begins": "2021-10-01T08:00:00",
+                            "ends": "2021-10-15T00:00:00-06:00"
+                          },
+                          "type": "ESTIMATED_DELIVERY"
+                        }
+                      ]
+                    },
+                    "description": "Redirect the package to the hold location.",
+                    "type": "REDIRECT_TO_HOLD_AT_LOCATION",
+                    "status": "HELD"
+                  }
+                ],
+                "estimatedDeliveryTimeWindow": {
+                  "description": "Description field",
+                  "window": {
+                    "begins": "2024-08-14T15:18:10",
+                    "ends": "2024-08-19T15:18:10"
+                  },
+                  "type": "ESTIMATED_DELIVERY"
+                },
+                "pieceCounts": [
+                  {
+                    "count": "35",
+                    "description": "picec count description",
+                    "type": "ORIGIN"
+                  }
+                ],
+                "originLocation": {
+                  "locationId": "SEA",
+                  "locationContactAndAddress": {
+                    "address": {
+                      "addressClassification": "BUSINESS",
+                      "residential": false,
+                      "streetLines": [
+                        "1043 North Easy Street",
+                        "Suite 999"
+                      ],
+                      "city": "SEATTLE",
+                      "stateOrProvinceCode": "WA",
+                      "postalCode": "98101",
+                      "countryCode": "US",
+                      "countryName": "United States"
+                    }
+                  }
+                },
+                "recipientInformation": {
+                  "address": {
+                    "addressClassification": "BUSINESS",
+                    "residential": false,
+                    "streetLines": [
+                      "1043 North Easy Street",
+                      "Suite 999"
+                    ],
+                    "city": "SEATTLE",
+                    "stateOrProvinceCode": "WA",
+                    "postalCode": "98101",
+                    "countryCode": "US",
+                    "countryName": "United States"
+                  }
+                },
+                "standardTransitTimeWindow": {
+                  "description": "Description field",
+                  "window": {
+                    "begins": "2021-10-01T08:00:00",
+                    "ends": "2021-10-15T00:00:00-06:00"
+                  },
+                  "type": "ESTIMATED_DELIVERY"
+                },
+                "shipmentDetails": {
+                  "contents": [
+                    {
+                      "itemNumber": "RZ5678",
+                      "receivedQuantity": "13",
+                      "description": "pulyurethane rope",
+                      "partNumber": "RK1345"
+                    }
+                  ],
+                  "beforePossessionStatus": false,
+                  "weight": [
+                    {
+                      "unit": "LB",
+                      "value": "22222.0"
+                    }
+                  ],
+                  "contentPieceCount": "3333",
+                  "splitShipments": [
+                    {
+                      "pieceCount": "10",
+                      "statusDescription": "status",
+                      "timestamp": "2019-05-07T08:00:07",
+                      "statusCode": "statuscode"
+                    }
+                  ]
+                },
+                "reasonDetail": {
+                  "description": "Wrong color",
+                  "type": "REJECTED"
+                },
+                "availableNotifications": [
+                  "ON_DELIVERY",
+                  "ON_EXCEPTION"
+                ],
+                "shipperInformation": {
+                  "address": {
+                    "addressClassification": "BUSINESS",
+                    "residential": false,
+                    "streetLines": [
+                      "1043 North Easy Street",
+                      "Suite 999"
+                    ],
+                    "city": "SEATTLE",
+                    "stateOrProvinceCode": "WA",
+                    "postalCode": "98101",
+                    "countryCode": "US",
+                    "countryName": "United States"
+                  }
+                },
+                "lastUpdatedDestinationAddress": {
+                  "addressClassification": "BUSINESS",
+                  "residential": false,
+                  "streetLines": [
+                    "1043 North Easy Street",
+                    "Suite 999"
+                  ],
+                  "city": "SEATTLE",
+                  "stateOrProvinceCode": "WA",
+                  "postalCode": "98101",
+                  "countryCode": "US",
+                  "countryName": "United States"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+    JSON
   end
 end

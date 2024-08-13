@@ -50,3 +50,8 @@ Omniship:
     api_key: '<%=ENV["PITNEY_BOWES_API_KEY"]%>'
     api_secret: '<%=ENV["PITNEY_BOWES_API_SECRET"]%>'
     test: true
+
+  FedEx:
+    client_id: '<%=ENV["FEDEX_CLIENT_ID"]%>'
+    client_secret: '<%=ENV["FEDEX_CLIENT_SECRET"]%>'
+    test: true
