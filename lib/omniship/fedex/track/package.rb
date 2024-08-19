@@ -4,10 +4,12 @@ module Omniship
       class Package < Omniship::Base
         # https://developer.fedex.com/api/en-us/guides/api-reference.html#trackingstatuscodes
         DELIVERED = 'DL'.freeze
-        # Picked up
-        # Left FedEx origin facility
-        # Arrived at FedEx location
-        LEFT_CODES = %w[PU DP AR].freeze
+        # PU: Picked up
+        # DP: Left FedEx origin facility
+        # AR: Arrived at FedEx location
+        # OD: Out for Delivery
+        # IT: In Transit
+        LEFT_CODES = %w[PU DP AR OD IT].freeze
 
         def tracking_number
           root.dig('trackingNumberInfo', 'trackingNumber')
