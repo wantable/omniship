@@ -20,4 +20,10 @@ describe "FedEx::Track" do
     expect(activity.status).to_not be_nil
     expect(activity.timestamp).to_not be_nil
   end
+
+  it 'test json parsing raising error' do
+    errors = Omniship::FedEx::Track::Request.send(:find_track_errors, track_fedex_not_found_response.dig('output', 'completeTrackResults'))
+
+    expect(errors).to_not be_empty
+  end
 end

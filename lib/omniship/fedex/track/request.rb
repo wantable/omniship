@@ -32,10 +32,37 @@ module Omniship
               raise Error.new(raw_response.code, response['errors'])
             end
 
-            Response.new(response.dig('output', 'completeTrackResults'))
+            track_results = response.dig('output', 'completeTrackResults')
+
+            if (errors = find_track_errors(track_results)) && errors.any?
+              raise Error.new(400, errors)
+            end
+
+            Response.new(track_results)
           end
 
           private
+
+          # Similar to USPS sometimes the error is inside of a 200 response :(
+          # [{
+          #   "trackingNumber":"XXX",
+          #   "trackResults":[{
+          #     "trackingNumberInfo":{"trackingNumber":"XXX","trackingNumberUniqueId":"","carrierCode":""},
+          #     "error":{
+          #       "code":"TRACKING.TRACKINGNUMBER.NOTFOUND",
+          #       "message":"The tracking number you entered can't be found right now. Please check the number with the shipper or try again later."
+          #     }
+          #   }]
+          # }]
+          def find_track_errors(track_results)
+            track_results.flat_map  do |result|
+              next unless result.key?('trackResults')
+
+              result['trackResults'].map do |track|
+                track['error']
+              end
+            end.compact
+          end
 
           # https://developer.fedex.com/api/en-us/catalog/authorization/v1/docs.html
           def oauth_client_credentials

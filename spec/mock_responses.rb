@@ -2073,4 +2073,23 @@ module MockResponses
     }
     JSON
   end
+
+  def track_fedex_not_found_response
+    {
+      "transactionId"=>"5243a255-b1ab-454f-884c-0a2ffd49a7aa",
+      "customerTransactionId"=>"a22ada43-ea34-45c9-9141-bddbde189d35",
+      "output"=>{
+        "completeTrackResults"=>[{
+          "trackingNumber"=>"02399989320920003663",
+          "trackResults"=>[{
+            "trackingNumberInfo"=>{"trackingNumber"=>"02399989320920003663", "trackingNumberUniqueId"=>"", "carrierCode"=>""},
+            "error"=>{
+              "code"=>"TRACKING.TRACKINGNUMBER.NOTFOUND",
+              "message"=>"The tracking number you entered can't be found right now. Please check the number with the shipper or try again later."
+            }
+          }]
+        }]
+      }
+    }
+  end
 end
