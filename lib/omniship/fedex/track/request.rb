@@ -55,6 +55,8 @@ module Omniship
           #   }]
           # }]
           def find_track_errors(track_results)
+            return [{ 'code' => '', 'message' => 'completeTrackResults is null' }] if track_results.nil?
+
             track_results.flat_map  do |result|
               next unless result.key?('trackResults')
 
