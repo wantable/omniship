@@ -34,7 +34,14 @@ module Omniship
 
           window = root.dig('estimatedDeliveryTimeWindow', 'window', 'begins')
 
-          return if window.nil? || window.empty?
+          if window.nil? || window.empty?
+            dates_and_times = root.dig('dateAndTimes')
+            return unless dates_and_times
+            estimated_delivery = dates_and_times.detect{|x| ['ACTUAL_DELIVERY', 'ESTIMATED_DELIVERY'].include?(x['type']) }
+
+            return unless estimated_delivery
+            window = estimated_delivery['dateTime']
+          end
 
           Omniship::FedEx.parse_timestamp(window)
         end

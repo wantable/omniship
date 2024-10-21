@@ -4,6 +4,8 @@ Bundler.setup
 
 require 'omniship'
 require 'mock_responses'
+require 'pry'
+
 
 # these are production numbers from real shipments
 # they are not varying enough to consider this a 100% test but they are a start at least
