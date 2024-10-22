@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
   s.add_dependency('nokogiri', "1.16")
   s.add_development_dependency('rake')
   s.add_development_dependency('rspec')
+  s.add_development_dependency('pry')
 
   # = MANIFEST =
   s.files =  Dir.glob("{lib}/**/*") + %w(LICENSE README.md)
