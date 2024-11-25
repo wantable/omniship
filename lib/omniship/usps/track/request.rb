@@ -41,8 +41,8 @@ module Omniship
 
             headers = {
               'Authorization' => "Bearer #{options[:bearer_token]}",
-              accept: :json,
-              'Content-Type' => 'application/json; charset=UTF-8'
+              'Content-Type' => 'application/json',
+              accept: :json
             }
 
             if options.key?(:forwarded_for_ip)
