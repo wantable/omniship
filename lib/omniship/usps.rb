@@ -8,33 +8,22 @@ module Omniship
                       /^(91|92)[0-9]+$/, 
                       /^[A-Za-z]{2}[0-9]+US$/]
 
-    TRACKING_URL = "https://tools.usps.com/go/TrackConfirmAction?qtc_tLabels1="
+    TRACKING_URL = "https://tools.usps.com/go/TrackConfirmAction?tLabels="
     TIMESTAMP_FORMAT = "%B %d, %Y %I:%M %p"
 
     class << self
-      attr_accessor :userid
-      attr_accessor :password
-      attr_accessor :retailer_name
-      attr_accessor :retailer_address
-      attr_accessor :permit_number
-      attr_accessor :permit_city
-      attr_accessor :permit_state
-      attr_accessor :permit_zip5
-      attr_accessor :pdu_po_box
-      attr_accessor :pdu_city
-      attr_accessor :pdu_state
-      attr_accessor :pdu_zip5
+      attr_accessor :client_id
+      attr_accessor :client_secret
       attr_accessor :client_ip
-      attr_accessor :source_id
       attr_accessor :test
     end
 
     def self.tracking_test?(tracking)
-      TRACKING_REGEX.any?{|regex| tracking =~ regex}
+      TRACKING_REGEX.any? { |regex| tracking =~ regex }
     end
     
-    def self.track(id)
-      Track::Request.track(id)
+    def self.track(id, options = {})
+      Track::Request.track(id, options)
     end
 
     def self.tracking_url(number)
@@ -44,7 +33,7 @@ module Omniship
     # <EventTime>7:09 am</EventTime>
     # <EventDate>January 17, 2017</EventDate>
     def self.parse_timestamp(date, time="12:00 am")
-      return if date.nil? or date.length == 0
+      return if date.nil? || date.length == 0
       Time.strptime("#{date} #{time}", TIMESTAMP_FORMAT)
     end
   end

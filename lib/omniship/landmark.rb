@@ -20,7 +20,7 @@ module Omniship
       tracking =~ TRACKING_REGEX
     end
 
-    def self.track(id)
+    def self.track(id, _options = {})
       Track::Request.track(id)
     end
 

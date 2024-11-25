@@ -21,7 +21,8 @@ module Omniship
       !!(tracking =~ TRACKING_REGEX)
     end
 
-    def self.track(id, qualifier=BARCODE)
+    def self.track(id, options = {})
+      qualifier = options&.fetch(:qualifier, BARCODE)
       Track::Request.track(id, qualifier)
     end
 

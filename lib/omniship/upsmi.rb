@@ -9,7 +9,7 @@ module Omniship
       TRACKING_REGEX.any?{|regex| tracking =~ regex }
     end
 
-    def self.track(id)
+    def self.track(id, _options = {})
       UPS::Track::Request.track(id, true)
     end
 
