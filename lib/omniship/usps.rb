@@ -1,4 +1,3 @@
-require 'omniship/usps/return_label'
 require 'omniship/usps/track'
 
 module Omniship
@@ -8,6 +7,7 @@ module Omniship
                       /^E\D{1}\d{9}\D{2}$|^9\d{15,21}$/, 
                       /^(91|92)[0-9]+$/, 
                       /^[A-Za-z]{2}[0-9]+US$/]
+
     TRACKING_URL = "https://tools.usps.com/go/TrackConfirmAction?qtc_tLabels1="
     TIMESTAMP_FORMAT = "%B %d, %Y %I:%M %p"
 
@@ -27,27 +27,6 @@ module Omniship
       attr_accessor :client_ip
       attr_accessor :source_id
       attr_accessor :test
-    end
-
-    def self.return_label(customer, options = nil)
-      retailer = {
-        name: retailer_name,
-        address: retailer_address
-      }
-      permit = {
-        number: permit_number,
-        city: permit_city,
-        state: permit_state,
-        zip5: permit_zip5
-      }
-      pdu = {
-        po_box: pdu_po_box, 
-        city: pdu_city,
-        state: pdu_state,
-        zip5: pdu_zip5
-      }
-      request = ReturnLabelRequest.new(ReturnLabel::Customer.new(customer), ReturnLabel::Retailer.new(retailer), ReturnLabel::Permit.new(permit), ReturnLabel::PDU.new(pdu), options)
-      request.get_response
     end
 
     def self.tracking_test?(tracking)
