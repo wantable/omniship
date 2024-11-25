@@ -34,7 +34,10 @@ module Omniship
     # <EventDate>January 17, 2017</EventDate>
     def self.parse_timestamp(date, time="12:00 am")
       return if date.nil? || date.length == 0
-      Time.strptime("#{date} #{time}", TIMESTAMP_FORMAT)
+
+      date_string = date
+      date_string += " #{time}" if !time.nil? && time.length > 0
+      Time.strptime(date_string, TIMESTAMP_FORMAT)
     end
   end
 end

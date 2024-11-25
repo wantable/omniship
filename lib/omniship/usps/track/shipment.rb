@@ -2,11 +2,8 @@ module Omniship
   module USPS
     module Track
       class Shipment < Omniship::Base
-        
         def packages
-          @packages ||= @root.xpath("TrackResponse/TrackInfo").map do |package|
-            Package.new(package)
-          end
+          @packages ||= Package.new(root)
         end
 
         def scheduled_delivery

@@ -25,15 +25,12 @@ module Omniship
         ].freeze
 
         def tracking_number
-          @root.attribute("ID").to_s
+          root['trackingNumber']
         end
 
         def activity
-          @root.xpath('TrackSummary').map do |act|
-            Activity.new(act)
-          end +
-          @root.xpath('TrackDetail').map do |act|
-            Activity.new(act)
+          @activity ||= root['eventSummaries'].map do |event|
+            Activity.new(event)
           end
         end
 
@@ -49,7 +46,11 @@ module Omniship
         end
 
         def scheduled_delivery
-          Omniship::USPS.parse_timestamp(@root.xpath("PredictedDeliveryDate/text()").to_s) || Omniship::USPS.parse_timestamp(@root.xpath("ExpectedDeliveryDate/text()").to_s)
+          delivery_date = root['expectedDeliveryDate']
+          delivery_time = root['expectedDeliveryTime']
+
+          Omniship::USPS.parse_timestamp(delivery_date, delivery_time) ||
+            Omniship::USPS.parse_timestamp(root['guaranteedDeliveryDate'])
         end
       end
     end
