@@ -12,7 +12,7 @@ module Omniship
           return response['message'] if response.key?('message')
 
           if response.key?('errors') && response['errors'].is_a?(Array) && response['errors'].any?
-            return response['errors'].first['message']
+            return response['errors'].first['message'] || 'Something went wrong'
           end
 
           return response.dig('error', 'message') unless response.dig('error', 'message').nil?

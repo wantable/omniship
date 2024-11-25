@@ -77,8 +77,9 @@ module Omniship
             parse_unauthorized_response(e.response.body)
           end
 
-          def parse_unauthorized_response(raw_response)
-            response = JSON.parse(raw_response)
+          def parse_unauthorized_response(response)
+            puts response if Omniship.debug
+            response = JSON.parse(response)
 
             return e if !response.key?('error_description') && !response.key?('error')
 
@@ -90,6 +91,7 @@ module Omniship
           end
 
           def parse_response_for_error(response)
+            puts response if Omniship.debug
             JSON.parse(response)
           rescue StandardError
             {'error' => 'Cannot track Package'}
