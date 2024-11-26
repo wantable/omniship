@@ -16,5 +16,9 @@ module Omniship
     def self.tracking_url(number)
       UPS.tracking_url(number)
     end
+
+    def self.bearer_token_required?
+      false
+    end
   end
 end

@@ -25,6 +25,10 @@ module Omniship
       TRACKING_URL + number
     end
 
+    def self.bearer_token_required?
+      false
+    end
+
     # <Date>YYYY-MM-DD</Date>
     # <Time>HH:MM:SS </Time>
     # <offset>±hh:mm</offset>

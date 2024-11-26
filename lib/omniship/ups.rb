@@ -30,6 +30,10 @@ module Omniship
       TRACKING_URL + number
     end
 
+    def self.bearer_token_required?
+      false
+    end
+
     # <Date>20170117</Date>
     # <Time>055500</Time>
     # Time zone here is local time

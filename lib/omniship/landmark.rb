@@ -32,6 +32,10 @@ module Omniship
       TRACKING_URL + number
     end
 
+    def self.bearer_token_required?
+      false
+    end
+
     # <DateTime>2014-07-07 06:37:27</DateTime>
     def self.parse_timestamp(text)
       return if text.nil? or text.length == 0
