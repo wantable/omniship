@@ -11,8 +11,6 @@ module Omniship
     TRACKING_URL = "https://tools.usps.com/go/TrackConfirmAction?tLabels="
 
     class << self
-      attr_accessor :client_id
-      attr_accessor :client_secret
       attr_accessor :client_ip
       attr_accessor :test
     end

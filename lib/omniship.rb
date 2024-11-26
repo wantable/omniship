@@ -44,8 +44,6 @@ module Omniship
       Omniship.track_timeout = omniship['track_timeout'] || 10 # 10 seconds default
 
       if usps = omniship['USPS']
-        USPS.client_id = usps['client_id']
-        USPS.client_secret = usps['client_secret']
         USPS.client_ip = usps['client_ip']
         USPS.test = usps['test']
       end
