@@ -45,9 +45,7 @@ module Omniship
               accept: :json
             }
 
-            if options.key?(:forwarded_for_ip)
-              headers['X-Forwarded-For'] = options[:forwarded_for_ip]
-            end
+            headers['X-Forwarded-For'] = USPS.client_ip unless USPS.client_ip.nil?
 
             if Omniship.debug
               puts url
