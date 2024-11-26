@@ -3,7 +3,7 @@ module Omniship
     module Track
       class Shipment < Omniship::Base
         def packages
-          @packages ||= Package.new(root)
+          @packages ||= [Package.new(root)]
         end
 
         def scheduled_delivery

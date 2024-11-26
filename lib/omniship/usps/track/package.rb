@@ -29,7 +29,7 @@ module Omniship
         end
 
         def activity
-          @activity ||= root['eventSummaries'].map do |event|
+          @activity ||= root['trackingEvents'].map do |event|
             Activity.new(event)
           end
         end
@@ -46,11 +46,8 @@ module Omniship
         end
 
         def scheduled_delivery
-          delivery_date = root['expectedDeliveryDate']
-          delivery_time = root['expectedDeliveryTime']
-
-          Omniship::USPS.parse_timestamp(delivery_date, delivery_time) ||
-            Omniship::USPS.parse_timestamp(root['guaranteedDeliveryDate'])
+          Omniship::USPS.parse_timestamp(root['expectedDeliveryTimeStamp'], nil) ||
+            Omniship::USPS.parse_timestamp(root['guaranteedDeliveryTimeStamp'], nil)
         end
       end
     end

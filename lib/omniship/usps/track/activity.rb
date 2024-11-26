@@ -7,17 +7,17 @@ module Omniship
         end
 
         def status
-          root.xpath('Event/text()').to_s
+          root['eventType']
         end
 
         def code
-          root.xpath('EventCode/text()').to_s
+          root['eventCode']
         end
 
         def timestamp
-          date = root.xpath('EventDate/text()').to_s
-          time = root.xpath('EventTime/text()').to_s
-          Omniship::USPS.parse_timestamp(date, time)
+          return if root['eventTimestamp'].nil? || root['eventTimestamp'].length == 0
+
+          Omniship::USPS.parse_timestamp(root['eventTimestamp'], nil)
         end
       end
     end
