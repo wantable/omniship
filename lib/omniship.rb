@@ -100,7 +100,7 @@ module Omniship
     provider = self.provider_from_number(number)
     if provider
       if provider.respond_to?(:track)
-        provider.send(:track, number, options: options)
+        provider.send(:track, number, options)
       else
         raise TrackError.new("#{provider.const_get(:LABEL)} does not support tracking.")
       end
