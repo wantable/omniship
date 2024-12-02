@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "USPS::Track" do
   it 'raises error without bearer token' do
-    expect { Omniship::USPS.track('9261290289104185136058') }.to raise_error(RuntimeError)
+    expect { Omniship::USPS.track('9261290289104185136058', bearer_token: nil) }.to raise_error(RuntimeError)
   end
 
   it 'timstamp parsing' do 

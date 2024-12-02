@@ -14,12 +14,12 @@ module Omniship
             LIVE_URL
           end
 
-          def track(tracking_number, options)
-            if options[:bearer_token].nil?
-              raise 'Please make sure a bearer_token is passed in via options'
-            end
+          def track(tracking_number, bearer_token, options)
+            options ||= {}
 
-            response = track_shipment(tracking_number, options)
+            raise 'bearer_token is required' if bearer_token.nil?
+
+            response = track_shipment(tracking_number, bearer_token, options)
 
             if response.key?('errors') || response.key?('error') || response['success'] == false
               raise Error.new(response)
@@ -31,7 +31,7 @@ module Omniship
           private
 
           # https://developer.usps.com/trackingv3#tag/Resources/operation/get-package-tracking
-          def track_shipment(tracking_number, options)
+          def track_shipment(tracking_number, bearer_token, options)
             url = endpoint + TRACK_PATH + tracking_number
 
             params = {}
@@ -40,7 +40,7 @@ module Omniship
             params[:mailingDate] = options[:mailing_date] if options.key?(:mailing_date)
 
             headers = {
-              'Authorization' => "Bearer #{options[:bearer_token]}",
+              'Authorization' => "Bearer #{bearer_token}",
               'Content-Type' => 'application/json',
               accept: :json
             }

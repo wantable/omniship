@@ -94,11 +94,11 @@ module Omniship
 
   # Track a package based on a tracking number
   # supports Landmark Global, UPS, DHL Global Mail, USPS
-  def self.track(number, options = {})
+  def self.track(number, bearer_token: nil, options: {})
     provider = self.provider_from_number(number)
     if provider
       if provider.respond_to?(:track)
-        provider.send(:track, number, options)
+        provider.send(:track, number, bearer_token:, options:)
       else
         raise TrackError.new("#{provider.const_get(:LABEL)} does not support tracking.")
       end

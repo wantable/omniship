@@ -20,8 +20,8 @@ module Omniship
       tracking =~ TRACKING_REGEX
     end
 
-    def self.track(id, _options = {})
-      Track::Request.track(id)
+    def self.track(tracking, bearer_token: nil, options: {})
+      Track::Request.track(tracking)
     end
 
     def self.track_with_reference(reference)
