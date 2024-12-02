@@ -25,31 +25,38 @@ module Omniship
         ].freeze
 
         def tracking_number
-          @root.attribute("ID").to_s
+          root['trackingNumber']
         end
 
         def activity
-          @root.xpath('TrackSummary').map do |act|
-            Activity.new(act)
-          end +
-          @root.xpath('TrackDetail').map do |act|
-            Activity.new(act)
+          @activity ||= root['trackingEvents'].map do |event|
+            Activity.new(event)
           end
         end
 
         # this is actually an indicator that the the package has been scanned by USPS ANYWHERE
         def has_left?
           has_arrived? ||
-            activity.any? { |activity| HAS_LEFT_CODES.include?(activity.code) }
+            activity.any? { |a| HAS_LEFT_CODES.include?(a.code) }
         end
 
         # delivered or ready for pickup at post office, or Notice Left
         def has_arrived?
-          activity.any? { |activity| HAS_ARRIVED_CODES.include?(activity.code) }
+          activity.any? { |a| HAS_ARRIVED_CODES.include?(a.code) }
         end
 
         def scheduled_delivery
-          Omniship::USPS.parse_timestamp(@root.xpath("PredictedDeliveryDate/text()").to_s) || Omniship::USPS.parse_timestamp(@root.xpath("ExpectedDeliveryDate/text()").to_s)
+          Omniship::USPS.parse_timestamp(root['expectedDeliveryTimeStamp'], nil) ||
+            Omniship::USPS.parse_timestamp(root['guaranteedDeliveryTimeStamp'], nil) ||
+            delivery_date_from_activity
+        end
+
+        private
+
+        def delivery_date_from_activity
+          return unless has_arrived?
+
+          activity.find { |a| HAS_ARRIVED_CODES.include?(a.code) }&.timestamp
         end
       end
     end

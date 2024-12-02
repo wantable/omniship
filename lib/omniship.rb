@@ -44,28 +44,8 @@ module Omniship
       Omniship.track_timeout = omniship['track_timeout'] || 10 # 10 seconds default
 
       if usps = omniship['USPS']
-        USPS.userid = usps['userid']
-        USPS.password = usps['password']
         USPS.client_ip = usps['client_ip']
-        USPS.source_id = usps['source_id']
         USPS.test = usps['test']
-
-        if retailer = usps['retailer']
-          USPS.retailer_name = retailer['name']
-          USPS.retailer_address = retailer['address']
-        end
-        if permit = usps['permit']
-          USPS.permit_number = permit['number']
-          USPS.permit_city = permit['city']
-          USPS.permit_state = permit['state']
-          USPS.permit_zip5 = permit['zip5']
-        end
-        if pdu = usps['pdu']
-          USPS.pdu_po_box = pdu['po_box']
-          USPS.pdu_city = pdu['city']
-          USPS.pdu_state = pdu['state']
-          USPS.pdu_zip5 = pdu['zip5']
-        end
       end
 
       if ups = omniship['UPS']
@@ -114,17 +94,16 @@ module Omniship
 
   # Track a package based on a tracking number
   # supports Landmark Global, UPS, DHL Global Mail, USPS
-  def self.track(number)
+  def self.track(number, bearer_token: nil, options: {})
     provider = self.provider_from_number(number)
     if provider
       if provider.respond_to?(:track)
-        provider.send(:track, number)
+        provider.send(:track, number, bearer_token:, options:)
       else
         raise TrackError.new("#{provider.const_get(:LABEL)} does not support tracking.")
       end
     else
       raise ProviderError.new("No provider found for #{number}")
-
     end
   end
 

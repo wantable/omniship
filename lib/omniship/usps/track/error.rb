@@ -2,13 +2,34 @@ module Omniship
   module USPS
     module Track
       class Error < TrackError
-        NOT_FOUND_RESPONSE = "The Postal Service could not locate the tracking information"
-        def initialize(root)
-          message = root.xpath("TrackResponse/TrackInfo/Error/Description/text()").to_s
-          if message.start_with?(NOT_FOUND_RESPONSE)
-            self.code = NOT_FOUND
+        def initialize(response)
+          self.code = find_code(response)
+
+          super(find_message(response))
+        end
+
+        def find_message(response)
+          return response['message'] if response.key?('message')
+
+          if response.key?('errors') && response['errors'].is_a?(Array) && response['errors'].any?
+            return response['errors'].first['message'] || 'Something went wrong'
           end
-          super(message)
+
+          return response.dig('error', 'message') unless response.dig('error', 'message').nil?
+
+          'Something went wrong'
+        end
+
+        def find_code(response)
+          return response['code'] if response.key?('code')
+
+          if response.key?('errors') && response['errors'].is_a?(Array) && response['errors'].any?
+            return response['errors'].first['code']
+          end
+
+          return response.dig('error', 'code') unless response.dig('error', 'message').nil?
+
+          500
         end
       end
     end

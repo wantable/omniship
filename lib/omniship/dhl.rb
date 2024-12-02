@@ -10,8 +10,16 @@ module Omniship
       tracking =~ TRACKING_REGEX
     end
 
+    def self.track(tracking, bearer_token: nil, options: {})
+      Track::Request.track(tracking)
+    end
+
     def self.tracking_url(number)
       TRACKING_URL + number
+    end
+
+    def self.bearer_token_required?
+      false
     end
   end
 end

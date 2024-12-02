@@ -17,12 +17,16 @@ module Omniship
       !Omniship::DHLGM.mailer_id.nil? and tracking.length == TRACKING_LENGTH and tracking.include?(Omniship::DHLGM.mailer_id) 
     end
 
-    def self.track(id)
+    def self.track(id, bearer_token: nil, options: {})
       Track::Request.track(id)
     end
 
     def self.tracking_url(number)
       TRACKING_URL + number
+    end
+
+    def self.bearer_token_required?
+      false
     end
 
     # <date>1/18/2017</date>

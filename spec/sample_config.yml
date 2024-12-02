@@ -12,24 +12,8 @@ Omniship:
     source: Wantable, Inc.
 
   USPS:
-    userid: '<%=ENV["USPS_USERID"]%>'
-    password: '<%=ENV["USPS_PASSWORD"]%>'
     client_ip: 127.0.0.1
-    source_id: Wantable, Inc.
-
-    retailer:
-      name: Wantable Inc
-      address: 112 E Mineral St
-    permit:
-      number: '<%=ENV["USPS_RETURNS_PERMIT_NUMBER"]%>'
-      city: Milwaukee
-      state: WI
-      zip5: 53204
-    pdu:
-      po_box: PO Box 514033
-      city: Milwaukee
-      state: WI
-      zip5: 53203
+    test: true
 
   Landmark:
     username: '<%=ENV["LANDMARK_USERNAME"]%>'

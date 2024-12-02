@@ -21,7 +21,8 @@ module Omniship
       !!(tracking =~ TRACKING_REGEX)
     end
 
-    def self.track(id, qualifier=BARCODE)
+    def self.track(id, bearer_token: nil, options: {})
+      qualifier = options&.fetch(:qualifier, BARCODE)
       Track::Request.track(id, qualifier)
     end
 
@@ -29,12 +30,18 @@ module Omniship
       TRACKING_URL + number
     end
 
-    private 
+    def self.bearer_token_required?
+      false
+    end
 
     def self.parse_timestamp(date, time=nil)
       return if date.nil? or date.empty?
+
       # parse epoch from "\/Date(1469163600000-0500)\/" and "\/Date(1484870400000-0600)\/"
       _d, epoch_date, date_tz_offset = DATE_REGEX.match(date).to_a.map(&:to_i)
+
+      return if epoch_date.nil? || date_tz_offset.nil?
+
       epoch_date = epoch_date.to_i / 1000.0
       date_tz_offset = date_tz_offset / 100
 

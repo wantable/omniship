@@ -429,194 +429,372 @@ module MockResponses
     }
   end
 
-  def track_usps_response
-    "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-    <TrackResponse>
-      <TrackInfo ID=\"9402116901279224348471\">
-        <Class>First-Class Package Service</Class>
-        <ClassOfMailCode>FC</ClassOfMailCode>
-        <DestinationCity>SAN DIEGO</DestinationCity>
-        <DestinationState>CA</DestinationState>
-        <DestinationZip>92104</DestinationZip>
-        <EmailEnabled>true</EmailEnabled>
-        <KahalaIndicator>false</KahalaIndicator>
-        <MailTypeCode>DM</MailTypeCode>
-        <MPDATE>2017-01-11 21:31:51.000000</MPDATE>
-        <MPSUFFIX>886842393</MPSUFFIX>
-        <OriginCity>MILWAUKEE</OriginCity>
-        <OriginState>WI</OriginState>
-        <OriginZip>53204</OriginZip>
-        <PodEnabled>true</PodEnabled>
-        <PredictedDeliveryDate>January 17, 2017</PredictedDeliveryDate>
-        <RestoreEnabled>false</RestoreEnabled>
-        <RramEnabled>false</RramEnabled>
-        <RreEnabled>false</RreEnabled>
-        <Service>Signature Confirmation&amp;lt;SUP&gt;&amp;#153;&amp;lt;/SUP&gt;</Service>
-        <ServiceTypeCode>021</ServiceTypeCode>
-        <Status>Delivered, Left with Individual</Status>
-        <StatusCategory>Delivered</StatusCategory>
-        <StatusSummary>Your item was delivered to an individual at the address at 12:15 pm on January 17, 2017 in SAN DIEGO, CA 92104.</StatusSummary>
-        <TABLECODE>T</TABLECODE>
-        <TrackSummary>
-          <EventTime>12:15 pm</EventTime>
-          <EventDate>January 17, 2017</EventDate>
-          <Event>Delivered, Left with Individual</Event>
-          <EventCity>SAN DIEGO</EventCity>
-          <EventState>CA</EventState>
-          <EventZIPCode>92104</EventZIPCode>
-          <EventCountry />
-          <FirmName />
-          <Name>J G</Name>
-          <AuthorizedAgent>false</AuthorizedAgent>
-          <EventCode>01</EventCode>
-          <DeliveryAttributeCode>04</DeliveryAttributeCode>
-        </TrackSummary>
-        <TrackDetail>
-          <EventTime>7:09 am</EventTime>
-          <EventDate>January 17, 2017</EventDate>
-          <Event>Out for Delivery</Event>
-          <EventCity>SAN DIEGO</EventCity>
-          <EventState>CA</EventState>
-          <EventZIPCode>92104</EventZIPCode>
-          <EventCountry />
-          <FirmName />
-          <Name />
-          <AuthorizedAgent>false</AuthorizedAgent>
-          <EventCode>OF</EventCode>
-        </TrackDetail>
-        <TrackDetail>
-          <EventTime>6:59 am</EventTime>
-          <EventDate>January 17, 2017</EventDate>
-          <Event>Sorting Complete</Event>
-          <EventCity>SAN DIEGO</EventCity>
-          <EventState>CA</EventState>
-          <EventZIPCode>92104</EventZIPCode>
-          <EventCountry />
-          <FirmName />
-          <Name />
-          <AuthorizedAgent>false</AuthorizedAgent>
-          <EventCode>PC</EventCode>
-        </TrackDetail>
-        <TrackDetail>
-          <EventTime>3:42 am</EventTime>
-          <EventDate>January 17, 2017</EventDate>
-          <Event>Arrived at Post Office</Event>
-          <EventCity>SAN DIEGO</EventCity>
-          <EventState>CA</EventState>
-          <EventZIPCode>92108</EventZIPCode>
-          <EventCountry />
-          <FirmName />
-          <Name />
-          <AuthorizedAgent>false</AuthorizedAgent>
-          <EventCode>07</EventCode>
-        </TrackDetail>
-        <TrackDetail>
-          <EventTime>5:57 pm</EventTime>
-          <EventDate>January 15, 2017</EventDate>
-          <Event>Departed USPS Destination Facility</Event>
-          <EventCity>SAN DIEGO</EventCity>
-          <EventState>CA</EventState>
-          <EventZIPCode>92199</EventZIPCode>
-          <EventCountry />
-          <FirmName />
-          <Name />
-          <AuthorizedAgent>false</AuthorizedAgent>
-          <EventCode>10</EventCode>
-        </TrackDetail>
-        <TrackDetail>
-          <EventTime>5:57 pm</EventTime>
-          <EventDate>January 15, 2017</EventDate>
-          <Event>Arrived at USPS Destination Facility</Event>
-          <EventCity>SAN DIEGO</EventCity>
-          <EventState>CA</EventState>
-          <EventZIPCode>92199</EventZIPCode>
-          <EventCountry />
-          <FirmName />
-          <Name />
-          <AuthorizedAgent>false</AuthorizedAgent>
-          <EventCode>10</EventCode>
-        </TrackDetail>
-        <TrackDetail>
-          <EventTime>12:23 am</EventTime>
-          <EventDate>January 14, 2017</EventDate>
-          <Event>In Transit to Destination</Event>
-          <EventCity />
-          <EventState />
-          <EventZIPCode />
-          <EventCountry />
-          <FirmName />
-          <Name />
-          <AuthorizedAgent>false</AuthorizedAgent>
-          <EventCode>EX</EventCode>
-        </TrackDetail>
-        <TrackDetail>
-          <EventTime>10:00 pm</EventTime>
-          <EventDate>January 13, 2017</EventDate>
-          <Event>Departed USPS Facility</Event>
-          <EventCity>OAK CREEK</EventCity>
-          <EventState>WI</EventState>
-          <EventZIPCode>53154</EventZIPCode>
-          <EventCountry />
-          <FirmName />
-          <Name />
-          <AuthorizedAgent>false</AuthorizedAgent>
-          <EventCode>EF</EventCode>
-        </TrackDetail>
-        <TrackDetail>
-          <EventTime>12:23 am</EventTime>
-          <EventDate>January 13, 2017</EventDate>
-          <Event>Arrived at USPS Origin Facility</Event>
-          <EventCity>OAK CREEK</EventCity>
-          <EventState>WI</EventState>
-          <EventZIPCode>53154</EventZIPCode>
-          <EventCountry />
-          <FirmName />
-          <Name />
-          <AuthorizedAgent>false</AuthorizedAgent>
-          <EventCode>10</EventCode>
-        </TrackDetail>
-        <TrackDetail>
-          <EventTime>11:08 pm</EventTime>
-          <EventDate>January 12, 2017</EventDate>
-          <Event>Accepted at USPS Origin Facility</Event>
-          <EventCity>MILWAUKEE</EventCity>
-          <EventState>WI</EventState>
-          <EventZIPCode>53204</EventZIPCode>
-          <EventCountry />
-          <FirmName />
-          <Name />
-          <AuthorizedAgent>false</AuthorizedAgent>
-          <EventCode>OA</EventCode>
-        </TrackDetail>
-        <TrackDetail>
-          <EventTime />
-          <EventDate>January 11, 2017</EventDate>
-          <Event>Pre-Shipment Info Sent to USPS, USPS Awaiting Item</Event>
-          <EventCity />
-          <EventState />
-          <EventZIPCode />
-          <EventCountry />
-          <FirmName />
-          <Name />
-          <AuthorizedAgent>false</AuthorizedAgent>
-          <EventCode>MA</EventCode>
-        </TrackDetail>
-      </TrackInfo>
-    </TrackResponse>"
+  def track_usps_arrived_response
+    JSON.parse(
+      <<~JSON
+      {
+        "destinationCity": "MILWAUKEE",
+        "destinationState": "WI",
+        "destinationZIP": "53207",
+        "emailEnabled": "true",
+        "kahalaIndicator": "false",
+        "mailClass": "Parcel Select",
+        "mailType": "DM",
+        "originCity": "OAK CREEK",
+        "originState": "WI",
+        "originZIP": "53154",
+        "proofOfDeliveryEnabled": "false",
+        "restoreEnabled": "false",
+        "RRAMEnabled": "false",
+        "RREEnabled": "false",
+        "services": [
+          "USPS Tracking<SUP>&#174;</SUP>"
+        ],
+        "serviceTypeCode": "612",
+        "status": "Delivered, In/At Mailbox",
+        "statusCategory": "Delivered",
+        "statusSummary": "Your item was delivered in or at the mailbox at 1:10 pm on November 23, 2024 in MILWAUKEE, WI 53207.",
+        "tableCode": "T",
+        "uniqueMailPieceID": "301474508",
+        "mailPieceIntakeDate": "2024-11-19 08:35:56.000000",
+        "trackingEvents": [
+          {
+            "eventType": "Delivered, In/At Mailbox",
+            "eventTimestamp": "2024-11-23T13:10:00",
+            "GMTTimestamp": "2024-11-23T19:10:09Z",
+            "GMTOffset": "-06:00",
+            "eventCountry": null,
+            "eventCity": "MILWAUKEE",
+            "eventState": "WI",
+            "eventZIP": "53207",
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "01",
+            "additionalProp": null
+          },
+          {
+            "eventType": "Out for Delivery",
+            "eventTimestamp": "2024-11-23T08:28:00",
+            "GMTTimestamp": "2024-11-23T14:28:23Z",
+            "GMTOffset": "-06:00",
+            "eventCountry": null,
+            "eventCity": "MILWAUKEE",
+            "eventState": "WI",
+            "eventZIP": "53207",
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "OF",
+            "additionalProp": null
+          },
+          {
+            "eventType": "Arrived at Post Office",
+            "eventTimestamp": "2024-11-23T08:17:00",
+            "GMTTimestamp": "2024-11-23T14:17:23Z",
+            "GMTOffset": "-06:00",
+            "eventCountry": null,
+            "eventCity": "MILWAUKEE",
+            "eventState": "WI",
+            "eventZIP": "53207",
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "07",
+            "additionalProp": null
+          },
+          {
+            "eventType": "Arrived at USPS Facility",
+            "eventTimestamp": "2024-11-23T06:22:00",
+            "GMTTimestamp": "2024-11-23T12:22:41Z",
+            "GMTOffset": "-06:00",
+            "eventCountry": null,
+            "eventCity": "MILWAUKEE",
+            "eventState": "WI",
+            "eventZIP": "53207",
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "A1",
+            "additionalProp": null
+          },
+          {
+            "eventType": "Departed USPS Facility",
+            "eventTimestamp": "2024-11-23T06:07:00",
+            "GMTTimestamp": "2024-11-23T12:07:39Z",
+            "GMTOffset": "-06:00",
+            "eventCountry": null,
+            "eventCity": "MILWAUKEE",
+            "eventState": "WI",
+            "eventZIP": "53203",
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "T1",
+            "additionalProp": null
+          },
+          {
+            "eventType": "Arrived at USPS Facility",
+            "eventTimestamp": "2024-11-23T04:35:00",
+            "GMTTimestamp": "2024-11-23T10:35:49Z",
+            "GMTOffset": "-06:00",
+            "eventCountry": null,
+            "eventCity": "MILWAUKEE",
+            "eventState": "WI",
+            "eventZIP": "53203",
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "A1",
+            "additionalProp": null
+          },
+          {
+            "eventType": "Departed USPS Regional Facility",
+            "eventTimestamp": "2024-11-23T04:10:00",
+            "GMTTimestamp": "2024-11-23T10:10:53Z",
+            "GMTOffset": "-06:00",
+            "eventCountry": null,
+            "eventCity": "OAK CREEK WI DISTRIBUTION CENTER",
+            "eventState": null,
+            "eventZIP": null,
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "T1",
+            "additionalProp": null
+          },
+          {
+            "eventType": "Arrived at USPS Facility",
+            "eventTimestamp": "2024-11-23T03:41:00",
+            "GMTTimestamp": "2024-11-23T09:41:38Z",
+            "GMTOffset": "-06:00",
+            "eventCountry": null,
+            "eventCity": "MILWAUKEE",
+            "eventState": "WI",
+            "eventZIP": "53207",
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "A1",
+            "additionalProp": null
+          },
+          {
+            "eventType": "Accepted at USPS Regional Destination Facility",
+            "eventTimestamp": "2024-11-22T17:22:00",
+            "GMTTimestamp": "2024-11-22T23:22:15Z",
+            "GMTOffset": "-06:00",
+            "eventCountry": null,
+            "eventCity": "OAK CREEK WI DISTRIBUTION CENTER",
+            "eventState": null,
+            "eventZIP": null,
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "AD",
+            "additionalProp": null
+          },
+          {
+            "eventType": "Arrived at USPS Regional Facility",
+            "eventTimestamp": "2024-11-22T16:20:00",
+            "GMTTimestamp": "2024-11-22T22:20:34Z",
+            "GMTOffset": "-06:00",
+            "eventCountry": null,
+            "eventCity": "OAK CREEK WI DISTRIBUTION CENTER",
+            "eventState": null,
+            "eventZIP": null,
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "A1",
+            "additionalProp": null
+          },
+          {
+            "eventType": "Departed Shipping Partner Facility, USPS Awaiting Item",
+            "eventTimestamp": "2024-11-22T07:43:00",
+            "GMTTimestamp": "2024-11-22T13:43:15Z",
+            "GMTOffset": "-06:00",
+            "eventCountry": null,
+            "eventCity": "GLENDALE HEIGHTS",
+            "eventState": "IL",
+            "eventZIP": "60139",
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "82",
+            "additionalProp": null
+          },
+          {
+            "eventType": "Arrived Shipping Partner Facility, USPS Awaiting Item",
+            "eventTimestamp": "2024-11-21T23:28:00",
+            "GMTTimestamp": "2024-11-21T05:28:33Z",
+            "GMTOffset": "-06:00",
+            "eventCountry": null,
+            "eventCity": "GLENDALE HEIGHTS",
+            "eventState": "IL",
+            "eventZIP": "60139",
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "81",
+            "additionalProp": null
+          },
+          {
+            "eventType": "Picked Up By Shipping Partner, USPS Awaiting Item",
+            "eventTimestamp": "2024-11-21T17:01:00",
+            "eventCountry": null,
+            "eventCity": null,
+            "eventState": null,
+            "eventZIP": null,
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "80",
+            "additionalProp": null
+          },
+          {
+            "eventType": "Arrived Shipping Partner Facility, USPS Awaiting Item",
+            "eventTimestamp": "2024-11-19T16:24:00",
+            "GMTTimestamp": "2024-11-19T21:24:07Z",
+            "GMTOffset": "-05:00",
+            "eventCountry": null,
+            "eventCity": "NIAGARA FALLS",
+            "eventState": "NY",
+            "eventZIP": "14304",
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "81",
+            "additionalProp": null
+          },
+          {
+            "eventType": "Shipping Label Created, USPS Awaiting Item",
+            "eventTimestamp": "2024-11-19T09:27:00",
+            "eventCountry": null,
+            "eventCity": null,
+            "eventState": null,
+            "eventZIP": null,
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "GX",
+            "additionalProp": null
+          }
+        ],
+        "trackingNumber": "9261290289104185136058"
+      }
+      JSON
+    )
+  end
+
+  def track_usps_in_progress_response
+    JSON.parse(
+      <<~JSON
+      {
+        "destinationCity": "MILWAUKEE",
+        "destinationState": "WI",
+        "destinationZIP": "53207",
+        "emailEnabled": "true",
+        "expectedDeliveryTimeStamp": "2024-11-29T00:00:00",
+        "kahalaIndicator": "false",
+        "mailClass": "USPS Ground Advantage<SUP>&#153;</SUP>",
+        "mailType": "DM",
+        "originCity": "NEW BERLIN",
+        "originState": "WI",
+        "originZIP": "53151",
+        "proofOfDeliveryEnabled": "false",
+        "restoreEnabled": "false",
+        "RRAMEnabled": "false",
+        "RREEnabled": "false",
+        "services": [
+          "USPS Tracking<SUP>&#174;</SUP>",
+          "Up to $100 insurance included"
+        ],
+        "serviceTypeCode": "022",
+        "status": "Arrived at USPS Regional Facility",
+        "statusCategory": "Moving Through Network",
+        "statusSummary": "Your item arrived at our USPS facility in OAK CREEK WI DISTRIBUTION CENTER on November 26, 2024 at 1:44 am. The item is currently in transit to the destination.",
+        "tableCode": "T",
+        "uniqueMailPieceID": "164744476",
+        "mailPieceIntakeDate": "2024-11-23 06:20:13.000000",
+        "trackingEvents": [
+          {
+            "eventType": "Arrived at USPS Regional Facility",
+            "eventTimestamp": "2024-11-26T01:44:00",
+            "GMTTimestamp": "2024-11-26T07:44:28Z",
+            "GMTOffset": "-06:00",
+            "eventCountry": null,
+            "eventCity": "OAK CREEK WI DISTRIBUTION CENTER",
+            "eventState": null,
+            "eventZIP": null,
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "10",
+            "additionalProp": null
+          },
+          {
+            "eventType": "Departed Post Office",
+            "eventTimestamp": "2024-11-25T18:31:00",
+            "GMTTimestamp": "2024-11-25T00:31:21Z",
+            "GMTOffset": "-06:00",
+            "eventCountry": null,
+            "eventCity": "NEW BERLIN",
+            "eventState": "WI",
+            "eventZIP": "53151",
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "SF",
+            "additionalProp": null
+          },
+          {
+            "eventType": "USPS in possession of item",
+            "eventTimestamp": "2024-11-25T18:26:00",
+            "GMTTimestamp": "2024-11-25T00:26:14Z",
+            "GMTOffset": "-06:00",
+            "eventCountry": null,
+            "eventCity": "NEW BERLIN",
+            "eventState": "WI",
+            "eventZIP": "53151",
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "03",
+            "additionalProp": null
+          },
+          {
+            "eventType": "Pre-Shipment, USPS Awaiting Item",
+            "eventTimestamp": "2024-11-23T00:00:00",
+            "eventCountry": null,
+            "eventCity": null,
+            "eventState": null,
+            "eventZIP": null,
+            "firm": null,
+            "name": null,
+            "authorizedAgent": "false",
+            "eventCode": "MA",
+            "additionalProp": null
+          }
+        ],
+        "trackingNumber": "9202290317456200135409"
+      }
+      JSON
+    )
   end
 
   def track_usps_not_found_response
-    "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-    <TrackResponse>
-      <TrackInfo ID=\"1234567890\">
-        <Error>
-          <Number>-2147219302</Number>
-          <Description>The Postal Service could not locate the tracking information for your request. Please verify your tracking number and try again later.</Description>
-          <HelpFile />
-          <HelpContext />
-        </Error>
-      </TrackInfo>
-    </TrackResponse>"
+    JSON.parse(
+      <<~JSON
+      {
+        "apiVersion": "/tracking/v3",
+        "error": {
+          "code": "400",
+          "message": "12: A status update is not yet available on your package. It will be available when the shipper provides an update or the package is given to USPS. Check back soon. Sign up for Informed Delivery<SUP>reg;</SUP> to receive notifications for packages addressed to you. - ",
+          "errors": [{"title":"12: A status update is not yet available on your package. It will be available when the shipper provides an update or the package is given to USPS. Check back soon. Sign up for Informed Delivery<SUP>reg;</SUP> to receive notifications for packages addressed to you. - ","detail":"","code":"150001"}]
+        }
+      }
+      JSON
+    )
   end
 
   def track_ups_response

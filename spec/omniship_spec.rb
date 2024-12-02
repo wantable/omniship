@@ -17,8 +17,6 @@ describe "Omniship" do
 
     Omniship.config("spec/sample_config.yml")
     expect(Omniship::UPS.username).to eq(ups_username)
-    expect(Omniship::USPS.userid).to eq(usps_userid)
-    expect(Omniship::USPS.permit_number).to eq(usps_returns_permit_number)
     expect(Omniship::Landmark.username).to eq(landmark_username)
     expect(Omniship::DHLGM.username).to eq(dhlgm_username)
     expect(Omniship::track_timeout).to eq(5)
