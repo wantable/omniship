@@ -3,7 +3,7 @@ require 'omniship/amazon/track'
 module Omniship
   module Amazon
     LABEL = 'Amazon'
-    TRACKING_REGEX = [/^TBA[0-9]+$/]
+    TRACKING_REGEX = []
 
     TRACKING_URL = "TODO"
 
