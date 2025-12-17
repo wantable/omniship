@@ -89,7 +89,12 @@ module Omniship
         FedEx.client_secret = fedex['client_secret']
         FedEx.test = fedex['test']
       end
+
+      if amazon = omniship['Amazon']
+        Amazon.test = amazon['test']
+      end
     end
+
     nil
   end
 

@@ -3,19 +3,19 @@ module Omniship
     module Track
       class Address < Omniship::Base
         def city
-          root['city']
+          root&.[]('city')
         end
 
         def state
-          root['stateOrRegion']
+          root&.[]('stateOrRegion')
         end
 
         def country
-          root['countryCode']
+          root&.[]('countryCode')
         end
 
         def postal_code
-          root['postalCode']
+          root&.[]('postalCode')
         end
 
         def to_s
