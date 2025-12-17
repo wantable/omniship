@@ -21,7 +21,7 @@ module Omniship
 
             response = track_shipment(tracking_number, access_token, options)
 
-            if response.key?('errors') || response.key?('error') || response['success'] == false
+            if response.key?('errors') || response.key?('error')
               raise Error.new(response)
             end
 

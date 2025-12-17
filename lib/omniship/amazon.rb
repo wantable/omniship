@@ -2,10 +2,10 @@ require 'omniship/amazon/track'
 
 module Omniship
   module Amazon
-    LABEL = 'Amazon'
+    LABEL = 'Amazon'.freeze
     TRACKING_REGEX = []
 
-    TRACKING_URL = "TODO"
+    TRACKING_URL = 'N/A'.freeze
 
     class << self
       attr_accessor :test
@@ -19,8 +19,9 @@ module Omniship
       Track::Request.track(id, access_token, options)
     end
 
+    # TODO: Amazon does not have a website for ShippingPartner Tracking
     def self.tracking_url(number)
-      TRACKING_URL + number
+      nil
     end
 
     def self.bearer_token_required?
