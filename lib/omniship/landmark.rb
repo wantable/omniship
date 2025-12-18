@@ -3,11 +3,11 @@ require 'omniship/landmark/track'
 # https://mercury.landmarkglobal.com/clients/KnowledgeBase/index.php?topic_name=API+Specifications&hash=bf8229696f7a3bb4700cfddef19fa23f#track
 module Omniship
   module Landmark
-    LABEL = "Landmark"
+    LABEL = "Landmark".freeze
     TRACKING_REGEX = /\b(LTN\d+N\d+)\b/i
-    TRACKING_URL = "https://track.landmarkglobal.com/?trck="
+    TRACKING_URL = "https://track.landmarkglobal.com/?trck=".freeze
     TIMESTAMP_FORMAT = "%Y-%m-%d %H:%M:%S %Z"
-    TIMEZONE = "CST"
+    TIMEZONE = "CST".freeze
 
     class << self
       attr_accessor :username
@@ -20,7 +20,7 @@ module Omniship
       tracking =~ TRACKING_REGEX
     end
 
-    def self.track(tracking, bearer_token: nil, options: {})
+    def self.track(tracking, access_token: nil, options: {})
       Track::Request.track(tracking)
     end
 
@@ -32,7 +32,7 @@ module Omniship
       TRACKING_URL + number
     end
 
-    def self.token_required?
+    def self.access_token_required?
       false
     end
 

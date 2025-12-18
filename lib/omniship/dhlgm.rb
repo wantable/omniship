@@ -2,9 +2,9 @@ require 'omniship/dhlgm/track'
 
 module Omniship
   module DHLGM
-    LABEL = "DHL Global Mail"
+    LABEL = "DHL Global Mail".freeze
     TRACKING_LENGTH = 22
-    TRACKING_URL = "http://webtrack.dhlglobalmail.com/?trackingnumber="
+    TRACKING_URL = "http://webtrack.dhlglobalmail.com/?trackingnumber=".freeze
     TIMESTAMP_FORMAT = "%m/%d/%Y %I:%M %P %Z"
 
     class << self
@@ -17,7 +17,7 @@ module Omniship
       !Omniship::DHLGM.mailer_id.nil? and tracking.length == TRACKING_LENGTH and tracking.include?(Omniship::DHLGM.mailer_id) 
     end
 
-    def self.track(id, bearer_token: nil, options: {})
+    def self.track(id, access_token: nil, options: {})
       Track::Request.track(id)
     end
 
@@ -25,7 +25,7 @@ module Omniship
       TRACKING_URL + number
     end
 
-    def self.token_required?
+    def self.access_token_required?
       false
     end
 
