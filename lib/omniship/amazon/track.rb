@@ -1,0 +1,7 @@
+require 'omniship/amazon/track/activity'
+require 'omniship/amazon/track/address'
+require 'omniship/amazon/track/package'
+require 'omniship/amazon/track/shipment'
+require 'omniship/amazon/track/error'
+require 'omniship/amazon/track/request'
+require 'omniship/amazon/track/response'

@@ -19,7 +19,7 @@ module Omniship
       TRACKING_REGEX.any? { |regex| tracking =~ regex }
     end
 
-    def self.track(tracking, bearer_token: nil, options: {})
+    def self.track(tracking, access_token: nil, options: {})
       Track::Request.track(tracking)
     end
 
@@ -27,7 +27,7 @@ module Omniship
       TRACKING_URL + number
     end
 
-    def self.bearer_token_required?
+    def self.access_token_required?
       false
     end
 

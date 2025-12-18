@@ -23,10 +23,11 @@ require 'omniship/dhl'
 require 'omniship/fedex'
 require 'omniship/newgistics'
 require 'omniship/pitney_bowes'
+require 'omniship/amazon'
 
 
 module Omniship
-  PROVIDERS = [UPSMI, UPS, Landmark, FedEx, DHLGM, DHL, USPS, Newgistics]
+  PROVIDERS = [UPSMI, UPS, Landmark, FedEx, DHLGM, DHL, USPS, Newgistics, Amazon]
   class << self
     attr_accessor :debug, :track_timeout
   end
@@ -88,17 +89,22 @@ module Omniship
         FedEx.client_secret = fedex['client_secret']
         FedEx.test = fedex['test']
       end
+
+      if amazon = omniship['Amazon']
+        Amazon.test = amazon['test']
+      end
     end
+
     nil
   end
 
   # Track a package based on a tracking number
   # supports Landmark Global, UPS, DHL Global Mail, USPS
-  def self.track(number, bearer_token: nil, options: {})
+  def self.track(number, access_token: nil, options: {})
     provider = self.provider_from_number(number)
     if provider
       if provider.respond_to?(:track)
-        provider.send(:track, number, bearer_token:, options:)
+        provider.send(:track, number, access_token:, options:)
       else
         raise TrackError.new("#{provider.const_get(:LABEL)} does not support tracking.")
       end

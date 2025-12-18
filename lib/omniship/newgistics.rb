@@ -2,13 +2,13 @@ require 'omniship/newgistics/track'
 
 module Omniship
   module Newgistics
-    LABEL = "Newgistics"
+    LABEL = "Newgistics".freeze
 
     # this regex works for the barcode only
     TRACKING_REGEX = /7(21|25)(00|01|10|20)\d{5}\d{2}\d{4}\d{2}\d{7,29}\d/i
     TRACKING_URL = "http://tracking.smartlabel.com/Default.aspx?TrackingValue="
-    BARCODE = 'Barcode'
-    REFERENCE_NUMBER = 'Reference Number'
+    BARCODE = 'Barcode'.freeze
+    REFERENCE_NUMBER = 'Reference Number'.freeze
     DATE_REGEX =  /\/Date\((\d+)(.+)\)\//
 
     class << self
@@ -21,7 +21,7 @@ module Omniship
       !!(tracking =~ TRACKING_REGEX)
     end
 
-    def self.track(id, bearer_token: nil, options: {})
+    def self.track(id, access_token: nil, options: {})
       qualifier = options&.fetch(:qualifier, BARCODE)
       Track::Request.track(id, qualifier)
     end
@@ -30,7 +30,7 @@ module Omniship
       TRACKING_URL + number
     end
 
-    def self.bearer_token_required?
+    def self.access_token_required?
       false
     end
 

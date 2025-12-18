@@ -2,13 +2,13 @@ require 'omniship/usps/track'
 
 module Omniship
   module USPS
-    LABEL = "USPS"
+    LABEL = "USPS".freeze
     TRACKING_REGEX = [/\b(91\d\d ?\d\d\d\d ?\d\d\d\d ?\d\d\d\d ?\d\d\d\d ?\d\d|91\d\d ?\d\d\d\d ?\d\d\d\d ?\d\d\d\d ?\d\d\d\d)\b/i, 
                       /^E\D{1}\d{9}\D{2}$|^9\d{15,21}$/, 
                       /^(91|92)[0-9]+$/, 
                       /^[A-Za-z]{2}[0-9]+US$/]
 
-    TRACKING_URL = "https://tools.usps.com/go/TrackConfirmAction?tLabels="
+    TRACKING_URL = "https://tools.usps.com/go/TrackConfirmAction?tLabels=".freeze
 
     class << self
       attr_accessor :client_ip
@@ -19,15 +19,15 @@ module Omniship
       TRACKING_REGEX.any? { |regex| tracking =~ regex }
     end
     
-    def self.track(id, bearer_token:, options: {})
-      Track::Request.track(id, bearer_token, options)
+    def self.track(id, access_token:, options: {})
+      Track::Request.track(id, access_token, options)
     end
 
     def self.tracking_url(number)
       TRACKING_URL + number
     end
 
-    def self.bearer_token_required?
+    def self.access_token_required?
       true
     end
 

@@ -39,3 +39,5 @@ Omniship:
     client_id: '<%=ENV["FEDEX_CLIENT_ID"]%>'
     client_secret: '<%=ENV["FEDEX_CLIENT_SECRET"]%>'
     test: true
+  Amazon:
+    test: true

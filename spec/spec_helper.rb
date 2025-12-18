@@ -54,5 +54,6 @@ RSpec.configure do |config|
     Omniship::PitneyBowes.test = true
     Omniship::FedEx.test = true
     Omniship::Newgistics.test = true
+    Omniship::Amazon.test = true
   }
 end
