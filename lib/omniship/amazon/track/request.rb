@@ -30,7 +30,6 @@ module Omniship
 
           private
 
-          # https://developer.usps.com/trackingv3#tag/Resources/operation/get-package-tracking
           def track_shipment(tracking_number, access_token, options)
             url = endpoint + TRACK_PATH
             params = {}
