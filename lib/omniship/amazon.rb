@@ -5,7 +5,7 @@ module Omniship
     LABEL = 'Amazon'.freeze
     TRACKING_REGEX = []
 
-    TRACKING_URL = 'N/A'.freeze
+    TRACKING_URL = 'https://track.amazon.com/'.freeze
 
     class << self
       attr_accessor :test
@@ -21,7 +21,7 @@ module Omniship
 
     # TODO: Amazon does not have a website for ShippingPartner Tracking
     def self.tracking_url(number)
-      nil
+      TRACKING_URL + number
     end
 
     def self.bearer_token_required?
