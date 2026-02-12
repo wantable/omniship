@@ -131,6 +131,10 @@ module Omniship
     end
   end
 
+  def self.access_token_required?
+    false
+  end
+
   private
 
   def self.provider_from_number(number)
