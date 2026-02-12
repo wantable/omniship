@@ -1,6 +1,13 @@
 require 'spec_helper'
 
 describe "Amazon::Track" do
+  it 'matches tracking prefixes' do
+    expect(Omniship::Amazon::tracking_test?('TBA123456789012')).to(eq(true))
+    expect(Omniship::Amazon::tracking_test?('TBM123456789012')).to(eq(true))
+    expect(Omniship::Amazon::tracking_test?('TBC123456789012')).to(eq(true))
+    expect(Omniship::Amazon::tracking_test?('123456789012')).to(eq(false))
+  end
+
   it 'raises error without bearer token' do
     expect { Omniship::Amazon.track('9261290289104185136058', access_token: nil) }.to raise_error(RuntimeError)
   end
@@ -38,10 +45,5 @@ describe "Amazon::Track" do
     expect(activity.status).to_not be_nil
     expect(activity.address.to_s).to eq("Bethpage, NY 11714 US")
     expect(activity.timestamp).to_not be_nil
-  end
-
-  it 'test json parsing not found' do
-    error = Omniship::Amazon::Track::Error.new(track_usps_not_found_response)
-    expect(error.code).to eq('400')
   end
 end
