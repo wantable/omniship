@@ -3,9 +3,9 @@ require 'omniship/amazon/track'
 module Omniship
   module Amazon
     LABEL = 'Amazon'.freeze
-    TRACKING_REGEX = []
+    TRACKING_REGEX = [/\ATB[A-Z]\d+\z/]
 
-    TRACKING_URL = 'https://track.amazon.com/'.freeze
+    TRACKING_URL = 'https://track.amazon.com/tracking'.freeze
 
     class << self
       attr_accessor :test
