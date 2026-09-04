@@ -22,6 +22,17 @@ describe "Amazon::Track" do
     expect(package.tracking_number).to_not be_nil
     expect(trk.shipment.scheduled_delivery).to_not be_nil
 
+    expect(package.delivered_at).to eq(Time.parse("2019-03-21T14:29:51Z"))
+    expect(trk.shipment.delivered_at).to eq(Time.parse("2019-03-21T14:29:51Z"))
+
+    pod = package.proof_of_delivery
+    expect(pod).to_not be_nil
+    expect(pod.delivery_image_url).to eq("https://s3.amazonaws.com/amzn-pod/delivery-image.jpg")
+    expect(pod.signature_image_url).to eq("https://s3.amazonaws.com/amzn-pod/signature-image.jpg")
+    expect(pod.received_by).to eq("John Doe")
+    expect(package.delivery_image_url).to eq("https://s3.amazonaws.com/amzn-pod/delivery-image.jpg")
+    expect(trk.shipment.proof_of_delivery).to_not be_nil
+
     activity = package.activity.find { |a| !a.address.state.nil? }
 
     expect(activity.code).to_not be_nil
@@ -38,6 +49,10 @@ describe "Amazon::Track" do
     package = trk.shipment.packages.first
     expect(package.tracking_number).to_not be_nil
     expect(trk.shipment.scheduled_delivery).to_not be_nil
+
+    expect(package.delivered_at).to be_nil
+    expect(package.proof_of_delivery).to be_nil
+    expect(package.delivery_image_url).to be_nil
 
     activity = package.activity.find { |a| !a.address.state.nil? }
 
