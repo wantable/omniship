@@ -2383,7 +2383,12 @@ module MockResponses
           }
         ],
         "summary":{
-          "status":"Delivered"
+          "status":"Delivered",
+          "proofOfDelivery":{
+            "deliveryImageURL":"https://s3.amazonaws.com/amzn-pod/delivery-image.jpg",
+            "signatureImageURL":"https://s3.amazonaws.com/amzn-pod/signature-image.jpg",
+            "receivedBy":"John Doe"
+          }
         },
         "trackingId":"23AA47DE2B3B6",
         "promisedDeliveryDate":"2019-03-22T03:00:00Z"

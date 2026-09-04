@@ -1,5 +1,6 @@
 require 'omniship/amazon/track/activity'
 require 'omniship/amazon/track/address'
+require 'omniship/amazon/track/proof_of_delivery'
 require 'omniship/amazon/track/package'
 require 'omniship/amazon/track/shipment'
 require 'omniship/amazon/track/error'

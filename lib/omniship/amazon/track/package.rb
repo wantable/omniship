@@ -30,19 +30,29 @@ module Omniship
 
         def scheduled_delivery
           Omniship::Amazon.parse_timestamp(root['promisedDeliveryDate']) ||
-            delivery_date_from_activity
+            delivered_at
+        end
+
+        # actual delivery timestamp, distinct from the promised/estimated date
+        def delivered_at
+          return unless has_arrived?
+
+          activity.find { |a| HAS_ARRIVED_CODES.include?(a.code) }&.timestamp
         end
 
         def alternate_tracking
           root['alternateLegTrackingId']
         end
 
-        private
+        def proof_of_delivery
+          pod = root.dig('summary', 'proofOfDelivery')
+          return if pod.nil? || pod.empty?
 
-        def delivery_date_from_activity
-          return unless has_arrived?
+          @proof_of_delivery ||= ProofOfDelivery.new(pod)
+        end
 
-          activity.find { |a| HAS_ARRIVED_CODES.include?(a.code) }&.timestamp
+        def delivery_image_url
+          proof_of_delivery&.delivery_image_url
         end
       end
     end
