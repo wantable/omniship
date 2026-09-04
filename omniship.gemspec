@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = "Omniship is a unified API for various shipping APIs."
   s.description = "Omniship is a unified API for various shipping APIs such as UPS, USPS, FedEx, and DHL."
 
-  s.authors  = ["Tom Preston-Werner", "Casey Juan Lopez", "Kevin Solkowski"]
+  s.authors  = ["Tom Preston-Werner", "Casey Sobrilsky", "Kevin Solkowski"]
   s.email    = 'webmaster@wantable.com'
   s.homepage = 'http://github.com/wantable/omniship'
 
@@ -21,9 +21,8 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = %w[LICENSE README.md]
 
   s.add_dependency('json')
-  s.add_dependency('curb')
   s.add_dependency('rest-client')
-  s.add_dependency('nokogiri', "1.16")
+  s.add_dependency('nokogiri', "~> 1.16")
   s.add_development_dependency('rake')
   s.add_development_dependency('rspec')
   s.add_development_dependency('pry')
