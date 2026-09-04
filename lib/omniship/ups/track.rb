@@ -1,6 +1,7 @@
 require 'omniship/ups/track/alternate_tracking'
 require 'omniship/ups/track/activity'
 require 'omniship/ups/track/address'
+require 'omniship/ups/track/proof_of_delivery'
 require 'omniship/ups/track/package'
 require 'omniship/ups/track/shipment'
 require 'omniship/ups/track/error'
