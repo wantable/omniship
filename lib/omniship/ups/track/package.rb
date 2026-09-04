@@ -31,7 +31,25 @@ module Omniship
         end
 
         def has_arrived?
-          activity.any? { |activity| activity.code == ARRIVAL_CODE && !activity.status.include?("transferred to post office")}
+          !delivered_activity.nil?
+        end
+
+        # actual delivery timestamp, distinct from the estimated delivery_dates
+        def delivered_at
+          delivered_activity&.timestamp
+        end
+
+        def proof_of_delivery
+          info = @root['deliveryInformation']
+          return if info.nil? || info.empty?
+
+          @proof_of_delivery ||= ProofOfDelivery.new(info)
+        end
+
+        private
+
+        def delivered_activity
+          activity.find { |activity| activity.code == ARRIVAL_CODE && !activity.status.include?("transferred to post office") }
         end
       end
     end

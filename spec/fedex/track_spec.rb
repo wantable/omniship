@@ -14,6 +14,17 @@ describe "FedEx::Track" do
     expect(trk.shipment.scheduled_delivery.to_date).to_not be_nil
     expect(trk.shipment.scheduled_delivery.to_date).to eq Date.parse('2024-08-14')
 
+    expect(package.delivered_at).to_not be_nil
+    expect(package.delivered_at.to_date).to eq Date.parse('2007-09-27')
+    expect(trk.shipment.delivered_at.to_date).to eq Date.parse('2007-09-27')
+
+    pod = package.proof_of_delivery
+    expect(pod).to_not be_nil
+    expect(pod.received_by).to eq 'Reciever'
+    expect(pod.signed_by).to eq 'Reciever'
+    expect(pod.location_description).to eq 'Receptionist/Front Desk'
+    expect(trk.shipment.proof_of_delivery).to_not be_nil
+
     activity = package.activity.first
 
     expect(activity.code).to_not be_nil

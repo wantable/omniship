@@ -48,15 +48,27 @@ module Omniship
         def scheduled_delivery
           Omniship::USPS.parse_timestamp(root['expectedDeliveryTimeStamp'], nil) ||
             Omniship::USPS.parse_timestamp(root['guaranteedDeliveryTimeStamp'], nil) ||
-            delivery_date_from_activity
+            delivered_at
+        end
+
+        # actual delivery timestamp, distinct from the estimated scheduled_delivery
+        def delivered_at
+          delivered_event&.timestamp
+        end
+
+        def proof_of_delivery
+          return unless delivered_event
+
+          pod = ProofOfDelivery.new(delivered_event.root)
+          pod if pod.received_by
         end
 
         private
 
-        def delivery_date_from_activity
+        def delivered_event
           return unless has_arrived?
 
-          activity.find { |a| HAS_ARRIVED_CODES.include?(a.code) }&.timestamp
+          activity.find { |a| HAS_ARRIVED_CODES.include?(a.code) }
         end
       end
     end

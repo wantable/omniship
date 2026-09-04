@@ -69,6 +69,24 @@ describe "UPS::Track" do
     expect(alternate_tracking.value).to_not be_nil
   end
 
+  it 'test json parsing of a delivered shipment with proof of delivery' do
+    trk = Omniship::UPS::Track::Response.new(track_ups_delivered_response)
+    expect(trk.has_left?).to eq true
+    expect(trk.has_arrived?).to eq true
+
+    package = trk.shipment.packages.first
+    expect(package.delivered_at).to eq(Time.parse("2024-08-15 14:22:00"))
+    expect(trk.shipment.delivered_at).to eq(Time.parse("2024-08-15 14:22:00"))
+
+    pod = package.proof_of_delivery
+    expect(pod).to_not be_nil
+    expect(pod.received_by).to eq("SMITH")
+    expect(pod.location).to eq("Front Door")
+    expect(pod.signature_image).to_not be_nil
+    expect(pod.pod_content).to_not be_nil
+    expect(trk.shipment.proof_of_delivery).to_not be_nil
+  end
+
   it 'test parsing not found' do
     error = Omniship::UPS::Track::Error.new(404, track_ups_not_found_response.dig('trackResponse', 'shipment').first['warnings'])
     expect(error.code).to eq(Omniship::TrackError::NOT_FOUND)
