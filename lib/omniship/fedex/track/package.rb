@@ -49,6 +49,21 @@ module Omniship
           Omniship::FedEx.parse_timestamp(window)
         end
 
+        # actual delivery timestamp, distinct from the estimated delivery_dates
+        def delivered_at
+          actual = Array(root['dateAndTimes']).detect { |x| x['type'] == 'ACTUAL_DELIVERY' }
+          return unless actual
+
+          Omniship::FedEx.parse_timestamp(actual['dateTime'])
+        end
+
+        def proof_of_delivery
+          details = root['deliveryDetails']
+          return if details.nil? || details.empty?
+
+          @proof_of_delivery ||= ProofOfDelivery.new(details)
+        end
+
         def alternate_tracking; end
       end
     end
