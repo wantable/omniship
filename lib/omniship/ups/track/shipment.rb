@@ -15,6 +15,14 @@ module Omniship
 
           Omniship::UPS.parse_timestamp(date) if date && !date.empty?
         end
+
+        def delivered_at
+          packages.map(&:delivered_at).compact.first
+        end
+
+        def proof_of_delivery
+          packages.map(&:proof_of_delivery).compact.first
+        end
       end
     end
   end

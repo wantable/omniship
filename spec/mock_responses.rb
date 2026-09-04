@@ -1588,6 +1588,71 @@ module MockResponses
     }
   end
 
+  def track_ups_delivered_response
+    {
+      "trackResponse" => {
+        "shipment" => [
+          {
+            "inquiryNumber" => "1Z1202R66698804005",
+            "package" => [
+              {
+                "trackingNumber" => "1Z1202R66698804005",
+                "deliveryDate" => [
+                  { "date" => "20240815", "type" => "DEL" }
+                ],
+                "deliveryTime" => { "endTime" => "142200", "type" => "DEL" },
+                "deliveryInformation" => {
+                  "location" => "Front Door",
+                  "receivedBy" => "SMITH",
+                  "signature" => { "image" => "iVBORw0KGgoAAAANSUhEUg" },
+                  "pod" => { "content" => "JVBERi0xLjQKJeLjz9M" }
+                },
+                "activity" => [
+                  {
+                    "location" => {
+                      "address" => {
+                        "city" => "Milwaukee",
+                        "stateProvince" => "WI",
+                        "countryCode" => "US",
+                        "country" => "US"
+                      }
+                    },
+                    "status" => {
+                      "type" => "D",
+                      "description" => "Delivered",
+                      "code" => "FS",
+                      "statusCode" => "011"
+                    },
+                    "date" => "20240815",
+                    "time" => "142200"
+                  },
+                  {
+                    "location" => {
+                      "address" => {
+                        "city" => "Milwaukee",
+                        "stateProvince" => "WI",
+                        "countryCode" => "US",
+                        "country" => "US"
+                      }
+                    },
+                    "status" => {
+                      "type" => "I",
+                      "description" => "Out For Delivery Today",
+                      "code" => "OF",
+                      "statusCode" => "005"
+                    },
+                    "date" => "20240815",
+                    "time" => "060000"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  end
+
   def track_ups_mi_response
     {
       "trackResponse" => {
