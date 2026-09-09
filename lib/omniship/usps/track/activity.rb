@@ -15,9 +15,13 @@ module Omniship
         end
 
         def timestamp
-          return if root['eventTimestamp'].nil? || root['eventTimestamp'].length == 0
+          ts = root['eventTimestamp']
+          return if ts.nil? || ts.length == 0
 
-          Omniship::USPS.parse_timestamp(root['eventTimestamp'], nil)
+          offset = root['GMTOffset']
+          ts = "#{ts}#{offset}" if offset && offset.length > 0
+
+          Omniship::USPS.parse_timestamp(ts, nil)
         end
       end
     end

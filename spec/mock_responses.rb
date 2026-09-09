@@ -1624,7 +1624,9 @@ module MockResponses
                       "statusCode" => "011"
                     },
                     "date" => "20240815",
-                    "time" => "142200"
+                    "time" => "142200",
+                    "gmtDate" => "20240815",
+                    "gmtTime" => "19:22:00"
                   },
                   {
                     "location" => {

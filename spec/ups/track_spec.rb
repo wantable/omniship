@@ -75,8 +75,8 @@ describe "UPS::Track" do
     expect(trk.has_arrived?).to eq true
 
     package = trk.shipment.packages.first
-    expect(package.delivered_at).to eq(Time.parse("2024-08-15 14:22:00"))
-    expect(trk.shipment.delivered_at).to eq(Time.parse("2024-08-15 14:22:00"))
+    expect(package.delivered_at).to eq(Time.parse("2024-08-15 19:22:00 UTC"))
+    expect(trk.shipment.delivered_at).to eq(Time.parse("2024-08-15 19:22:00 UTC"))
 
     pod = package.proof_of_delivery
     expect(pod).to_not be_nil

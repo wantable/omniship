@@ -15,8 +15,8 @@ describe "FedEx::Track" do
     expect(trk.shipment.scheduled_delivery.to_date).to eq Date.parse('2024-08-14')
 
     expect(package.delivered_at).to_not be_nil
-    expect(package.delivered_at.to_date).to eq Date.parse('2007-09-27')
-    expect(trk.shipment.delivered_at.to_date).to eq Date.parse('2007-09-27')
+    expect(package.delivered_at).to eq(Time.parse("2024-08-12T15:18:10 -0500"))
+    expect(trk.shipment.delivered_at).to eq(Time.parse("2024-08-12T15:18:10 -0500"))
 
     pod = package.proof_of_delivery
     expect(pod).to_not be_nil

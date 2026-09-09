@@ -7,6 +7,7 @@ module Omniship
     TRACKING_URL = "http://wwwapps.ups.com/WebTracking/track?track=yes&trackNums=".freeze
     DATE_FORMAT = "%Y%m%d"
     TIMESTAMP_FORMAT = "%Y%m%d %H%M%S"
+    GMT_TIMESTAMP_FORMAT = "%Y%m%d %H:%M:%S %z"
 
     class << self
       attr_accessor :username
@@ -44,6 +45,14 @@ module Omniship
       else
         Time.strptime("#{date} #{time}", TIMESTAMP_FORMAT)
       end
+    end
+
+    # gmtDate/gmtTime are already UTC, e.g. "20240320" / "11:08:38"
+    # (note gmtTime carries colons, unlike the local time field)
+    def self.parse_timestamp_gmt(date, time)
+      return if date.nil? || date.empty? || time.nil? || time.empty?
+
+      Time.strptime("#{date} #{time} +0000", GMT_TIMESTAMP_FORMAT)
     end
   end
 end

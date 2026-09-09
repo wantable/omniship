@@ -15,7 +15,8 @@ module Omniship
         end
 
         def timestamp
-          Omniship::UPS.parse_timestamp(@root['date'], @root['time'])
+          Omniship::UPS.parse_timestamp_gmt(@root['gmtDate'], @root['gmtTime']) ||
+            Omniship::UPS.parse_timestamp(@root['date'], @root['time'])
         end
       end
     end
