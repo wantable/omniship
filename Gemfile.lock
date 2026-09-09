@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    omniship (0.6.4)
+    omniship (0.6.5)
       json
       nokogiri (~> 1.16)
       rest-client

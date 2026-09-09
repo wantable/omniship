@@ -49,12 +49,11 @@ module Omniship
           Omniship::FedEx.parse_timestamp(window)
         end
 
-        # actual delivery timestamp, distinct from the estimated delivery_dates
+        # actual delivery timestamp, distinct from the estimated delivery_dates.
+        # Derived from the delivered scanEvent, whose date carries the offset, so
+        # the result is a true absolute instant (unlike the no-offset dateAndTimes).
         def delivered_at
-          actual = Array(root['dateAndTimes']).detect { |x| x['type'] == 'ACTUAL_DELIVERY' }
-          return unless actual
-
-          Omniship::FedEx.parse_timestamp(actual['dateTime'])
+          activity.find { |a| a.code == DELIVERED }&.timestamp
         end
 
         def proof_of_delivery

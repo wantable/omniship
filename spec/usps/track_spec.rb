@@ -18,8 +18,8 @@ describe "USPS::Track" do
     expect(package.tracking_number).to_not be_nil
     expect(trk.shipment.scheduled_delivery).to_not be_nil
 
-    expect(package.delivered_at).to eq(Time.parse("2024-11-23T13:10:00"))
-    expect(trk.shipment.delivered_at).to eq(Time.parse("2024-11-23T13:10:00"))
+    expect(package.delivered_at).to eq(Time.parse("2024-11-23T13:10:00 -06:00"))
+    expect(trk.shipment.delivered_at).to eq(Time.parse("2024-11-23T13:10:00 -06:00"))
 
     # USPS v3 tracking carries no recipient name in this sample, so no POD
     expect(package.proof_of_delivery).to be_nil

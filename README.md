@@ -14,6 +14,9 @@ Currently Supported Functionality
   * auto detects the provider based on the format of the tracking number
   * works with UPS, USPS, DHL Global Mail (if Omniship::DHLGM.mailer_id is set and matches), FedEx, Landmark Global, UPS Mail Innovations , Newgistics (barcode only)
 
+* [Delivery Timestamps](#delivery-timestamps)
+  * `delivered_at` returns a true absolute (offset-aware / UTC) instant, consistently across all carriers
+
 * [UPS and UPS Mail Innovations](#ups-and-ups-mail-innovations)
   * Track
 
@@ -282,6 +285,38 @@ trk.shipment.packages.first.has_arrived?
 # => true / false
 ```
 
+Delivery Timestamps
+-------------------
+
+When a package has been delivered, `package.delivered_at` returns the actual delivery
+time as a **true absolute instant** (offset-aware / UTC). This is consistent across every
+carrier, so callers can safely convert the value into any zone (e.g. the recipient's local
+time) without worrying about which carrier produced it.
+
+```ruby
+trk.shipment.packages.first.delivered_at
+# => 2024-08-15 19:22:00 UTC
+
+trk.shipment.delivered_at
+# => the first delivered_at across the shipment's packages
+```
+
+Each carrier's raw payload expresses the delivery time differently, so Omniship normalizes
+them to an absolute instant:
+
+* **Amazon** — already reports a UTC instant (`eventTime` ends in `Z`); used as-is.
+* **USPS** — the delivered event's local `eventTimestamp` is combined with its sibling
+  `GMTOffset` (e.g. `-06:00`) to produce an offset-aware instant. When `GMTOffset` is
+  blank it falls back to the bare local timestamp.
+* **UPS** — the UTC `gmtDate`/`gmtTime` fields are preferred when present; otherwise it
+  falls back to the local `date`/`time` fields.
+* **FedEx** — derived from the delivered (`DL`) scan event, whose `date` carries the
+  timezone offset (e.g. `2024-08-12T15:18:10 -0500`).
+
+Note: `scheduled_delivery` and other estimated-delivery values are typically date-oriented
+and are not necessarily offset-aware; the absolute-instant guarantee applies to
+`delivered_at`.
+
 Track
 -----
 
@@ -310,6 +345,8 @@ TODO
 - Convert tests to use [webmock](https://github.com/bblimke/webmock) or similar strategy instead of calling the api's.
   - Unskip Landmark and Newgistics tests once they are passing with valid credentials. Search for "I no longer have valid test api credentials"
 - Fix time zone issue with Newgistics.parse_timestamp
-- Add zip to time zone conversion for UPS and USPS timestamps
+- Make non-`delivered_at` timestamps (e.g. scan activity, scheduled_delivery) offset-aware
+  too. `delivered_at` is already normalized to an absolute instant for all carriers using
+  the offset/GMT fields in each payload (see [Delivery Timestamps](#delivery-timestamps)).
 - Bulk tracking? Newgistics at least supports it.
 - Use the `track_timeout` config var in Landmark and Newgistics. At this time I do not have access to those api's to develop this.
