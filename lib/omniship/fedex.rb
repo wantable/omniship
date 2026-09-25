@@ -35,7 +35,7 @@ module Omniship
     def self.parse_timestamp(datetime, offset: false)
       return if datetime.nil? || datetime.empty?
 
-      if offset && datetime.match?(/[+-]\d{2}:\d{2}\z/)
+      if offset && datetime.to_s.match?(/[+-]\d{2}:\d{2}\z/)
         Time.strptime(datetime, TIMESTAMP_FORMAT_WITH_OFFSET)
       else
         Time.strptime(datetime, TIMESTAMP_FORMAT)
