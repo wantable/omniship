@@ -6,7 +6,13 @@ RSpec::Core::RakeTask.new
 
 task :load_env do |t|
   ENV['RACK_ENV'] ||= 'test'
-  if File.exists?("../.#{ENV["RACK_ENV"]}_env")
+  file_exists = if File.respond_to?(:exists?)
+    File.exists?("../.#{ENV["RACK_ENV"]}_env")
+  else
+    File.exist?("../.#{ENV["RACK_ENV"]}_env")
+  end
+
+  if file_exists
     File.read("../.#{ENV["RACK_ENV"]}_env").split("\n").each do |var|
       name, value = var.split "="
       ENV[name] = value if name and value

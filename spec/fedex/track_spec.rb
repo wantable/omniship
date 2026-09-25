@@ -56,4 +56,25 @@ describe "FedEx::Track" do
 
     expect(errors).to_not be_empty
   end
+
+  it "parse timestamp works even if the datetime doesn't have offset" do
+    [
+      '2026-09-25T00:00:00',
+      '2026-09-24T15:22:00-04:00',
+      '2026-09-24T11:19:05-05:00',
+      '2026-09-23T18:59:11-04:00',
+      '2026-09-23T06:58:35-04:00',
+      '2026-09-21T18:48:00-04:00',
+      '2026-09-21T12:46:21-04:00',
+      '2026-09-20T23:18:37-04:00',
+      '2026-09-19T23:01:12-04:00',
+      '2026-09-19T04:39:29-05:00',
+      '2026-09-18T18:19:00-05:00',
+      '2026-09-17T12:47:15-05:00'
+    ].each do |datetime|
+      expect {
+        Omniship::FedEx.parse_timestamp(datetime, offset: true)
+      }.not_to(raise_error(ArgumentError))
+    end
+  end
 end
