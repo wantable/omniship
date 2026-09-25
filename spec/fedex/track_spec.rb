@@ -72,9 +72,7 @@ describe "FedEx::Track" do
       '2026-09-18T18:19:00-05:00',
       '2026-09-17T12:47:15-05:00'
     ].each do |datetime|
-      expect {
-        Omniship::FedEx.parse_timestamp(datetime, offset: true)
-      }.not_to(raise_error(ArgumentError))
+      expect { Omniship::FedEx.parse_timestamp(datetime, offset: true) }.not_to(raise_error)
     end
   end
 end
